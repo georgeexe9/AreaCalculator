@@ -6,5 +6,11 @@ namespace AreaCalculator
         {
             InitializeComponent();
         }
+
+        private void CalculatorMainFrom_Load(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }
