@@ -50,14 +50,18 @@
             SquareAside = new TextBox();
             label3 = new Label();
             tabPage2 = new TabPage();
+            AreaTriangle = new Label();
             button3 = new Button();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
+            label12 = new Label();
+            heightTriangle = new TextBox();
+            sideATriangle = new TextBox();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
             tabPage3 = new TabPage();
             tabPage4 = new TabPage();
+            изчистиПолетаToolStripMenuItem = new ToolStripMenuItem();
+            изходToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -104,6 +108,7 @@
             // 
             // помощToolStripMenuItem
             // 
+            помощToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { изчистиПолетаToolStripMenuItem, изходToolStripMenuItem });
             помощToolStripMenuItem.ForeColor = Color.White;
             помощToolStripMenuItem.Name = "помощToolStripMenuItem";
             помощToolStripMenuItem.Size = new Size(62, 20);
@@ -293,9 +298,11 @@
             // tabPage2
             // 
             tabPage2.BackColor = Color.LightSteelBlue;
+            tabPage2.Controls.Add(AreaTriangle);
             tabPage2.Controls.Add(button3);
-            tabPage2.Controls.Add(textBox5);
-            tabPage2.Controls.Add(textBox4);
+            tabPage2.Controls.Add(label12);
+            tabPage2.Controls.Add(heightTriangle);
+            tabPage2.Controls.Add(sideATriangle);
             tabPage2.Controls.Add(label8);
             tabPage2.Controls.Add(label7);
             tabPage2.Controls.Add(label6);
@@ -306,28 +313,52 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Триъгълник";
             // 
+            // AreaTriangle
+            // 
+            AreaTriangle.AutoSize = true;
+            AreaTriangle.BackColor = Color.Transparent;
+            AreaTriangle.ForeColor = Color.FromArgb(46, 60, 99);
+            AreaTriangle.Location = new Point(88, 129);
+            AreaTriangle.Name = "AreaTriangle";
+            AreaTriangle.Size = new Size(73, 15);
+            AreaTriangle.TabIndex = 8;
+            AreaTriangle.Text = "AreaTriangle";
+            AreaTriangle.TextAlign = ContentAlignment.TopCenter;
+            // 
             // button3
             // 
-            button3.Location = new Point(19, 138);
+            button3.Location = new Point(19, 163);
             button3.Name = "button3";
             button3.Size = new Size(111, 29);
             button3.TabIndex = 3;
             button3.Text = "Пресметни";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
-            // textBox5
+            // label12
             // 
-            textBox5.Location = new Point(88, 85);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 7;
+            label12.AutoSize = true;
+            label12.BackColor = Color.Transparent;
+            label12.ForeColor = Color.FromArgb(46, 60, 99);
+            label12.Location = new Point(25, 129);
+            label12.Name = "label12";
+            label12.Size = new Size(57, 15);
+            label12.TabIndex = 7;
+            label12.Text = "Резултат:";
             // 
-            // textBox4
+            // heightTriangle
             // 
-            textBox4.Location = new Point(88, 53);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 5;
+            heightTriangle.Location = new Point(88, 85);
+            heightTriangle.Name = "heightTriangle";
+            heightTriangle.Size = new Size(100, 23);
+            heightTriangle.TabIndex = 7;
+            // 
+            // sideATriangle
+            // 
+            sideATriangle.Location = new Point(88, 53);
+            sideATriangle.Name = "sideATriangle";
+            sideATriangle.Size = new Size(100, 23);
+            sideATriangle.TabIndex = 5;
             // 
             // label8
             // 
@@ -382,6 +413,19 @@
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Кръг";
             // 
+            // изчистиПолетаToolStripMenuItem
+            // 
+            изчистиПолетаToolStripMenuItem.Name = "изчистиПолетаToolStripMenuItem";
+            изчистиПолетаToolStripMenuItem.Size = new Size(180, 22);
+            изчистиПолетаToolStripMenuItem.Text = "Изчисти полета";
+            изчистиПолетаToolStripMenuItem.Click += изчистиПолетаToolStripMenuItem_Click;
+            // 
+            // изходToolStripMenuItem
+            // 
+            изходToolStripMenuItem.Name = "изходToolStripMenuItem";
+            изходToolStripMenuItem.Size = new Size(180, 22);
+            изходToolStripMenuItem.Text = "Изход";
+            // 
             // CalculatorMainFrom
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -433,8 +477,8 @@
         private Button button1;
         private TextBox SquareAside;
         private Button button3;
-        private TextBox textBox5;
-        private TextBox textBox4;
+        private TextBox heightTriangle;
+        private TextBox sideATriangle;
         private Label label8;
         private Label label7;
         private Label label6;
@@ -442,5 +486,9 @@
         private Label label9;
         private Label RectangleAreaResult;
         private Label label11;
+        private Label AreaTriangle;
+        private Label label12;
+        private ToolStripMenuItem изчистиПолетаToolStripMenuItem;
+        private ToolStripMenuItem изходToolStripMenuItem;
     }
 }
