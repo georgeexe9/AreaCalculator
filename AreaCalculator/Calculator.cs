@@ -2,7 +2,8 @@
 {
     internal class Calculator
     {
-        public double SquareArea(double x)
+        
+        public  double SquareArea(double x)
         {
             return x * x;
         }
@@ -24,6 +25,7 @@
         }
         public double TrapezoidArea(double sideA, double sideB, double height)
         {
+            //1/2 e 0.5
             return 0.5 * (sideA + sideB) * height;
         }
 
