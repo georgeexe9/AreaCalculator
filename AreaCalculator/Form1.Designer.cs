@@ -32,6 +32,8 @@
             label2 = new Label();
             menuStrip1 = new MenuStrip();
             помощToolStripMenuItem = new ToolStripMenuItem();
+            изчистиПолетаToolStripMenuItem = new ToolStripMenuItem();
+            изходToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
@@ -60,8 +62,6 @@
             label6 = new Label();
             tabPage3 = new TabPage();
             tabPage4 = new TabPage();
-            изчистиПолетаToolStripMenuItem = new ToolStripMenuItem();
-            изходToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -114,13 +114,25 @@
             помощToolStripMenuItem.Size = new Size(62, 20);
             помощToolStripMenuItem.Text = "Помощ";
             // 
+            // изчистиПолетаToolStripMenuItem
+            // 
+            изчистиПолетаToolStripMenuItem.Name = "изчистиПолетаToolStripMenuItem";
+            изчистиПолетаToolStripMenuItem.Size = new Size(161, 22);
+            изчистиПолетаToolStripMenuItem.Text = "Изчисти полета";
+            // 
+            // изходToolStripMenuItem
+            // 
+            изходToolStripMenuItem.Name = "изходToolStripMenuItem";
+            изходToolStripMenuItem.Size = new Size(161, 22);
+            изходToolStripMenuItem.Text = "Изход";
+            // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(46, 60, 99);
             panel1.Controls.Add(tabControl1);
             panel1.Location = new Point(0, 135);
             panel1.Name = "panel1";
-            panel1.Size = new Size(769, 427);
+            panel1.Size = new Size(475, 427);
             panel1.TabIndex = 3;
             // 
             // tabControl1
@@ -412,19 +424,6 @@
             tabPage4.Size = new Size(406, 351);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Кръг";
-            // 
-            // изчистиПолетаToolStripMenuItem
-            // 
-            изчистиПолетаToolStripMenuItem.Name = "изчистиПолетаToolStripMenuItem";
-            изчистиПолетаToolStripMenuItem.Size = new Size(180, 22);
-            изчистиПолетаToolStripMenuItem.Text = "Изчисти полета";
-            изчистиПолетаToolStripMenuItem.Click += изчистиПолетаToolStripMenuItem_Click;
-            // 
-            // изходToolStripMenuItem
-            // 
-            изходToolStripMenuItem.Name = "изходToolStripMenuItem";
-            изходToolStripMenuItem.Size = new Size(180, 22);
-            изходToolStripMenuItem.Text = "Изход";
             // 
             // CalculatorMainFrom
             // 
