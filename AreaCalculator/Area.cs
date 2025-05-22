@@ -2,6 +2,9 @@
 {
     public partial class CalculatorMainFrom : Form
     {
+        /// <summary>
+        /// ИЗПОЛЗВАМ АБСТРАКЦИЯ КАТО СКРИВАМ НЕНУЖНАТА ИНФОРАМИЦИЯ ЗА ПОТРЕБИТЕЛЯ
+        /// </summary>
 
         public CalculatorMainFrom()
         {
@@ -16,7 +19,7 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
 
 
             double side = double.Parse(SquareAside.Text);
@@ -44,7 +47,7 @@
             AreaTriangle.Text = $"Лицето е {triangleArea}";
         }
 
-        //private void изчистиПолетаToolStripMenuItem_Click(object sender, EventArgs e)
+        //private void ПолетаToolStripMenuItem_Click(object sender, EventArgs e)
         //{
         //    Calculator.ClearAllBoxes(SquareAside, sideATriangle, SideBRectangle, SideARectangle, heightTriangle);
         //}

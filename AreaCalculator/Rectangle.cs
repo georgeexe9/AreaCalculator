@@ -1,7 +1,7 @@
 ﻿namespace AreaCalculator
 {
     //съжалявам, но extends е по-добре от ":"
-    
+
     internal class Rectangle : Shape
     {
         public double Sidea { get; set; }
