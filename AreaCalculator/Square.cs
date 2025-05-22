@@ -13,5 +13,9 @@
         {
             return SideA * SideA;
         }
+        public override double CalculatePerimetar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

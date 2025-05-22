@@ -14,5 +14,11 @@
         {
             return Math.PI * Radius * Radius;
         }
+
+        public override double CalculatePerimetar()
+        {
+            throw new NotImplementedException("За сега няма да се имплементира!");
+        }
+
     }
 }

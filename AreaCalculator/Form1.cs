@@ -16,7 +16,7 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ;
+            
 
 
             double side = double.Parse(SquareAside.Text);

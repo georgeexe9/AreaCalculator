@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AreaCalculator
 {
+    //нека си признаем, че extends е по-добре от :
     internal class Trapezoid : Shape
     {
         public double SideA { get; set; }
@@ -21,6 +22,10 @@ namespace AreaCalculator
         public override double CalculateArea()
         {
             return 0.5 * (SideA + SideB) * Height;
+        }
+        public override double CalculatePerimetar()
+        {
+            throw new NotImplementedException();
         }
     }
     

@@ -1,5 +1,7 @@
 ﻿namespace AreaCalculator
 {
+    //съжалявам, но extends е по-добре от ":"
+    
     internal class Rectangle : Shape
     {
         public double Sidea { get; set; }
@@ -14,6 +16,10 @@
         public override double CalculateArea()
         {
             return Sidea * Sideb;
+        }
+        public override double CalculatePerimetar()
+        {
+            throw new NotImplementedException();
         }
     }
 }
