@@ -29,41 +29,73 @@
         private void button1_Click(object sender, EventArgs e)
         {
 
-
-            //животът на променливата е кратък като моя!
-            double side = double.Parse(SquareAside.Text);
-           //създаваме нова инстанция Квадрат от абстрактен тип Форма
-           //присвояваме променливата side в абстрактия клас Форма
-            Shape shape = new Square(side);
-            //Извикваме CalculateArea без да ни интересува как подяволите работи,
-            //защриховаме към променлива от същия типаж
-            double squareArea = shape.CalculateArea();
-            //визуализираме резултата в лейбъл
-            SquareAreaResult.Text = $"Лицето е {squareArea}";
+            try
+            {
+                //животът на променливата е кратък като моя!
+                double side = double.Parse(SquareAside.Text);
+                //създаваме нова инстанция Квадрат от абстрактен тип Форма
+                //присвояваме променливата side в абстрактия клас Форма
+                Shape shape = new Square(side);
+                //Извикваме CalculateArea без да ни интересува как подяволите работи,
+                //защриховаме към променлива от същия типаж
+                double squareArea = shape.CalculateArea();
+                //визуализираме резултата в лейбъл
+                SquareAreaResult.Text = $"Лицето е {squareArea}";
+            }
+            catch (ArithmeticException ex)
+            {
+                MessageBox.Show(ex.Message, "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Моля въведете числа, а не буквички!\n Чупите ми кода!","Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            double sideA = double.Parse(SideARectangle.Text);
-            double sideB = double.Parse(SideBRectangle.Text);
-            Shape shape = new Rectangle(sideA, sideB);
-            double rectangleArea = shape.CalculateArea();
-            RectangleAreaResult.Text = $"Лицето е {rectangleArea}";
+        { 
+            try
+            {
+                double sideA = double.Parse(SideARectangle.Text);
+                double sideB = double.Parse(SideBRectangle.Text);
+                Shape shape = new Rectangle(sideA, sideB);
+                double rectangleArea = shape.CalculateArea();
+                RectangleAreaResult.Text = $"Лицето е {rectangleArea}";
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show(ex.Message, "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Моля въведете числа, а не буквички! Чупите ми кода!", "Грешка",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            double sideA = double.Parse(sideATriangle.Text);
-            double height = double.Parse(heightTriangle.Text);
-            Shape shape = new Triangle(sideA, height);
-            double triangleArea = shape.CalculateArea();
-            AreaTriangle.Text = $"Лицето е {triangleArea}";
+            try
+            {
+                double sideA = double.Parse(sideATriangle.Text);
+                double height = double.Parse(heightTriangle.Text);
+                Shape shape = new Triangle(sideA, height);
+                double triangleArea = shape.CalculateArea();
+                AreaTriangle.Text = $"Лицето е {triangleArea}";
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show(ex.Message,"Грешка",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+            catch(FormatException)
+            {
+                MessageBox.Show("Моля въведете валидни числа","Грешка",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            
         }
 
-        //private void ПолетаToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    Calculator.ClearAllBoxes(SquareAside, sideATriangle, SideBRectangle, SideARectangle, heightTriangle);
-        //}
+       
     }
 }
