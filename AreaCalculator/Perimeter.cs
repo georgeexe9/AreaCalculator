@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AreaCalculator
 {
-    public partial class Perimetar : Form
+    public partial class Perimeter : Form
     {
-        public Perimetar()
+        public Perimeter()
         {
             InitializeComponent();
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AreaCalculator
 {
-    internal class Eclipse
+    internal class Ellipse
 
     {
        

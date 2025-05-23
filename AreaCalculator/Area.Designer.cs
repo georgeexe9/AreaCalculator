@@ -102,7 +102,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.RenderMode = ToolStripRenderMode.Professional;
-            menuStrip1.Size = new Size(475, 24);
+            menuStrip1.Size = new Size(618, 24);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -130,9 +130,9 @@
             // 
             panel1.BackColor = Color.FromArgb(46, 60, 99);
             panel1.Controls.Add(tabControl1);
-            panel1.Location = new Point(0, 135);
+            panel1.Location = new Point(0, 130);
             panel1.Name = "panel1";
-            panel1.Size = new Size(475, 427);
+            panel1.Size = new Size(618, 431);
             panel1.TabIndex = 3;
             // 
             // tabControl1
@@ -141,10 +141,10 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
-            tabControl1.Location = new Point(31, 24);
+            tabControl1.Location = new Point(12, 21);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(414, 379);
+            tabControl1.Size = new Size(447, 398);
             tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -155,7 +155,7 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(406, 351);
+            tabPage1.Size = new Size(439, 370);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Правоъгълник и квадрат";
             // 
@@ -321,7 +321,7 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(406, 351);
+            tabPage2.Size = new Size(439, 370);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Триъгълник";
             // 
@@ -430,7 +430,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 79, 130);
-            ClientSize = new Size(475, 562);
+            ClientSize = new Size(618, 562);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(menuStrip1);

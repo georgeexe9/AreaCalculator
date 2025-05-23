@@ -12,14 +12,23 @@
 
         public override double CalculateArea()
         {
+            if (Radius < 0)
+            {
+                throw new ArgumentOutOfRangeException("Радиусът трябва да е по-голям от 0!");
+            }
             return Math.PI * Radius * Radius;
         }
 
         public override double CalculatePerimetar()
         {
-            throw new NotImplementedException("За сега няма да се имплементира!");
+            if (Radius < 0)
+            {
+              
+                throw new ArgumentOutOfRangeException("Радиусът трябва да е по-голям от 0!");
+            }
+            return 2 * Math.PI * Radius;
         }
-       
+
 
     }
 }

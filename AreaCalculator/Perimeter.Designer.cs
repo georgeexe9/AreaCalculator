@@ -1,6 +1,6 @@
 ﻿namespace AreaCalculator
 {
-    partial class Perimetar
+    partial class Perimeter
     {
         /// <summary>
         /// Required designer variable.
