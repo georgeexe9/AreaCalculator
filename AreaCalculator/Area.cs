@@ -42,7 +42,7 @@
                 //визуализираме резултата в лейбъл
                 SquareAreaResult.Text = $"Лицето е {squareArea}";
             }
-            catch (ArithmeticException ex)
+            catch (ArgumentOutOfRangeException ex)
             {
                 MessageBox.Show(ex.Message, "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
