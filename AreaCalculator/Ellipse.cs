@@ -8,7 +8,7 @@
 
         public Ellipse(double majorAxis, double minorAxis)
         {
-            if (majorAxis <= 0 && minorAxis <= 0)
+            if (majorAxis <= 0 || minorAxis <= 0)
             {
                 throw new ArgumentOutOfRangeException("Полуостта по дължина и полуостта по ширина трябва да е по-голяма от 0!");
             }

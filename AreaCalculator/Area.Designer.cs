@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+           
             label1 = new Label();
             label2 = new Label();
             menuStrip1 = new MenuStrip();
@@ -489,5 +490,7 @@
         private Label label12;
         private ToolStripMenuItem изчистиПолетаToolStripMenuItem;
         private ToolStripMenuItem изходToolStripMenuItem;
+        
     }
+
 }

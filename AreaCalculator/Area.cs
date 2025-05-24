@@ -1,5 +1,8 @@
-﻿namespace AreaCalculator
+﻿using Microsoft.VisualBasic.Logging;
+
+namespace AreaCalculator
 {
+    
     public partial class CalculatorMainFrom : Form
     {
         /// <summary>
@@ -55,6 +58,7 @@
 
         private void button2_Click(object sender, EventArgs e)
         { 
+            //:
             try
             {
                 double sideA = double.Parse(SideARectangle.Text);
@@ -63,10 +67,12 @@
                 double rectangleArea = shape.CalculateArea();
                 RectangleAreaResult.Text = $"Лицето е {rectangleArea}";
             }
+            //хвърля грешка за неправилно въведени стойности
             catch (ArgumentOutOfRangeException ex)
             {
                 MessageBox.Show(ex.Message, "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            //хвърля грешка за неправилно подаден тип данни
             catch (FormatException)
             {
                 MessageBox.Show("Моля въведете числа, а не буквички! Чупите ми кода!", "Грешка",MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -76,6 +82,7 @@
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 double sideA = double.Parse(sideATriangle.Text);
@@ -84,9 +91,11 @@
                 double triangleArea = shape.CalculateArea();
                 AreaTriangle.Text = $"Лицето е {triangleArea}";
             }
+            //catch 
             catch (ArgumentOutOfRangeException ex)
             {
                 MessageBox.Show(ex.Message,"Грешка",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
             
             catch(FormatException)

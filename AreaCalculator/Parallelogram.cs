@@ -8,7 +8,7 @@ namespace AreaCalculator
 {
     internal class Parallelogram : Shape
     {
-        public double Side { get; set; }
+        public double Side { get;  set; }
         public double Height { get; set; }
 
         public Parallelogram(double side, double height) 

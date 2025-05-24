@@ -1,6 +1,6 @@
 ﻿namespace AreaCalculator
 {
-    internal class Square : Shape
+    public class Square : Shape
     {
         public double SideA { get; set; }
 
@@ -21,7 +21,7 @@
         }
         public override double CalculatePerimetar()
         {
-            //вика основния метод от родителския клас
+            
             return base.CalculatePerimetar();
         }
     }
