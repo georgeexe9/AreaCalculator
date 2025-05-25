@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-           
             label1 = new Label();
             label2 = new Label();
             menuStrip1 = new MenuStrip();
@@ -118,13 +117,14 @@
             // изчистиПолетаToolStripMenuItem
             // 
             изчистиПолетаToolStripMenuItem.Name = "изчистиПолетаToolStripMenuItem";
-            изчистиПолетаToolStripMenuItem.Size = new Size(161, 22);
+            изчистиПолетаToolStripMenuItem.Size = new Size(180, 22);
             изчистиПолетаToolStripMenuItem.Text = "Изчисти полета";
+            изчистиПолетаToolStripMenuItem.Click += изчистиПолетаToolStripMenuItem_Click;
             // 
             // изходToolStripMenuItem
             // 
             изходToolStripMenuItem.Name = "изходToolStripMenuItem";
-            изходToolStripMenuItem.Size = new Size(161, 22);
+            изходToolStripMenuItem.Size = new Size(180, 22);
             изходToolStripMenuItem.Text = "Изход";
             // 
             // panel1
@@ -413,7 +413,7 @@
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(406, 351);
+            tabPage3.Size = new Size(439, 370);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Трапец";
             // 
@@ -422,7 +422,7 @@
             tabPage4.BackColor = Color.LightSteelBlue;
             tabPage4.Location = new Point(4, 24);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(406, 351);
+            tabPage4.Size = new Size(439, 370);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Кръг";
             // 
