@@ -19,10 +19,10 @@
         {
             return SideA * SideA;
         }
-        public override double CalculatePerimetar()
+        public override double CalculatePerimeter()
         {
-            
-            return base.CalculatePerimetar();
+
+            return 4 * SideA;
         }
     }
 }

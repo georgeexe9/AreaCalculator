@@ -36,10 +36,11 @@
             
             return 0.5 * (SideA + SideB) * Height;
         }
-        public override double CalculatePerimetar()
+        public override double CalculatePerimeter()
         {
-            throw new NotImplementedException();
+            return base.CalculatePerimeter();
         }
+
     }
 
 }

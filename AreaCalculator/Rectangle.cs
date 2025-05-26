@@ -9,13 +9,9 @@
 
         public Rectangle(double sidea, double sideb)
         {
-            if (sidea <= 0 && sideb <= 0)
+            if (sidea <= 0)
             {
                 throw new ArgumentOutOfRangeException("Страната a и страната b на правоъгълника трябва да бъдат по-големи от нула ");
-            }
-            else if (sidea <= 0)
-            {
-                throw new ArgumentOutOfRangeException("Страната а трябва да бъде по-голяма от 0");
             }
             else if (sideb <= 0)
             {
@@ -27,13 +23,15 @@
 
         public override double CalculateArea()
         {
-          
+
             return Sidea * Sideb;
         }
-        public override double CalculatePerimetar()
+        public override double CalculatePerimeter()
         {
+            {
 
-            return base.CalculatePerimetar();
+                return 2 * (Sidea + Sideb);
+            }
         }
     }
 }

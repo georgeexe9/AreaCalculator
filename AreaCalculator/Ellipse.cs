@@ -8,11 +8,8 @@
 
         public Ellipse(double majorAxis, double minorAxis)
         {
-            if (majorAxis <= 0 || minorAxis <= 0)
-            {
-                throw new ArgumentOutOfRangeException("Полуостта по дължина и полуостта по ширина трябва да е по-голяма от 0!");
-            }
-            else if (majorAxis <= 0)
+            //If проверки в конструктора
+            if (majorAxis <= 0)
             {
                 throw new ArgumentOutOfRangeException("Полуостта по дължина трябва да е по-голяма от 0!");
             }
@@ -20,18 +17,23 @@
             {
                 throw new ArgumentOutOfRangeException("Полуостта по ширина трябва да бъде по-голяма от 0!");
             }
+
             MajorAxis = majorAxis;
             MinorAxis = minorAxis;
         }
         public override double CalculateArea()
         {
-            
+
             return Math.PI * MajorAxis * MinorAxis;
-         
+
         }
-        public override double CalculatePerimetar()
+        public override double CalculatePerimeter()
         {
-            return base.CalculatePerimetar();
+            return Math.PI * (3 * (MajorAxis + MinorAxis) - Math.Sqrt((3 * MajorAxis + MinorAxis) * (MajorAxis + 3 * MinorAxis)));
+        }
+        public override string GetShapeName()
+        {
+            return "Елипса";
         }
     }
 }

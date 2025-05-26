@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic.Logging;
-
+﻿
 namespace AreaCalculator
 {
 
@@ -28,18 +27,10 @@ namespace AreaCalculator
 
 
         }
-        private void ValidateBoxes()
-        {
-            
-        }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(SquareAside.Text))
-            {
-                MessageBox.Show("Моля въведете стойност за страната на квадрата!");
-            }
-            else
+            if (!string.IsNullOrWhiteSpace(SquareAside.Text))
             {
                 try
                 {
@@ -63,24 +54,25 @@ namespace AreaCalculator
                     MessageBox.Show("Моля въведете числа, а не буквички!\n Чупите ми кода!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            else
+            {
+                MessageBox.Show("Моля въведете стойност за страната на квадрата!");
+            }
 
-               
-            
+
+
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(SideARectangle.Text) || string.IsNullOrWhiteSpace(SideBRectangle.Text))
+            if (!string.IsNullOrWhiteSpace(SideARectangle.Text) && !string.IsNullOrWhiteSpace(SideBRectangle.Text))
             {
-                MessageBox.Show("Моля въведете стойности за страната а и страната b на правоъгълника");
-            }
-            else
-            {
+                //try was expected to welp me here
                 try
                 {
-                    double sideA = double.Parse(SideARectangle.Text);
-                    double sideB = double.Parse(SideBRectangle.Text);
+                    double sideA = double.Parse(SideARectangle.Text.Trim());
+                    double sideB = double.Parse(SideBRectangle.Text.Trim());
                     Shape shape = new Rectangle(sideA, sideB);
                     double rectangleArea = shape.CalculateArea();
                     RectangleAreaResult.Text = $"Лицето е {rectangleArea}";
@@ -98,22 +90,22 @@ namespace AreaCalculator
                     MessageBox.Show("Моля въведете числа, а не буквички! Чупите ми кода!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-               
+            else
+            {
+                MessageBox.Show("Моля въведете стойности за страната а и страната b на правоъгълника");
+            }
+
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(sideATriangle.Text) || string.IsNullOrWhiteSpace(heightTriangle.Text))
-            {
-                MessageBox.Show("Моля въведете страната и височината на триъгълника");
-            }
-            else
+            if (!string.IsNullOrWhiteSpace(sideATriangle.Text) && !string.IsNullOrWhiteSpace(heightTriangle.Text))
             {
                 try
                 {
-                    double sideA = double.Parse(sideATriangle.Text);
-                    double height = double.Parse(heightTriangle.Text);
+                    double sideA = double.Parse(sideATriangle.Text.Trim());
+                    double height = double.Parse(heightTriangle.Text.Trim());
                     Shape shape = new Triangle(sideA, height);
                     double triangleArea = shape.CalculateArea();
                     AreaTriangle.Text = $"Лицето е {triangleArea}";
@@ -130,9 +122,13 @@ namespace AreaCalculator
                     MessageBox.Show("Моля въведете валидни числа", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            else
+            {
+                MessageBox.Show("Моля въведете страната и височината на триъгълника");
+            }
 
 
-            
+
 
         }
 

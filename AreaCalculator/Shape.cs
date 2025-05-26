@@ -52,13 +52,19 @@
             throw new NotSupportedException("няма да се имплементира");
         }
         //виртуален - незадължителен метод
-        public virtual double CalculatePerimetar()
+        public virtual double CalculatePerimeter()
         {
             throw new NotSupportedException("няма да се имплементира");
         }
         public virtual void DrawShape()
         {
             throw new NotSupportedException("няма да се имплементира");
+        }
+       public virtual string GetSummary()
+        {
+            return $"Фигура {GetShapeName()}\n" +
+                $"Лице/Площ: {CalculateArea()}" +
+                $"Периметър: {CalculatePerimeter()}";
         }
 
     }

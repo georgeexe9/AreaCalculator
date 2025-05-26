@@ -102,7 +102,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.RenderMode = ToolStripRenderMode.Professional;
-            menuStrip1.Size = new Size(618, 24);
+            menuStrip1.Size = new Size(467, 24);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -431,7 +431,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 79, 130);
-            ClientSize = new Size(618, 562);
+            ClientSize = new Size(467, 562);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(menuStrip1);

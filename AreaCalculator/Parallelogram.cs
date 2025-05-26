@@ -33,9 +33,9 @@ namespace AreaCalculator
             
             return Side * Height;
         }
-        public override double CalculatePerimetar()
+        public override double CalculatePerimeter()
         {
-            return base.CalculatePerimetar();
+            return base.CalculatePerimeter();
         }
     }
     
