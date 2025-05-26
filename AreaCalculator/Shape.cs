@@ -54,14 +54,16 @@
         //виртуален - незадължителен метод
         public virtual double CalculatePerimeter()
         {
-            throw new NotSupportedException("няма да се имплементира");
+            throw new NotSupportedException("Този метод ще бъде override-нат в класовете наследници");
         }
         public virtual void DrawShape()
         {
-            throw new NotSupportedException("няма да се имплементира");
+            throw new NotSupportedException("Бъдещо разширение");
         }
        public virtual string GetSummary()
         {
+            //ще вземе данните от наследниците(класове) ще върне
+            //кратка информация за тях
             return $"Фигура {GetShapeName()}\n" +
                 $"Лице/Площ: {CalculateArea()}" +
                 $"Периметър: {CalculatePerimeter()}";

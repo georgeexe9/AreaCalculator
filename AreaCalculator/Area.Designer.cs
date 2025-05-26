@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorMainFrom));
             label1 = new Label();
             label2 = new Label();
             menuStrip1 = new MenuStrip();
@@ -38,6 +39,8 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             groupBox2 = new GroupBox();
+            pictureBox3 = new PictureBox();
+            label19 = new Label();
             RectangleAreaResult = new Label();
             button2 = new Button();
             label11 = new Label();
@@ -46,29 +49,52 @@
             label5 = new Label();
             label4 = new Label();
             groupBox1 = new GroupBox();
+            pictureBox2 = new PictureBox();
+            label18 = new Label();
+            SideA = new TextBox();
+            label10 = new Label();
             SquareAreaResult = new Label();
             label9 = new Label();
             button1 = new Button();
-            SquareAside = new TextBox();
             label3 = new Label();
             tabPage2 = new TabPage();
-            AreaTriangle = new Label();
-            button3 = new Button();
-            label12 = new Label();
-            heightTriangle = new TextBox();
-            sideATriangle = new TextBox();
-            label8 = new Label();
-            label7 = new Label();
+            groupBox4 = new GroupBox();
+            pictureBox1 = new PictureBox();
             label6 = new Label();
+            AreaTriangle = new Label();
+            label7 = new Label();
+            button3 = new Button();
+            label8 = new Label();
+            label12 = new Label();
+            sideATriangle = new TextBox();
+            heightTriangle = new TextBox();
+            tabPage5 = new TabPage();
             tabPage3 = new TabPage();
+            groupBox3 = new GroupBox();
+            label16 = new Label();
+            SideBbox = new TextBox();
+            label15 = new Label();
+            label17 = new Label();
+            label14 = new Label();
+            TrapezoidLabelInfo = new Label();
+            SideABox = new TextBox();
+            button4 = new Button();
+            HeightBox = new TextBox();
+            label13 = new Label();
             tabPage4 = new TabPage();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             tabPage2.SuspendLayout();
+            groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            tabPage3.SuspendLayout();
+            groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -77,7 +103,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe Script", 26.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(11, 39);
+            label1.Location = new Point(50, 39);
             label1.Name = "label1";
             label1.Size = new Size(448, 57);
             label1.TabIndex = 0;
@@ -89,7 +115,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(21, 96);
+            label2.Location = new Point(136, 96);
             label2.Name = "label2";
             label2.Size = new Size(270, 21);
             label2.TabIndex = 1;
@@ -102,7 +128,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.RenderMode = ToolStripRenderMode.Professional;
-            menuStrip1.Size = new Size(467, 24);
+            menuStrip1.Size = new Size(539, 24);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -117,14 +143,14 @@
             // изчистиПолетаToolStripMenuItem
             // 
             изчистиПолетаToolStripMenuItem.Name = "изчистиПолетаToolStripMenuItem";
-            изчистиПолетаToolStripMenuItem.Size = new Size(180, 22);
+            изчистиПолетаToolStripMenuItem.Size = new Size(161, 22);
             изчистиПолетаToolStripMenuItem.Text = "Изчисти полета";
             изчистиПолетаToolStripMenuItem.Click += изчистиПолетаToolStripMenuItem_Click;
             // 
             // изходToolStripMenuItem
             // 
             изходToolStripMenuItem.Name = "изходToolStripMenuItem";
-            изходToolStripMenuItem.Size = new Size(180, 22);
+            изходToolStripMenuItem.Size = new Size(161, 22);
             изходToolStripMenuItem.Text = "Изход";
             // 
             // panel1
@@ -133,19 +159,20 @@
             panel1.Controls.Add(tabControl1);
             panel1.Location = new Point(0, 130);
             panel1.Name = "panel1";
-            panel1.Size = new Size(618, 431);
+            panel1.Size = new Size(545, 450);
             panel1.TabIndex = 3;
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage5);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
             tabControl1.Location = new Point(12, 21);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(447, 398);
+            tabControl1.Size = new Size(506, 398);
             tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -156,12 +183,14 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(439, 370);
+            tabPage1.Size = new Size(498, 370);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Правоъгълник и квадрат";
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(pictureBox3);
+            groupBox2.Controls.Add(label19);
             groupBox2.Controls.Add(RectangleAreaResult);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(label11);
@@ -171,10 +200,30 @@
             groupBox2.Controls.Add(label4);
             groupBox2.Location = new Point(17, 174);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(367, 160);
+            groupBox2.Size = new Size(459, 160);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Правоъгълник:";
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.Screenshot_2025_05_26_191955;
+            pictureBox3.Location = new Point(329, 67);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(124, 32);
+            pictureBox3.TabIndex = 10;
+            pictureBox3.TabStop = false;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.BackColor = Color.Transparent;
+            label19.ForeColor = Color.FromArgb(46, 60, 99);
+            label19.Location = new Point(85, 59);
+            label19.Name = "label19";
+            label19.Size = new Size(12, 15);
+            label19.TabIndex = 10;
+            label19.Text = "x";
             // 
             // RectangleAreaResult
             // 
@@ -189,7 +238,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(250, 113);
+            button2.Location = new Point(342, 113);
             button2.Name = "button2";
             button2.Size = new Size(111, 29);
             button2.TabIndex = 3;
@@ -210,14 +259,14 @@
             // 
             // SideBRectangle
             // 
-            SideBRectangle.Location = new Point(79, 77);
+            SideBRectangle.Location = new Point(84, 76);
             SideBRectangle.Name = "SideBRectangle";
             SideBRectangle.Size = new Size(100, 23);
             SideBRectangle.TabIndex = 5;
             // 
             // SideARectangle
             // 
-            SideARectangle.Location = new Point(79, 37);
+            SideARectangle.Location = new Point(84, 33);
             SideARectangle.Name = "SideARectangle";
             SideARectangle.Size = new Size(100, 23);
             SideARectangle.TabIndex = 3;
@@ -227,7 +276,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.ForeColor = Color.FromArgb(46, 60, 99);
-            label5.Location = new Point(17, 80);
+            label5.Location = new Point(21, 79);
             label5.Name = "label5";
             label5.Size = new Size(57, 15);
             label5.TabIndex = 4;
@@ -238,7 +287,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.ForeColor = Color.FromArgb(46, 60, 99);
-            label4.Location = new Point(17, 40);
+            label4.Location = new Point(21, 33);
             label4.Name = "label4";
             label4.Size = new Size(56, 15);
             label4.TabIndex = 3;
@@ -246,17 +295,59 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(pictureBox2);
+            groupBox1.Controls.Add(label18);
+            groupBox1.Controls.Add(SideA);
+            groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(SquareAreaResult);
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(SquareAside);
             groupBox1.Controls.Add(label3);
             groupBox1.Location = new Point(17, 25);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(367, 143);
+            groupBox1.Size = new Size(459, 143);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Квадрат:";
+            groupBox1.Enter += groupBox1_Enter;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(318, 48);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(135, 32);
+            pictureBox2.TabIndex = 9;
+            pictureBox2.TabStop = false;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.BackColor = Color.Transparent;
+            label18.ForeColor = Color.FromArgb(46, 60, 99);
+            label18.Location = new Point(84, 60);
+            label18.Name = "label18";
+            label18.Size = new Size(13, 15);
+            label18.TabIndex = 8;
+            label18.Text = "2";
+            // 
+            // SideA
+            // 
+            SideA.Location = new Point(121, 57);
+            SideA.Name = "SideA";
+            SideA.Size = new Size(100, 23);
+            SideA.TabIndex = 7;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.ForeColor = Color.FromArgb(46, 60, 99);
+            label10.Location = new Point(103, 60);
+            label10.Name = "label10";
+            label10.Size = new Size(12, 15);
+            label10.TabIndex = 5;
+            label10.Text = "x";
             // 
             // SquareAreaResult
             // 
@@ -282,7 +373,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(250, 99);
+            button1.Location = new Point(342, 99);
             button1.Name = "button1";
             button1.Size = new Size(111, 29);
             button1.TabIndex = 2;
@@ -290,19 +381,12 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // SquareAside
-            // 
-            SquareAside.Location = new Point(79, 32);
-            SquareAside.Name = "SquareAside";
-            SquareAside.Size = new Size(100, 23);
-            SquareAside.TabIndex = 1;
-            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.ForeColor = Color.FromArgb(46, 60, 99);
-            label3.Location = new Point(17, 35);
+            label3.Location = new Point(17, 60);
             label3.Name = "label3";
             label3.Size = new Size(53, 15);
             label3.TabIndex = 0;
@@ -311,89 +395,43 @@
             // tabPage2
             // 
             tabPage2.BackColor = Color.LightSteelBlue;
-            tabPage2.Controls.Add(AreaTriangle);
-            tabPage2.Controls.Add(button3);
-            tabPage2.Controls.Add(label12);
-            tabPage2.Controls.Add(heightTriangle);
-            tabPage2.Controls.Add(sideATriangle);
-            tabPage2.Controls.Add(label8);
-            tabPage2.Controls.Add(label7);
-            tabPage2.Controls.Add(label6);
+            tabPage2.Controls.Add(groupBox4);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(439, 370);
+            tabPage2.Size = new Size(498, 370);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "Триъгълник";
+            tabPage2.Text = "Триъгълник и трапец";
             // 
-            // AreaTriangle
+            // groupBox4
             // 
-            AreaTriangle.AutoSize = true;
-            AreaTriangle.BackColor = Color.Transparent;
-            AreaTriangle.ForeColor = Color.FromArgb(46, 60, 99);
-            AreaTriangle.Location = new Point(88, 129);
-            AreaTriangle.Name = "AreaTriangle";
-            AreaTriangle.Size = new Size(73, 15);
-            AreaTriangle.TabIndex = 8;
-            AreaTriangle.Text = "AreaTriangle";
-            AreaTriangle.TextAlign = ContentAlignment.TopCenter;
+            groupBox4.Controls.Add(pictureBox1);
+            groupBox4.Controls.Add(label6);
+            groupBox4.Controls.Add(AreaTriangle);
+            groupBox4.Controls.Add(label7);
+            groupBox4.Controls.Add(button3);
+            groupBox4.Controls.Add(label8);
+            groupBox4.Controls.Add(label12);
+            groupBox4.Controls.Add(sideATriangle);
+            groupBox4.Controls.Add(heightTriangle);
+            groupBox4.Location = new Point(16, 21);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(427, 170);
+            groupBox4.TabIndex = 9;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Триъгълник";
             // 
-            // button3
+            // pictureBox1
             // 
-            button3.Location = new Point(19, 163);
-            button3.Name = "button3";
-            button3.Size = new Size(111, 29);
-            button3.TabIndex = 3;
-            button3.Text = "Пресметни";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.BackColor = Color.Transparent;
-            label12.ForeColor = Color.FromArgb(46, 60, 99);
-            label12.Location = new Point(25, 129);
-            label12.Name = "label12";
-            label12.Size = new Size(57, 15);
-            label12.TabIndex = 7;
-            label12.Text = "Резултат:";
-            // 
-            // heightTriangle
-            // 
-            heightTriangle.Location = new Point(88, 85);
-            heightTriangle.Name = "heightTriangle";
-            heightTriangle.Size = new Size(100, 23);
-            heightTriangle.TabIndex = 7;
-            // 
-            // sideATriangle
-            // 
-            sideATriangle.Location = new Point(88, 53);
-            sideATriangle.Name = "sideATriangle";
-            sideATriangle.Size = new Size(100, 23);
-            sideATriangle.TabIndex = 5;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.Transparent;
-            label8.ForeColor = Color.FromArgb(46, 60, 99);
-            label8.Location = new Point(19, 88);
-            label8.Name = "label8";
-            label8.Size = new Size(63, 15);
-            label8.TabIndex = 6;
-            label8.Text = "височина:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.Transparent;
-            label7.ForeColor = Color.FromArgb(46, 60, 99);
-            label7.Location = new Point(19, 53);
-            label7.Name = "label7";
-            label7.Size = new Size(47, 15);
-            label7.TabIndex = 1;
-            label7.Text = "страна:";
+            pictureBox1.BackColor = Color.LightBlue;
+            pictureBox1.Image = Properties.Resources.Screenshot_2025_05_26_184810;
+            pictureBox1.Location = new Point(288, 52);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(133, 65);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // label6
             // 
@@ -401,28 +439,227 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(46, 60, 99);
-            label6.Location = new Point(19, 15);
+            label6.Location = new Point(6, 19);
             label6.Name = "label6";
             label6.Size = new Size(94, 21);
             label6.TabIndex = 5;
             label6.Text = "Триъгълник";
             // 
+            // AreaTriangle
+            // 
+            AreaTriangle.AutoSize = true;
+            AreaTriangle.BackColor = Color.Transparent;
+            AreaTriangle.ForeColor = Color.FromArgb(46, 60, 99);
+            AreaTriangle.Location = new Point(80, 123);
+            AreaTriangle.Name = "AreaTriangle";
+            AreaTriangle.Size = new Size(73, 15);
+            AreaTriangle.TabIndex = 8;
+            AreaTriangle.Text = "AreaTriangle";
+            AreaTriangle.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.ForeColor = Color.FromArgb(46, 60, 99);
+            label7.Location = new Point(27, 60);
+            label7.Name = "label7";
+            label7.Size = new Size(56, 15);
+            label7.TabIndex = 1;
+            label7.Text = "страна a:";
+            // 
+            // button3
+            // 
+            button3.Location = new Point(310, 132);
+            button3.Name = "button3";
+            button3.Size = new Size(111, 29);
+            button3.TabIndex = 3;
+            button3.Text = "Пресметни";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.ForeColor = Color.FromArgb(46, 60, 99);
+            label8.Location = new Point(11, 84);
+            label8.Name = "label8";
+            label8.Size = new Size(73, 15);
+            label8.TabIndex = 6;
+            label8.Text = "височина h:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.Transparent;
+            label12.ForeColor = Color.FromArgb(46, 60, 99);
+            label12.Location = new Point(17, 123);
+            label12.Name = "label12";
+            label12.Size = new Size(57, 15);
+            label12.TabIndex = 7;
+            label12.Text = "Резултат:";
+            // 
+            // sideATriangle
+            // 
+            sideATriangle.Location = new Point(93, 52);
+            sideATriangle.Name = "sideATriangle";
+            sideATriangle.Size = new Size(100, 23);
+            sideATriangle.TabIndex = 5;
+            // 
+            // heightTriangle
+            // 
+            heightTriangle.Location = new Point(93, 81);
+            heightTriangle.Name = "heightTriangle";
+            heightTriangle.Size = new Size(100, 23);
+            heightTriangle.TabIndex = 7;
+            // 
+            // tabPage5
+            // 
+            tabPage5.Location = new Point(4, 24);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Padding = new Padding(3);
+            tabPage5.Size = new Size(498, 370);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "Успоредник";
+            tabPage5.UseVisualStyleBackColor = true;
+            // 
             // tabPage3
             // 
-            tabPage3.BackColor = Color.LightSkyBlue;
+            tabPage3.BackColor = Color.LightSteelBlue;
+            tabPage3.Controls.Add(groupBox3);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(439, 370);
+            tabPage3.Size = new Size(498, 370);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Трапец";
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(label16);
+            groupBox3.Controls.Add(SideBbox);
+            groupBox3.Controls.Add(label15);
+            groupBox3.Controls.Add(label17);
+            groupBox3.Controls.Add(label14);
+            groupBox3.Controls.Add(TrapezoidLabelInfo);
+            groupBox3.Controls.Add(SideABox);
+            groupBox3.Controls.Add(button4);
+            groupBox3.Controls.Add(HeightBox);
+            groupBox3.Controls.Add(label13);
+            groupBox3.ForeColor = Color.Black;
+            groupBox3.Location = new Point(17, 25);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(247, 269);
+            groupBox3.TabIndex = 19;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Трапец";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.BackColor = Color.Transparent;
+            label16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label16.ForeColor = Color.FromArgb(46, 60, 99);
+            label16.Location = new Point(16, 29);
+            label16.Name = "label16";
+            label16.Size = new Size(65, 21);
+            label16.TabIndex = 12;
+            label16.Text = "Трапец:";
+            // 
+            // SideBbox
+            // 
+            SideBbox.Location = new Point(85, 106);
+            SideBbox.Name = "SideBbox";
+            SideBbox.Size = new Size(100, 23);
+            SideBbox.TabIndex = 18;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = Color.Transparent;
+            label15.ForeColor = Color.FromArgb(46, 60, 99);
+            label15.Location = new Point(16, 67);
+            label15.Name = "label15";
+            label15.Size = new Size(56, 15);
+            label15.TabIndex = 9;
+            label15.Text = "страна a:";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.BackColor = Color.Transparent;
+            label17.ForeColor = Color.FromArgb(46, 60, 99);
+            label17.Location = new Point(16, 106);
+            label17.Name = "label17";
+            label17.Size = new Size(57, 15);
+            label17.TabIndex = 17;
+            label17.Text = "страна b:";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.BackColor = Color.Transparent;
+            label14.ForeColor = Color.FromArgb(46, 60, 99);
+            label14.Location = new Point(18, 152);
+            label14.Name = "label14";
+            label14.Size = new Size(63, 15);
+            label14.TabIndex = 13;
+            label14.Text = "височина:";
+            // 
+            // TrapezoidLabelInfo
+            // 
+            TrapezoidLabelInfo.AutoSize = true;
+            TrapezoidLabelInfo.BackColor = Color.Transparent;
+            TrapezoidLabelInfo.ForeColor = Color.FromArgb(46, 60, 99);
+            TrapezoidLabelInfo.Location = new Point(85, 184);
+            TrapezoidLabelInfo.Name = "TrapezoidLabelInfo";
+            TrapezoidLabelInfo.Size = new Size(54, 15);
+            TrapezoidLabelInfo.TabIndex = 16;
+            TrapezoidLabelInfo.Text = "Резултат";
+            TrapezoidLabelInfo.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // SideABox
+            // 
+            SideABox.Location = new Point(85, 67);
+            SideABox.Name = "SideABox";
+            SideABox.Size = new Size(100, 23);
+            SideABox.TabIndex = 11;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(22, 228);
+            button4.Name = "button4";
+            button4.Size = new Size(111, 29);
+            button4.TabIndex = 10;
+            button4.Text = "Пресметни";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // HeightBox
+            // 
+            HeightBox.Location = new Point(87, 149);
+            HeightBox.Name = "HeightBox";
+            HeightBox.Size = new Size(100, 23);
+            HeightBox.TabIndex = 15;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.BackColor = Color.Transparent;
+            label13.ForeColor = Color.FromArgb(46, 60, 99);
+            label13.Location = new Point(22, 184);
+            label13.Name = "label13";
+            label13.Size = new Size(57, 15);
+            label13.TabIndex = 14;
+            label13.Text = "Резултат:";
             // 
             // tabPage4
             // 
             tabPage4.BackColor = Color.LightSteelBlue;
             tabPage4.Location = new Point(4, 24);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(439, 370);
+            tabPage4.Size = new Size(498, 370);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Кръг";
             // 
@@ -431,7 +668,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 79, 130);
-            ClientSize = new Size(467, 562);
+            ClientSize = new Size(539, 575);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(menuStrip1);
@@ -446,10 +683,17 @@
             tabPage1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            tabPage3.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -475,7 +719,6 @@
         private Label label5;
         private Label label4;
         private Button button1;
-        private TextBox SquareAside;
         private Button button3;
         private TextBox heightTriangle;
         private TextBox sideATriangle;
@@ -490,7 +733,26 @@
         private Label label12;
         private ToolStripMenuItem изчистиПолетаToolStripMenuItem;
         private ToolStripMenuItem изходToolStripMenuItem;
-        
+        private GroupBox groupBox4;
+        private GroupBox groupBox3;
+        private Label label16;
+        private TextBox SideBbox;
+        private Label label15;
+        private Label label17;
+        private Label label14;
+        private Label TrapezoidLabelInfo;
+        private TextBox SideABox;
+        private Button button4;
+        private TextBox HeightBox;
+        private Label label13;
+        private TabPage tabPage5;
+        private PictureBox pictureBox1;
+        private Label label10;
+        private TextBox SideA;
+        private PictureBox pictureBox2;
+        private Label label18;
+        private Label label19;
+        private PictureBox pictureBox3;
     }
 
 }

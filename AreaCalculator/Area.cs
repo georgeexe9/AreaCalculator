@@ -27,18 +27,20 @@ namespace AreaCalculator
 
 
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(SquareAside.Text))
+            if (!string.IsNullOrWhiteSpace(SideA.Text))
             {
                 try
                 {
                     //животът на променливата е кратък като моя!
-                    double side = double.Parse(SquareAside.Text.Trim());
+                    double side = double.Parse(SideA.Text.Trim());
+
                     //създаваме нова инстанция Квадрат от абстрактен тип Форма
                     //присвояваме променливата side в абстрактия клас Форма
                     Shape shape = new Square(side);
+
                     //Извикваме CalculateArea без да ни интересува как подяволите работи,
                     //защриховаме към променлива от същия типаж
                     double squareArea = shape.CalculateArea();
@@ -134,14 +136,45 @@ namespace AreaCalculator
 
         private void изчистиПолетаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClearAllTextBoxes(SquareAside, sideATriangle, SideBRectangle, SideARectangle, heightTriangle);
+            ClearAllTextBoxes(SideA, sideATriangle, SideBRectangle, SideARectangle, heightTriangle);
         }
         public static void ClearAllTextBoxes(params TextBox[] TextBox)
         {
-            foreach(var box in  TextBox)
+            foreach (var box in TextBox)
             {
                 box.Clear();
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double sidea = double.Parse(SideABox.Text.Trim());
+                double sideb = double.Parse(SideBbox.Text.Trim());
+                double height = double.Parse(HeightBox.Text.Trim());
+                Shape shape = new Trapezoid(sidea, sideb, height);
+                double result = shape.CalculateArea();
+                TrapezoidLabelInfo.Text = $"Лицето е:{result}";
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show(ex.Message, "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Моля, въведете числа! Чупите ми програма!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

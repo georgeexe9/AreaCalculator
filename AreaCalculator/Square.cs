@@ -24,5 +24,10 @@
 
             return 4 * SideA;
         }
+
+        public override string GetShapeName()
+        {
+            return "Square";
+        }
     }
 }

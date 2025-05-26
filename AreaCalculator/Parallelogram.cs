@@ -9,15 +9,13 @@ namespace AreaCalculator
     internal class Parallelogram : Shape
     {
         public double Side { get;  set; }
+        public double SideB {  get; set; }
         public double Height { get; set; }
 
-        public Parallelogram(double side, double height) 
+        public Parallelogram(double side, double height, double sideb) 
         {
-            if (side <= 0 && height <= 0)
-            {
-                throw new ArgumentOutOfRangeException("Страната и височината на успоредника трябва да бъдат по-големи от 0!");
-            }
-            else if (side <= 0)
+          
+            if (side <= 0)
             {
                 throw new ArgumentOutOfRangeException("Страната на успоредника трябва да бъде по-голяма от 0");
             }
@@ -25,17 +23,22 @@ namespace AreaCalculator
             {
                 throw new ArgumentOutOfRangeException("Височината на успоредника трябва да бъде по-голяма от 0");
             }
+            else if (sideb <= 0)
+            {
+                throw new ArgumentOutOfRangeException("Страната b на успоредника трябва да бъде по-голяма от 0!");
+            }
             Side = side;
+            SideB = sideb;
             Height = height;
+            
         }
         public override double CalculateArea()
         {
-            
             return Side * Height;
         }
         public override double CalculatePerimeter()
         {
-            return base.CalculatePerimeter();
+            return 2 * (Side +  SideB);
         }
     }
     

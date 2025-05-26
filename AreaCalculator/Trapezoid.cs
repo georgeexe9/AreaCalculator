@@ -9,18 +9,14 @@
 
         public Trapezoid(double sideA, double sideB, double height)
         {
-         
-            if (sideA <= 0 && sideB <= 0 && height <= 0)
-            {
-                throw new ArgumentOutOfRangeException("Страната а, страната b и височината трябва да бъдат по-големи от 0");
-            }
-            else if (sideA <= 0)
+
+            if (sideA <= 0)
             {
                 throw new ArgumentOutOfRangeException("Страната а трябва да бъде по-голяма от 0!");
             }
             else if (sideB <= 0)
             {
-                
+
                 throw new ArgumentOutOfRangeException("Страната b трябва да бъде по-голяма от 0!");
             }
             else if (height <= 0)
@@ -33,7 +29,7 @@
         }
         public override double CalculateArea()
         {
-            
+            // 1/2 е представена като 0.5
             return 0.5 * (SideA + SideB) * Height;
         }
         public override double CalculatePerimeter()
