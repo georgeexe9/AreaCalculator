@@ -44,8 +44,10 @@ namespace AreaCalculator
                     //Извикваме CalculateArea без да ни интересува как подяволите работи,
                     //защриховаме към променлива от същия типаж
                     double squareArea = shape.CalculateArea();
+                    string info = shape.GetSummary();
                     //визуализираме резултата в лейбъл
                     SquareAreaResult.Text = $"Лицето е {squareArea}";
+                    MessageBox.Show(info, "Info",MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (ArgumentOutOfRangeException ex)
                 {
@@ -111,6 +113,9 @@ namespace AreaCalculator
                     Shape shape = new Triangle(sideA, height);
                     double triangleArea = shape.CalculateArea();
                     AreaTriangle.Text = $"Лицето е {triangleArea}";
+                    string info = shape.GetSummary();
+                    MessageBox.Show(info,"Информация за фигурата:",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                   
                 }
                 //catch 
                 catch (ArgumentOutOfRangeException ex)
@@ -128,6 +133,7 @@ namespace AreaCalculator
             {
                 MessageBox.Show("Моля въведете страната и височината на триъгълника");
             }
+            
 
 
 

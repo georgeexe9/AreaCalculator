@@ -7,12 +7,8 @@
 
         public Triangle(double side, double height)
         {
-            if (side <= 0 && height <= 0)
-            {
-                throw new ArgumentOutOfRangeException("Страната и височината на триъгълника трябва да бъдат по-големи от 0");
-            }
 
-            else if (side <= 0)
+            if (side <= 0)
             {
                 throw new ArgumentOutOfRangeException("Страната на триъгълника трябва да бъде по-голяма от 0");
             }
@@ -27,9 +23,20 @@
 
         public override double CalculateArea()
         {
-         
+
             return 0.5 * Side * Height;
 
+        }
+
+        public override string GetShapeName()
+        {
+            return "Триъгълник\n" +
+                $"Страна: {Side}\n" +
+                $"Височина: {Height}";
+        }
+        public override double CalculatePerimeter()
+        {
+            return base.CalculatePerimeter();
         }
     }
 }

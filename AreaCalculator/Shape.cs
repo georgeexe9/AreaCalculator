@@ -1,4 +1,6 @@
-﻿namespace AreaCalculator
+﻿using System.Text;
+
+namespace AreaCalculator
 {
 
     /// <summary>
@@ -47,26 +49,34 @@
         public abstract double CalculateArea();
         //виртуален - незадължителен метод,
         //ще се override-ва(пренаписва), където пожелая
+        //ще бъде нормална абструкция, не виртуален сроко
         public virtual string GetShapeName()
         {
-            throw new NotSupportedException("няма да се имплементира");
+            throw new NotSupportedException("няма да се имплементира. В процес на строеж в други класове");
         }
         //виртуален - незадължителен метод
         public virtual double CalculatePerimeter()
         {
-            throw new NotSupportedException("Този метод ще бъде override-нат в класовете наследници");
+            throw new NotSupportedException("Този метод ще бъде override-нат по-късно! Ако го извикате, ще даде грешка");
         }
-        public virtual void DrawShape()
+        public virtual void Draw()
         {
-            throw new NotSupportedException("Бъдещо разширение");
+            throw new NotSupportedException("Бъдещо разширение..., най-вероятно");
         }
-       public virtual string GetSummary()
+        public virtual string GetSummary()
         {
-            //ще вземе данните от наследниците(класове) ще върне
-            //кратка информация за тях
-            return $"Фигура {GetShapeName()}\n" +
-                $"Лице/Площ: {CalculateArea()}" +
-                $"Периметър: {CalculatePerimeter()}";
+            //инициализация на нов newSBS от тип StringBuilder
+            StringBuilder newSBS = new StringBuilder();
+            newSBS.Append("Благодаря, че използвахте калкулатора! Кратка информация:\n" +
+                        $"Фигура: {GetShapeName()}\n" +
+                        $"Лице/Площ: {CalculateArea()}\n" +
+                        $"Периметър: {CalculatePerimeter()}");
+           
+            
+            //връща -> to string
+            return newSBS.ToString();
+
+
         }
 
     }

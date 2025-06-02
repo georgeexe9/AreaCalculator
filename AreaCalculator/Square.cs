@@ -17,6 +17,7 @@
 
         public override double CalculateArea()
         {
+
             return SideA * SideA;
         }
         public override double CalculatePerimeter()
