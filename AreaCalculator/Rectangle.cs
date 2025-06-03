@@ -11,11 +11,11 @@
         {
             if (sidea <= 0)
             {
-                throw new ArgumentOutOfRangeException("Страната a и страната b на правоъгълника трябва да бъдат по-големи от нула ");
+                throw new ArgumentOutOfRangeException(nameof(sidea),"Страната a и страната b на правоъгълника трябва да бъдат по-големи от нула ");
             }
             else if (sideb <= 0)
             {
-                throw new ArgumentOutOfRangeException("Страната b трябва да бъде по-голяма от 0");
+                throw new ArgumentOutOfRangeException(nameof(sideb),"Страната b трябва да бъде по-голяма от 0");
             }
             Sidea = sidea;
             Sideb = sideb;
@@ -28,10 +28,12 @@
         }
         public override double CalculatePerimeter()
         {
-            {
-
-                return 2 * (Sidea + Sideb);
-            }
+             return 2 * (Sidea + Sideb);
+            
+        }
+        public override string GetShapeName()
+        {
+            return "Правоъгълник";
         }
     }
 }

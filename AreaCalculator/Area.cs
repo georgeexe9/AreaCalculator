@@ -47,7 +47,7 @@ namespace AreaCalculator
                     string info = shape.GetSummary();
                     //визуализираме резултата в лейбъл
                     SquareAreaResult.Text = $"Лицето е {squareArea}";
-                    MessageBox.Show(info, "Info",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(info, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (ArgumentOutOfRangeException ex)
                 {
@@ -77,9 +77,12 @@ namespace AreaCalculator
                 {
                     double sideA = double.Parse(SideARectangle.Text.Trim());
                     double sideB = double.Parse(SideBRectangle.Text.Trim());
-                    Shape shape = new Rectangle(sideA, sideB);
-                    double rectangleArea = shape.CalculateArea();
-                    RectangleAreaResult.Text = $"Лицето е {rectangleArea}";
+                    Shape rectangle = new Rectangle(sideA, sideB);
+                    double rectangleArea = rectangle.CalculateArea();
+                    double rectanglePerimeter = rectangle.CalculatePerimeter();
+                    string infoRectangle = rectangle.GetSummary();
+                    RectangleAreaResult.Text = $"Лице/Площ - {rectangleArea}, Периметър - {rectanglePerimeter}";
+                    MessageBox.Show(infoRectangle, "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     SideARectangle.Clear();
                     SideBRectangle.Clear();
                 }
@@ -109,13 +112,16 @@ namespace AreaCalculator
                 try
                 {
                     double sideA = double.Parse(sideATriangle.Text.Trim());
+                    double sideB = double.Parse(sideBTriangle.Text.Trim());
+                    double sideC = double.Parse(sideCTriangle.Text.Trim());
                     double height = double.Parse(heightTriangle.Text.Trim());
-                    Shape shape = new Triangle(sideA, height);
-                    double triangleArea = shape.CalculateArea();
-                    AreaTriangle.Text = $"Лицето е {triangleArea}";
-                    string info = shape.GetSummary();
-                    MessageBox.Show(info,"Информация за фигурата:",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                   
+                    Shape triangle = new Triangle(sideA, sideB, sideC, height);
+                    double triangleArea = triangle.CalculateArea();
+                    double trianglePerimeter = triangle.CalculatePerimeter();
+                    AreaTriangle.Text = $"Лице/Площ: {triangleArea}, Периметър: {trianglePerimeter}";
+                    string info = triangle.GetSummary();
+                    MessageBox.Show(info, "Информация за фигурата:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 //catch 
                 catch (ArgumentOutOfRangeException ex)
@@ -133,7 +139,7 @@ namespace AreaCalculator
             {
                 MessageBox.Show("Моля въведете страната и височината на триъгълника");
             }
-            
+
 
 
 
@@ -158,10 +164,15 @@ namespace AreaCalculator
             {
                 double sidea = double.Parse(SideABox.Text.Trim());
                 double sideb = double.Parse(SideBbox.Text.Trim());
+                double sidec = double.Parse(SideCBox.Text.Trim());
+                double sided = double.Parse(SideDBox.Text.Trim());
                 double height = double.Parse(HeightBox.Text.Trim());
-                Shape shape = new Trapezoid(sidea, sideb, height);
-                double result = shape.CalculateArea();
-                TrapezoidLabelInfo.Text = $"Лицето е:{result}";
+                Shape trapezoid = new Trapezoid(sidea, sideb,sidec,sided, height);
+                double resultArea = trapezoid.CalculateArea();
+                double resultPerimeter = trapezoid.CalculatePerimeter();
+                string infoTrapezoid = trapezoid.GetSummary();
+                TrapezoidLabelInfo.Text = $"Лице/Площ - {resultArea}, Периметър - {resultPerimeter}";
+                MessageBox.Show(infoTrapezoid, "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (ArgumentOutOfRangeException ex)
             {
@@ -182,5 +193,56 @@ namespace AreaCalculator
         {
 
         }
+
+        private void SumParellelogram_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(SideAParallelogram.Text) && !string.IsNullOrWhiteSpace(SideBParallelogram.Text) && !string.IsNullOrWhiteSpace(HeightParallelogram.Text))
+            {
+                try
+                {
+                    double side = double.Parse(SideAParallelogram.Text.Trim());
+                    double sideb = double.Parse(SideBParallelogram.Text.Trim());
+                    double height = double.Parse(HeightParallelogram.Text.Trim());
+
+
+                    Shape parallelogram = new Parallelogram(side, sideb, height);
+                    double result = parallelogram.CalculateArea();
+                    double resultPerimeter = parallelogram.CalculatePerimeter();
+                    ResultParallelogram.Text = $"Лицето е {result}";
+                    ResultParallelogramPerimeter.Text = $"Периметъра е {resultPerimeter}";
+                    string getinfo = parallelogram.GetSummary();
+                    MessageBox.Show(getinfo, "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    MessageBox.Show(ex.Message, "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Моля, въведете числа! Чупите ми програма!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Моля въведете страната а, страната b и височината на успоредника!");
+            }
+
+
+
+
+
+        }
+
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

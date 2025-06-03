@@ -14,18 +14,18 @@ namespace AreaCalculator
 
         public Parallelogram(double side, double height, double sideb) 
         {
-          
+          //конструктора е чувствителен, ще иска и трите стойности
             if (side <= 0)
             {
-                throw new ArgumentOutOfRangeException("Страната на успоредника трябва да бъде по-голяма от 0");
+                throw new ArgumentOutOfRangeException(nameof(side),"Страната на успоредника трябва да бъде по-голяма от 0");
             }
             else if (height <= 0)
             {
-                throw new ArgumentOutOfRangeException("Височината на успоредника трябва да бъде по-голяма от 0");
+                throw new ArgumentOutOfRangeException(nameof(sideb),"Височината на успоредника трябва да бъде по-голяма от 0");
             }
             else if (sideb <= 0)
             {
-                throw new ArgumentOutOfRangeException("Страната b на успоредника трябва да бъде по-голяма от 0!");
+                throw new ArgumentOutOfRangeException(nameof(height),"Страната b на успоредника трябва да бъде по-голяма от 0!");
             }
             Side = side;
             SideB = sideb;
@@ -39,6 +39,10 @@ namespace AreaCalculator
         public override double CalculatePerimeter()
         {
             return 2 * (Side +  SideB);
+        }
+        public override string GetShapeName()
+        {
+            return "Успоредник";
         }
     }
     

@@ -45,17 +45,15 @@ namespace AreaCalculator
     public abstract class Shape
     {
 
-        //ще се override-ва във всичките класове
+     
         public abstract double CalculateArea();
-        //виртуален - незадължителен метод,
-        //ще се override-ва(пренаписва), където пожелая
-        //ще бъде нормална абструкция, не виртуален сроко
+       
         public virtual string GetShapeName()
         {
             throw new NotSupportedException("няма да се имплементира. В процес на строеж в други класове");
         }
         //виртуален - незадължителен метод
-        public virtual double CalculatePerimeter()
+        public  virtual double CalculatePerimeter()
         {
             throw new NotSupportedException("Този метод ще бъде override-нат по-късно! Ако го извикате, ще даде грешка");
         }
@@ -71,8 +69,7 @@ namespace AreaCalculator
                         $"Фигура: {GetShapeName()}\n" +
                         $"Лице/Площ: {CalculateArea()}\n" +
                         $"Периметър: {CalculatePerimeter()}");
-           
-            
+          
             //връща -> to string
             return newSBS.ToString();
 
