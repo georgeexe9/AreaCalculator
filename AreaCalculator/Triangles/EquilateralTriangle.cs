@@ -12,5 +12,13 @@ namespace AreaCalculator.Triangles
         {
 
         }
+        public override double CalculateArea()
+        {
+            return (Math.Sqrt(3) / 4) * Side * Side;
+        }
+        public override double CalculatePerimeter()
+        {
+            return 3 * Side;
+        }
     }
 }

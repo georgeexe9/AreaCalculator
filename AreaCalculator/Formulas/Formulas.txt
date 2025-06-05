@@ -1,0 +1,89 @@
+﻿=== TRIANGLES ===
+
+1. General Triangle
+- Description: Three sides a, b, c
+- Area formula: 
+  Area = sqrt(s(s - a)(s - b)(s - c)), where s = (a + b + c) / 2  (Heron's formula)
+- Perimeter formula:
+  Perimeter = a + b + c
+
+2. Equilateral Triangle
+- Description: All sides equal (a)
+- Area formula:
+  Area = (sqrt(3) / 4) * a^2
+- Perimeter formula:
+  Perimeter = 3a
+
+3. Isosceles Triangle
+- Description: Two equal sides (a), base b
+- Area formula:
+  Area = (b / 4) * sqrt(4a^2 - b^2)
+- Perimeter formula:
+  Perimeter = 2a + b
+
+4. Right Triangle
+- Description: One right angle (90°), sides a, b (legs), c (hypotenuse)
+- Area formula:
+  Area = (1/2) * a * b
+- Perimeter formula:
+  Perimeter = a + b + c
+- Note: c = sqrt(a^2 + b^2)
+
+5. Acute Triangle
+- Description: All angles less than 90°
+- Area formula:
+  Area = Heron's formula or other methods
+- Perimeter formula:
+  Perimeter = a + b + c
+
+6. Obtuse Triangle
+- Description: One angle greater than 90°
+- Area formula:
+  Area = Heron's formula or other methods
+- Perimeter formula:
+  Perimeter = a + b + c
+
+
+=== TRAPEZOIDS ===
+
+1. General Trapezoid
+- Description: Quadrilateral with one pair of parallel sides (bases) a and b, non-parallel sides c and d, height h
+- Area formula:
+  Area = 0.5 * (a + b) * h
+- Perimeter formula:
+  Perimeter = a + b + c + d
+- Notes: 
+  - The height h is perpendicular distance between the bases.
+  - The sum of non-parallel sides must satisfy triangle inequality constraints.
+
+2. Isosceles Trapezoid
+- Description: Trapezoid where non-parallel sides c and d are equal
+- Area formula:
+  Area = 0.5 * (a + b) * h  (same as general trapezoid)
+- Perimeter formula:
+  Perimeter = a + b + 2c
+- Additional properties:
+  - Non-parallel sides are equal length.
+  - Base angles are equal.
+
+3. Right Trapezoid
+- Description: Trapezoid with two right angles
+- Area formula:
+  Area = 0.5 * (a + b) * h
+- Perimeter formula:
+  Perimeter = a + b + c + d
+- Additional notes:
+  - One of the legs (c or d) is perpendicular to the bases.
+
+---
+
+Notes on trapezoid validation:
+
+- Bases (a and b) must be positive and parallel.
+- Height h must be positive and less than or equal to the difference of the bases.
+- Non-parallel sides (c and d) must satisfy triangle inequality with difference of bases.
+- Height must be perpendicular to bases.
+
+---
+
+This file summarizes basic geometric formulas and properties for common 2D shapes: triangles and trapezoids.

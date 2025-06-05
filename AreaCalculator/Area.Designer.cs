@@ -333,7 +333,7 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Квадрат:";
-            groupBox1.Enter += groupBox1_Enter;
+          
             // 
             // pictureBox2
             // 
@@ -426,7 +426,7 @@
             tabPage2.Size = new Size(498, 354);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Триъгълник и трапец";
-            tabPage2.Click += tabPage2_Click;
+            
             // 
             // groupBox4
             // 
@@ -496,7 +496,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+    
             // 
             // label6
             // 
@@ -609,7 +609,7 @@
             groupBox5.TabIndex = 2;
             groupBox5.TabStop = false;
             groupBox5.Text = "Успоредник";
-            groupBox5.Enter += groupBox5_Enter;
+        
             // 
             // ResultParallelogramPerimeter
             // 

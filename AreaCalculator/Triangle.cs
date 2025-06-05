@@ -7,12 +7,12 @@
         public double SideC { get; set; }
         public double Height { get; set; }
 
-        public Triangle(double side,double sideB,double sideC, double height)
+        public Triangle(double side, double sideB, double sideC, double height)
         {
 
             if (side <= 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(side),"Страната на триъгълника трябва да бъде по-голяма от 0");
+                throw new ArgumentOutOfRangeException(nameof(side), "Страната на триъгълника трябва да бъде по-голяма от 0");
             }
             else if (sideB <= 0)
             {
@@ -29,7 +29,7 @@
 
             Side = side;
             SideB = sideB;
-            SideC =sideC;
+            SideC = sideC;
             Height = height;
         }
 
@@ -39,10 +39,10 @@
             return 0.5 * Side * Height;
         }
 
-     
+
         public override double CalculatePerimeter()
         {
-            return Side * SideB * SideC;
+            return Side + SideB + SideC;
         }
         public override string GetShapeName()
         {

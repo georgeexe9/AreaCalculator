@@ -1,6 +1,6 @@
 ﻿namespace AreaCalculator
 {
-    public class Square : Shape
+    internal class Square : Shape
     {
         public double SideA { get; set; }
 
