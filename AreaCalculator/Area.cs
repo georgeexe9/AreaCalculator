@@ -73,12 +73,15 @@ namespace AreaCalculator
         {
             if (!string.IsNullOrWhiteSpace(SideARectangle.Text) && !string.IsNullOrWhiteSpace(SideBRectangle.Text))
             {
-                //try was expected to welp me here
+              
                 try
                 {
+
                     double sideA = double.Parse(SideARectangle.Text.Trim());
                     double sideB = double.Parse(SideBRectangle.Text.Trim());
+
                     Shape rectangle = new Rectangle(sideA, sideB);
+
                     double rectangleArea = rectangle.CalculateArea();
                     double rectanglePerimeter = rectangle.CalculatePerimeter();
                     string infoRectangle = rectangle.GetSummary();
