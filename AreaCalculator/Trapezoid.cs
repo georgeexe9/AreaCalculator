@@ -52,7 +52,7 @@
         }
         public override double CalculateArea()
         {
-            // 1/2 е представена като 0.5
+            
             return 0.5 * (SideA + SideB) * Height;
         }
         public override double CalculatePerimeter()

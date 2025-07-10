@@ -63,6 +63,26 @@ namespace AreaCalculator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap home {
+            get {
+                object obj = ResourceManager.GetObject("home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rectangle {
+            get {
+                object obj = ResourceManager.GetObject("rectangle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Screenshot_2025_05_26_184710 {
             get {
                 object obj = ResourceManager.GetObject("Screenshot 2025-05-26 184710", resourceCulture);
@@ -96,6 +116,16 @@ namespace AreaCalculator.Properties {
         internal static System.Drawing.Bitmap Screenshot_2025_05_26_191955 {
             get {
                 object obj = ResourceManager.GetObject("Screenshot 2025-05-26 191955", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled {
+            get {
+                object obj = ResourceManager.GetObject("Untitled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

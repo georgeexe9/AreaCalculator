@@ -11,13 +11,9 @@
 
         public Rectangle(double sidea, double sideb)
         {
-            if (sidea <= 0 && sideb <= 0)
+            if (sidea <= 0 || sideb <= 0)
             {
-                throw new ArgumentException("Страната a и страната b на правоъгълника трябва да бъдат по-големи от нула ");
-            }
-            else if (sideb > 0)
-            {
-                throw new ArgumentException("Страната b трябва да бъде по-голяма от 0");
+                throw new ArgumentException("Страните на правоъгълника трябва да бъдат по-големи от нула.");
             }
             Sidea = sidea;
             Sideb = sideb;
@@ -31,6 +27,10 @@
         {
              return 2 * (Sidea + Sideb);
             
+        }
+        public override double CalculateDiagonal()
+        {
+            return Math.Sqrt(Math.Pow(Sidea,2) + Math.Pow(Sideb,2));
         }
         public override string GetShapeName()
         {

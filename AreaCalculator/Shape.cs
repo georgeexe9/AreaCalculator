@@ -2,8 +2,7 @@
 
 namespace AreaCalculator
 {
-    //represent every possible 2D shape
-    //
+   
     public abstract class Shape
     {
         public abstract double CalculateArea();
@@ -20,6 +19,10 @@ namespace AreaCalculator
         public virtual void Draw()
         {
             throw new NotSupportedException("Бъдещо разширение..., най-вероятно");
+        }
+        public virtual double CalculateDiagonal()
+        {
+            throw new NotSupportedException("Само в правоъгълник");
         }
         public virtual string GetSummary()
         {
