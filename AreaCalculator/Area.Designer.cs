@@ -32,6 +32,8 @@
             label1 = new Label();
             MainPanel = new Panel();
             panel2 = new Panel();
+            button2 = new Button();
+            button1 = new Button();
             button6 = new Button();
             label3 = new Label();
             RhombusControlButton = new Button();
@@ -42,7 +44,7 @@
             помощToolStripMenuItem = new ToolStripMenuItem();
             заПриложениетоToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
-            button1 = new Button();
+            openFileDialog1 = new OpenFileDialog();
             panel2.SuspendLayout();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -71,6 +73,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(42, 56, 92);
+            panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(button6);
             panel2.Controls.Add(label3);
@@ -82,6 +85,44 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(268, 447);
             panel2.TabIndex = 4;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(42, 56, 92);
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button2.ForeColor = Color.White;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.TopLeft;
+            button2.Location = new Point(19, 299);
+            button2.Name = "button2";
+            button2.Size = new Size(238, 36);
+            button2.TabIndex = 8;
+            button2.Text = "Кръг";
+            button2.TextAlign = ContentAlignment.MiddleLeft;
+            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(42, 56, 92);
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.TopLeft;
+            button1.Location = new Point(19, 257);
+            button1.Name = "button1";
+            button1.Size = new Size(238, 36);
+            button1.TabIndex = 7;
+            button1.Text = "Квадрат";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
+            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
@@ -224,24 +265,9 @@
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
-            // button1
+            // openFileDialog1
             // 
-            button1.BackColor = Color.FromArgb(42, 56, 92);
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.TopLeft;
-            button1.Location = new Point(19, 257);
-            button1.Name = "button1";
-            button1.Size = new Size(238, 36);
-            button1.TabIndex = 7;
-            button1.Text = "Квадрат";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = false;
+            openFileDialog1.FileName = "openFileDialog1";
             // 
             // CalculatorMainFrom
             // 
@@ -282,6 +308,8 @@
         private ToolStripMenuItem заПриложениетоToolStripMenuItem;
         private PictureBox pictureBox1;
         private Button button1;
+        private Button button2;
+        private OpenFileDialog openFileDialog1;
     }
 
 }

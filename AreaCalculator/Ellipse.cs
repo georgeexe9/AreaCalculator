@@ -11,11 +11,11 @@
             //If проверки в конструктора
             if (majorAxis <= 0)
             {
-                throw new ArgumentOutOfRangeException("Полуостта по дължина трябва да е по-голяма от 0!");
+                throw new ArgumentException("Полуостта по дължина трябва да е по-голяма от 0!");
             }
             else if (minorAxis <= 0)
             {
-                throw new ArgumentOutOfRangeException("Полуостта по ширина трябва да бъде по-голяма от 0!");
+                throw new ArgumentException("Полуостта по ширина трябва да бъде по-голяма от 0!");
             }
 
             MajorAxis = majorAxis;

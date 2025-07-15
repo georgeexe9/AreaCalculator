@@ -38,7 +38,7 @@ namespace AreaCalculator
 
                     label1.Text = $"Лицето/Площта - {area}, Периметър - {perimeter}";
                 }
-                catch (ArgumentOutOfRangeException ex)
+                catch (ArgumentException ex)
                 {
                     MessageBox.Show(ex.Message, "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

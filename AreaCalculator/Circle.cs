@@ -10,7 +10,7 @@
 
             if (radius <= 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(radius),"Радиусът трябва да е по-голям от 0!");
+                throw new ArgumentException(nameof(radius),"Радиусът трябва да е по-голям от 0!");
             }
 
             Radius = radius;

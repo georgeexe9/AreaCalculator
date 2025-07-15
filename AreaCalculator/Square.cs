@@ -9,7 +9,7 @@
            
             if (sidea <= 0)
             {
-                throw new ArgumentOutOfRangeException("Страната на квадрата трябва да бъде по-голяма от 0");
+                throw new ArgumentException("Страната на квадрата трябва да бъде по-голяма от 0");
             }
 
             SideA = sidea;
