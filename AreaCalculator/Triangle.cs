@@ -12,19 +12,19 @@
 
             if (side <= 0)
             {
-                throw new ArgumentException(nameof(side), "Страната на триъгълника трябва да бъде по-голяма от 0");
+                throw new ArgumentException("Страната на триъгълника трябва да бъде по-голяма от 0");
             }
             else if (sideB <= 0)
             {
-                throw new ArgumentException(nameof(sideB), "Височината на триъгълника трябва да бъде по-голяма от 0");
+                throw new ArgumentException("Височината на триъгълника трябва да бъде по-голяма от 0");
             }
             else if (sideC <= 0)
             {
-                throw new ArgumentException(nameof(sideC), "Височината на триъгълника трябва да бъде по-голяма от 0");
+                throw new ArgumentException("Височината на триъгълника трябва да бъде по-голяма от 0");
             }
             else if (height <= 0)
             {
-                throw new ArgumentException(nameof(height), "Височината на триъгълника трябва да бъде по-голяма от 0");
+                throw new ArgumentException("Височината на триъгълника трябва да бъде по-голяма от 0");
             }
 
             Side = side;
@@ -48,5 +48,6 @@
         {
             return "Триъгълник";
         }
+        
     }
 }

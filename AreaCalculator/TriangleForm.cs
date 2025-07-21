@@ -35,8 +35,10 @@ namespace AreaCalculator
                     double area = triangle.CalculateArea();
                     double perimeter = triangle.CalculatePerimeter();
 
-
-                    label1.Text = $"Лицето/Площта - {area}, Периметър - {perimeter}";
+                    StringBuilder newSBS = new StringBuilder();
+                    newSBS.Append($"Лице S - {area}");
+                    newSBS.Append($"Периметър P - {perimeter} ");
+                    label1.Text = newSBS.ToString();
                 }
                 catch (ArgumentException ex)
                 {
@@ -45,7 +47,8 @@ namespace AreaCalculator
                 catch (FormatException)
                 {
                     MessageBox.Show("Моля, въведете правилни стойности!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                } 
+                
             }
             else
             {

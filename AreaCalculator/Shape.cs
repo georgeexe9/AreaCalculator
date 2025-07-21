@@ -9,7 +9,7 @@ namespace AreaCalculator
        
         public virtual string GetShapeName()
         {
-            throw new NotSupportedException("няма да се имплементира. В процес на строеж в други класове");
+            throw new NotSupportedException(" няма да се имплементира. В процес на строеж в други класове");
         }
         //виртуален - незадължителен метод
         public  virtual double CalculatePerimeter()
@@ -18,23 +18,25 @@ namespace AreaCalculator
         }
         public virtual void Draw()
         {
-            throw new NotSupportedException("Бъдещо разширение..., най-вероятно");
+            throw new NotSupportedException("Бъдещо разширение..., най-вероятно не");
         }
         public virtual double CalculateDiagonal()
         {
-            throw new NotSupportedException("Само в правоъгълник");
+            throw new NotSupportedException("Само в правоъгълник и успоредник");
         }
         public virtual string GetSummary()
         {
             
-            StringBuilder newSBS = new StringBuilder();
-            newSBS.Append("Благодаря, че използвахте калкулатора! Кратка информация:\n" +
-                        $"Фигура: {GetShapeName()}\n" +
-                        $"Лице/Площ: {CalculateArea()}\n" +
-                        $"Периметър: {CalculatePerimeter()}");
-          
-          
-            return newSBS.ToString();
+                StringBuilder newSBS = new StringBuilder();
+                newSBS.Append("Благодаря, че използвахте калкулатора! Кратка информация:\n" +
+                            $"Фигура: {GetShapeName()}\n" +
+                            $"Лице/Площ: {CalculateArea()}\n" +
+                            $"Периметър: {CalculatePerimeter()}");
+                return newSBS.ToString();
+
+            
+            
+            
 
 
         }
