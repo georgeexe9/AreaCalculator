@@ -7,6 +7,8 @@ namespace AreaCalculator
         public TriangleForm()
         {
             InitializeComponent();
+            panelInfo.Visible = false;
+
         }
 
         private void CalculateButton_Click(object sender, EventArgs e)
@@ -19,10 +21,27 @@ namespace AreaCalculator
             SideBBox.Clear();
             SideCBox.Clear();
             HeightBox.Clear();
+            InformationalLabel.Text = "";
+            panelInfo.Visible = false;
         }
+        private void ShowMessage(string message, Color forecolor)
+        {
+            panelInfo.Visible = true;
+            InformationalLabel.Text = message;
+            InformationalLabel.ForeColor = forecolor;
+        }
+        private bool AreNotBoxesEmpty()
+        {
+            return !string.IsNullOrEmpty(SideABox.Text) &&
+                !string.IsNullOrEmpty(SideBBox.Text) &&
+                !string.IsNullOrEmpty(SideCBox.Text) &&
+                !string.IsNullOrEmpty(HeightBox.Text);
+        }
+
+
         private void CalculateTriangle()
         {
-            if (!string.IsNullOrEmpty(SideABox.Text) && !string.IsNullOrEmpty(SideBBox.Text) && !string.IsNullOrEmpty(SideCBox.Text) && !string.IsNullOrEmpty(HeightBox.Text))
+            if (AreNotBoxesEmpty())
             {
                 try
                 {
@@ -36,37 +55,40 @@ namespace AreaCalculator
                     double perimeter = triangle.CalculatePerimeter();
 
                     StringBuilder newSBS = new StringBuilder();
-                    newSBS.Append($"Лице S - {area}");
-                    newSBS.Append($"Периметър P - {perimeter} ");
-                    label1.Text = newSBS.ToString();
+                    newSBS.AppendLine($"Лице S - {area}");
+                    newSBS.AppendLine($"Периметър P - {perimeter} ");
+                    panelInfo.Visible = true;
+                    string result = newSBS.ToString();
+                    ShowMessage(result, Color.White);
 
-                    MessageBox.Show($"{triangle.GetShapeInfo()}", "Пилотна информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //
                 }
                 catch (ArgumentException ex)
                 {
-                    MessageBox.Show(ex.Message, "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ShowMessage(ex.Message, Color.Red);
+
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("Моля, въведете правилни стойности!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                } 
-                
+                    ShowMessage("Моля, въведете валидни положителни данни", Color.Red);
+                }
+
             }
             else
             {
-                MessageBox.Show("Моля, въведете данни, за да се направят изчисленията!", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ShowMessage("Моля, въведете данни в полетата!", Color.Red);
+
             }
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             ClearAllTextBoxes();
-        }
-
-        private void TriangleForm_Load(object sender, EventArgs e)
-        {
 
         }
+
+
+
     }
 }

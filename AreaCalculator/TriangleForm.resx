@@ -117,17 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Триъгълникът е геометрична фигура, която има три страни и три ъгъла. 
-При построяването на триъгълник дължината на страните може да се 
-избира свободно, стига никоя от страните да не е по-дълга от сбора 
-на другите две.</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAYsAAAD0CAYAAABq4worAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAH0lJREFUeF7t3XmIFGcexvGwiIiIiEhkCCIiDiIyREQUEQcRRZSgDBFRFDEoioMH
+        vAAADrwBlbxySQAAH0lJREFUeF7t3XmIFGcexvGwiIiIiEhkCCIiDiIyREQUEQcRRZSgDBFRFDEoioMH
         imJQoiiuRDFBwyQhUYyKSZREY9zFdeOtuzExcbIeUXe8He/baNx1N9TyvLs1277vzPQxXd11fP/4oPav
         epy+6ul637d+9dJvv/3mAQDQmJfsGwAAsBEWAIC0CAsAQFqEBQAgLcICAJAWYQEASIuwAACkRVgAANIi
         LAAAaREWAIC0CAsAQFqEBQAgLcICAJAWYQEASIuwAELmpZdeqlerVq28srIyb86cOd6JEyec+wFBIiyA
@@ -262,52 +256,6 @@
         LRiAOCIsgJQunxMnTjRHECUlJd6KFSvMORVqVaOgUJ1LBCOpCAvgt9/MiXgKA/9CXQcPHjRHGGrQpt5Q
         48eP986ePevcD0gKwgIAkBZhAQBIi7AAAKRFWAAA0iIsAABpERYAgLT+AzZtH/GTkveCAAAAAElFTkSu
         QmCC
-</value>
-  </data>
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJoAAACcCAYAAACHprIKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAACVNJREFUeF7t3D9r22ofxvHzVvJGjF+A6XBGQQdDhkDhMQSKeeBgCsV0MR2CKTyY
-        QDEPBBEwqBDQEPBQ0BLUoThDUIagDAENhnswaAhcB/1xokiqY8vKL1J8BT5DJdlx7a+sW7fl/LW3twei
-        l/ZXegHRS2BoJIKhkQiGRiIYGolgaCSCoZEIhkYiGBqJYGgkgqGRCIZGIhha5bXQPuzgQGvkrKsPhlZZ
-        XZi3ePhxTtLr64WhVVzfUgBcmO+z6+qEoVVaB1MPgLLQz6yrF4ZWZU0dDgD/1zC7rmYY2pYaWhfDEwPj
-        LxoaOeu3cjyLxmenLWj/HUKfGNC/ddFKb1cDDK2wNkaWB185mE4MmL89qHkwnnKgZ7YtJhqfKXi3Cu6F
-        CWNiwfUB/3JUftQvjKEV0ogiuHdh7C+XDWEvyhxPxeMzKFhfWw/L9esyf4cchlbEZwvBe41/MUgsj8ZT
-        uBxlt09ofLHg+T68aT+z7onl+Ox38t1Li6Y85hZ66e0rjqEVMLoMivJhHyWWH9nww/HU6onV3s8gUQB3
-        Jjo56x88jM8S91fjkwOGtrE+wqHT/QyjxPIoIA/Tw/T2Kc0Ohidj9N7lrEvImz9rnIaZPQ28JhjaxuLQ
-        nhy+4kNaOHbSYNw4MP5O324Tyft7XGbcAFjYGOztoXvuYvb/9O2qi6FtrIFxcOhMRNA+dcLDJq517L03
-        4N5NVx8Wn5N7iEwsaw5h39kYNnNuW1H1Cu2zgdmFvt2LWIb9MWbKh3ftwLlVUL/HGAVvcwsPjufC+rJ6
-        nPasr9F4b/Y9eT9t6Nc+MHfh3JXwO4TVKLR2zuHkNWWvqmjtl3WVRQvtD3kTwA1oHzpoPzO+q6LahKaF
-        A+HwPKy0CVGSU4/QmiPMlIIKJkTfwJUMu6gWoQWn+t55N5oVD2bKP2e3oWqrfmgfp/Dm0bgsCq2e80i7
-        ruKhadCvFeyjaIAdTWIGs+Xp7ajqKh1a43gGdaVDi/+9DM090zLbZhwYcBY+/A04Pw6y90OlqG5ozT6s
-        uQvz4eqIPWhnbhiasp75QPoFVe0n/fiqqrKhdc/Da2Tyf565QoKqp5qh7Rtw5zkfscSX54Qf9aRvkxFN
-        qHY2UM5kK+WpYGga9CuF2XHOi74MbZ3rsZo9jCYGjA0El2Nn7odKUbHQWuhOHPjxFQqZ9e8MhKO0ynwM
-        ReuqTGidMxf+fWIc5s8wfljfw/Q2vD7i8efeh7qo3wWAu6oyoe2E4KJH04Zz5cC5sjH93qvlN5qKYGhS
-        gukaT8Exh+gdDqBfeNE1bJ6Ffvqk5w1iaEK6Uw/+jZm4hLuB4a9oOPCa84JSGJqQ6HNaQP3sPS7/ssFZ
-        dM0xNCHB5d5qoWAfJ6ZQltM1O3AWzdBe0fIjteC7m+l1bw1Dey3ByUH4LWQHeuLz3LeKob2K+E8q+C7M
-        f3I+AXmDGNorCL+ep2YY/2c3IgswNGFhZHMLg4dpjj6MnxX4CuELY2iCwj/wkp6gPZzCuzFyvlr3tjA0
-        IY1/zPBvm8FPXdkb/L2zGv7Rlk0xNCHLCdu8n7UuTa85hkYiGBqJYGgkgqGRCIZGIhgaiWBoJIKhkQiG
-        RiIYGolgaCSCoZEIhkYiGBqJYGgkgqGRCIZGIhgaiWBoJIKhkQiGRiIYGolgaCSCoZEIhkYiGBqJYGgk
-        gqGRCIZGIhgaiWBoJIKhkQiGRiIYGolgaCSCoZEIhkYiGBqJYGgkgqGRCIZGIhgaiWBoJIKhkQiGRiIY
-        GolgaCSCoZEIhkYiGBqJYGgkgqGRCIZGIhgaiWBoJIKhkQiGRiIYGolgaCSCoZEIhkYiGBqJYGgkgqG9
-        koZ2gM5hG62cdW9RyaF1Yd768O/x5MdfPC7zlQvruING5rY74psN5cdPzMLGML3+jSo5tNgnCyp4Im9N
-        aMnlzQ7Gl8Gz7MM50bK32xkjzIId71rfmR3uRUJrTNxwh1U/e5l1e6dOtDd7U3TS62pFh+NZ6GWWr+Fz
-        tCO6Z1vsbJ8seFd6dnlFvUhoo8vwIAn7KLtOO4sizLzb1Y4OR1noZ5Y/r3PuBbshrM/ZdWsLYr3e6dD6
-        sMLjpgM9s06DcRN15v7YYm/eUmt/gPFEx/BjK7NufUVDa0C/jsZnI62P8cSAflRgzFpGaO/aGHw3YEzG
-        6GuN7PoSlR/a4RTB/pr3jtU+dRCO0K50tNO3k9DswbhS8O9smBMD1o2CmvvAvMghsGho8fjs3oe6DR6H
-        CdvzN39OtgqtjZHlwl+4sM8MGD8suAsF62t6u/KUHlpjOQabu3CunEd3PuB7mE16a5zSD2HP/ehsdU3q
-        YphzP0lt6Nc+EMTRjJe9NxEeyAsNyguGFo/P/OtEWOFztuGhtHBobehXwWvhQN+Plg0uotNg77yTs305
-        Sg8tGp8BzmkHncOED1qBF7M8WrwDPDlkx2fHzz3Brf3U/yVkwlU2RpnlHRysOAxFY9RUVPFjc06z2weH
-        Wu1D9nd0/mdD3ZjZ5YcdtN+l7yPx+3OeB+1oitmFgd5yB3wBJYe2HJ+5MF7wQW+ug2l4PHdhvn9cnvui
-        Z/Rg/Eq8Mz/w4N8ruJnlDhxzkHM/gXh8dj/DKLF8+Ct6R3FO0tvvYe/vEabp+w/cKGDhZZdfObBP/rTj
-        5D8PEsoNbTk+23rq4g978Sr7qwb2OsL9OPW49Kvsi76+IofOeEe8MRLv7o8vvrHJi1/o0Bk/D4XGpNsp
-        NbSH+TOrn1m3mTYGJ8HZ0Aa+dXPuZyl+gp/MOw1hL5Yv+gD2rYVB5narFA/tyfPzMdo5/V/DzYYW24SW
-        d7umBm3FIXdbJYbWwDgen82O0+teWzd613gY9DfQj47x0Yv+1Ya6HOXcbpUioUXTO0FU0b/jE5R54gRl
-        XYVC06JD95359Ax3fwTbU7C//Xlsua0SQuvAvMn7fNPGOLPt62l8mcLz4zHVnYJ7PoIRvsguXO/xDGx9
-        RUKLHkcwlRA+jmBa43aKQZF3kkKhBVGNMVPBBEA8prv1oO5mMD6tGnpsr4TQaqSp4eDJWVk0Flx1lvZn
-        xUKLtNB+5uz0WUVDCz2OgYv93ze3W6GVqg/jfJSZlBbzfoTpj23HwnIYGolgaCSCoZEIhkYiGBqJYGgk
-        gqGRCIZGIhgaiWBoJIKhkQiGRiIYGolgaCSCoZEIhkYiGBqJYGgkgqGRCIZGIhgaiWBoJIKhkQiGRiL+
-        BZkyLlriyQmXAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

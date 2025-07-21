@@ -1,17 +1,14 @@
-﻿
-using AreaCalculator.Trapezoids;
-using System.Text;
-
-namespace AreaCalculator
+﻿namespace AreaCalculator
 {
 
     public partial class CalculatorMainFrom : Form
     {
 
+        readonly HomeControlcs hc = new HomeControlcs();
         public CalculatorMainFrom()
         {
             InitializeComponent();
-
+            MainPanel.Controls.Add(hc);
 
         }
         private void LoadControl(UserControl uc)
@@ -19,6 +16,7 @@ namespace AreaCalculator
             MainPanel.Controls.Clear();
             uc.Dock = DockStyle.Fill;
             MainPanel.Controls.Add(uc);
+
         }
 
 
@@ -44,6 +42,16 @@ namespace AreaCalculator
         {
             PhombusControl rhom = new PhombusControl();
             LoadControl(rhom);
+        }
+
+        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            LoadControl(hc);
         }
     }
 }

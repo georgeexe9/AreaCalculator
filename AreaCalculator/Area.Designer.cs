@@ -40,13 +40,9 @@
             ParallelogramButtonControl = new Button();
             RectangleControlButton = new Button();
             TriangleControlButton = new Button();
-            menuStrip1 = new MenuStrip();
-            помощToolStripMenuItem = new ToolStripMenuItem();
-            заПриложениетоToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
             openFileDialog1 = new OpenFileDialog();
             panel2.SuspendLayout();
-            menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -56,7 +52,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(104, 53);
+            label1.Location = new Point(110, 40);
             label1.Name = "label1";
             label1.Size = new Size(298, 47);
             label1.TabIndex = 0;
@@ -69,6 +65,7 @@
             MainPanel.Name = "MainPanel";
             MainPanel.Size = new Size(725, 450);
             MainPanel.TabIndex = 3;
+            MainPanel.Paint += MainPanel_Paint;
             // 
             // panel2
             // 
@@ -142,6 +139,7 @@
             button6.TextAlign = ContentAlignment.MiddleLeft;
             button6.TextImageRelation = TextImageRelation.ImageBeforeText;
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // label3
             // 
@@ -233,32 +231,10 @@
             TriangleControlButton.UseVisualStyleBackColor = false;
             TriangleControlButton.Click += button1_Click;
             // 
-            // menuStrip1
-            // 
-            menuStrip1.BackColor = Color.LightSteelBlue;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { помощToolStripMenuItem, заПриложениетоToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(988, 24);
-            menuStrip1.TabIndex = 6;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // помощToolStripMenuItem
-            // 
-            помощToolStripMenuItem.Name = "помощToolStripMenuItem";
-            помощToolStripMenuItem.Size = new Size(62, 20);
-            помощToolStripMenuItem.Text = "Помощ";
-            // 
-            // заПриложениетоToolStripMenuItem
-            // 
-            заПриложениетоToolStripMenuItem.Name = "заПриложениетоToolStripMenuItem";
-            заПриложениетоToolStripMenuItem.Size = new Size(117, 20);
-            заПриложениетоToolStripMenuItem.Text = "За приложението";
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(19, 36);
+            pictureBox1.Location = new Point(19, 21);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(85, 79);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -279,14 +255,10 @@
             Controls.Add(panel2);
             Controls.Add(label1);
             Controls.Add(MainPanel);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
             Name = "CalculatorMainFrom";
             Text = "Shape Calculator";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -303,9 +275,6 @@
         private Button TriangleControlButton;
         private Label label3;
         private Button button6;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem помощToolStripMenuItem;
-        private ToolStripMenuItem заПриложениетоToolStripMenuItem;
         private PictureBox pictureBox1;
         private Button button1;
         private Button button2;
