@@ -39,6 +39,8 @@ namespace AreaCalculator
                     newSBS.Append($"Лице S - {area}");
                     newSBS.Append($"Периметър P - {perimeter} ");
                     label1.Text = newSBS.ToString();
+
+                    MessageBox.Show($"{triangle.GetShapeInfo()}", "Пилотна информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (ArgumentException ex)
                 {

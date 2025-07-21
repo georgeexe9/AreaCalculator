@@ -2,17 +2,32 @@
 
 namespace AreaCalculator
 {
-   
+
     public abstract class Shape
     {
+        /// <summary>
+        /// TODO - имплементирай GetShapeInfo навсякъде в другите класове
+        /// </summary>
+        /// <returns></returns>
+
+        //изчислява лице/площ
         public abstract double CalculateArea();
-       
+
+        //връща пълна информация за фигурата
+        public virtual string GetShapeInfo()
+        {
+            //търси логика в другите класове в тва assembly
+            throw new NotSupportedException("временно виртуален метод");
+        }
+
+        //МЕТОД НА STANDBY ;) 
+        [Obsolete("Този метод е морално остарял, използвайте GetShapeInfo()")]
         public virtual string GetShapeName()
         {
-            throw new NotSupportedException(" няма да се имплементира. В процес на строеж в други класове");
+            throw new NotSupportedException("Override-ва се в другите класове");
         }
         //виртуален - незадължителен метод
-        public  virtual double CalculatePerimeter()
+        public virtual double CalculatePerimeter()
         {
             throw new NotSupportedException("Този метод ще бъде override-нат по-късно! Ако го извикате, ще даде грешка");
         }
@@ -26,17 +41,15 @@ namespace AreaCalculator
         }
         public virtual string GetSummary()
         {
-            
-                StringBuilder newSBS = new StringBuilder();
-                newSBS.Append("Благодаря, че използвахте калкулатора! Кратка информация:\n" +
-                            $"Фигура: {GetShapeName()}\n" +
-                            $"Лице/Площ: {CalculateArea()}\n" +
-                            $"Периметър: {CalculatePerimeter()}");
-                return newSBS.ToString();
 
-            
-            
-            
+            StringBuilder newSBS = new StringBuilder();
+            newSBS.Append("Благодаря, че използвахте калкулатора! Кратка информация:\n" +
+                        $"{GetShapeInfo}");
+            return newSBS.ToString();
+
+
+
+
 
 
         }
