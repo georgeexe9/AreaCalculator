@@ -70,7 +70,7 @@ namespace AreaCalculator
                 }
                 catch (FormatException)
                 {
-                    ShowMessage("Моля, въведете валидни положителни данни", Color.Red);
+                    ShowMessage("Моля, въведете валидни\n положителни данни", Color.Red);
                 }
 
             }

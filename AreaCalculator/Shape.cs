@@ -6,7 +6,7 @@ namespace AreaCalculator
     public abstract class Shape
     {
         /// <summary>
-        /// TODO - имплементирай GetShapeInfo навсякъде в другите класове
+        /// Hides funtionality like George
         /// </summary>
         /// <returns></returns>
 
@@ -17,27 +17,27 @@ namespace AreaCalculator
         public virtual string GetShapeInfo()
         {
             //търси логика в другите класове в тва assembly
-            throw new NotSupportedException("временно виртуален метод");
+            throw new NotSupportedException("temporary method");
         }
 
-        //МЕТОД НА STANDBY ;) 
-        [Obsolete("Този метод е морално остарял, използвайте GetShapeInfo()")]
+        //STANDBY METHOD ;) 
+        [Obsolete("THROW OUT OF THE WINDOWWW!")]
         public virtual string GetShapeName()
         {
-            throw new NotSupportedException("Override-ва се в другите класове");
+            throw new NotSupportedException("Overrides in other classes");
         }
-        //виртуален - незадължителен метод
+        //virtual - not required
         public virtual double CalculatePerimeter()
         {
-            throw new NotSupportedException("Този метод ще бъде override-нат по-късно! Ако го извикате, ще даде грешка");
+            throw new NotSupportedException("Calculates Perimeter in child classes");
         }
         public virtual void Draw()
         {
-            throw new NotSupportedException("Бъдещо разширение..., най-вероятно не");
+            throw new NotSupportedException("I do not touch that shit");
         }
         public virtual double CalculateDiagonal()
         {
-            throw new NotSupportedException("Само в правоъгълник и успоредник");
+            throw new NotSupportedException("Only in rectangle and parallelogram");
         }
         public virtual string GetSummary()
         {
@@ -46,12 +46,6 @@ namespace AreaCalculator
             newSBS.Append("Благодаря, че използвахте калкулатора! Кратка информация:\n" +
                         $"{GetShapeInfo}");
             return newSBS.ToString();
-
-
-
-
-
-
         }
         
 

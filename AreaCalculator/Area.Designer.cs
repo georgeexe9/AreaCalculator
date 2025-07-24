@@ -32,6 +32,7 @@
             label1 = new Label();
             MainPanel = new Panel();
             panel2 = new Panel();
+            button5 = new Button();
             button2 = new Button();
             button1 = new Button();
             button6 = new Button();
@@ -70,6 +71,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(42, 56, 92);
+            panel2.Controls.Add(button5);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(button6);
@@ -82,6 +84,25 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(268, 447);
             panel2.TabIndex = 4;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(42, 56, 92);
+            button5.BackgroundImage = (Image)resources.GetObject("button5.BackgroundImage");
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button5.ForeColor = Color.White;
+            button5.Image = (Image)resources.GetObject("button5.Image");
+            button5.ImageAlign = ContentAlignment.TopLeft;
+            button5.Location = new Point(19, 341);
+            button5.Name = "button5";
+            button5.Size = new Size(238, 36);
+            button5.TabIndex = 9;
+            button5.Text = "Ромб";
+            button5.TextAlign = ContentAlignment.MiddleLeft;
+            button5.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button5.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -279,6 +300,7 @@
         private Button button1;
         private Button button2;
         private OpenFileDialog openFileDialog1;
+        private Button button5;
     }
 
 }
