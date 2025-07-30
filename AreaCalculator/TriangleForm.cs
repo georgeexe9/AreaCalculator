@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using AreaCalculator.Triangles;
+using System.Text;
 
 namespace AreaCalculator
 {
@@ -8,6 +9,7 @@ namespace AreaCalculator
         {
             InitializeComponent();
             panelInfo.Visible = false;
+            CalculateRightTriangle();
 
         }
 
@@ -88,7 +90,35 @@ namespace AreaCalculator
 
         }
 
+        private void TriangleForm_Load(object sender, EventArgs e)
+        {
 
+        }
+        private static void CalculateRightTriangle()
+        {
+            double sideA = 3;
+            double sideB = 4;
+            Shape rightTriangle = new RightTriangle(sideA, sideB);
+            double area = rightTriangle.CalculateArea();
+            double perimeter = rightTriangle.CalculatePerimeter();
+            ///
+            // Кастинг – правя се на нещо, което не съм, като временно обличам маска,
+            // за да се държа като друг тип пред хората. 😀
+            // Например, променливата rightTriangle е от тип Shape (форма),
+            // но всъщност съдържа обект от RightTriangle (правоъгълен триъгълник).
+            // За да използвам специфичното свойство Hypotenuse, трябва да я кастна към RightTriangle.
+            // Като човек, който се прави на някой друг, за да постигне целта си.
+            
+            ///
+            
+            double hypotenuse = ((RightTriangle)rightTriangle).Hypotenuse;
 
+            StringBuilder sbs = new StringBuilder();
+            sbs.AppendLine($"Лице - {area}");
+            sbs.AppendLine($"Периметър - {perimeter}");
+            sbs.AppendLine($"Хипотенуза - {hypotenuse}");
+            MessageBox.Show(sbs.ToString(), "Title", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }

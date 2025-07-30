@@ -1,9 +1,12 @@
-﻿using System.Text;
+﻿using System.Security.Policy;
+using System.Text;
 
 namespace AreaCalculator
 {
     internal class Triangle : Shape
     {
+        
+
         public double Side { get; set; }
         public double SideB { get; set; }
         public double SideC { get; set; }

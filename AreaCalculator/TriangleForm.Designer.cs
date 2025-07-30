@@ -268,6 +268,7 @@
             Controls.Add(panel1);
             Name = "TriangleForm";
             Size = new Size(725, 450);
+            Load += TriangleForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panelInfo.ResumeLayout(false);

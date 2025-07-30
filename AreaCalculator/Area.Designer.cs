@@ -32,18 +32,20 @@
             label1 = new Label();
             MainPanel = new Panel();
             panel2 = new Panel();
-            button5 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            button6 = new Button();
-            label3 = new Label();
-            RhombusControlButton = new Button();
-            ParallelogramButtonControl = new Button();
-            RectangleControlButton = new Button();
+            panel1 = new Panel();
             TriangleControlButton = new Button();
+            button5 = new Button();
+            label3 = new Label();
+            RectangleControlButton = new Button();
+            button2 = new Button();
+            ParallelogramButtonControl = new Button();
+            button1 = new Button();
+            RhombusControlButton = new Button();
+            button6 = new Button();
             pictureBox1 = new PictureBox();
             openFileDialog1 = new OpenFileDialog();
             panel2.SuspendLayout();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -55,9 +57,9 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(110, 40);
             label1.Name = "label1";
-            label1.Size = new Size(298, 47);
+            label1.Size = new Size(312, 47);
             label1.TabIndex = 0;
-            label1.Text = "Shape Calculator";
+            label1.Text = "Shaper Calculator";
             // 
             // MainPanel
             // 
@@ -71,166 +73,27 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(42, 56, 92);
-            panel2.Controls.Add(button5);
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(panel1);
             panel2.Controls.Add(button6);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(RhombusControlButton);
-            panel2.Controls.Add(ParallelogramButtonControl);
-            panel2.Controls.Add(RectangleControlButton);
-            panel2.Controls.Add(TriangleControlButton);
             panel2.Location = new Point(0, 130);
             panel2.Name = "panel2";
             panel2.Size = new Size(268, 447);
             panel2.TabIndex = 4;
             // 
-            // button5
+            // panel1
             // 
-            button5.BackColor = Color.FromArgb(42, 56, 92);
-            button5.BackgroundImage = (Image)resources.GetObject("button5.BackgroundImage");
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            button5.ForeColor = Color.White;
-            button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.ImageAlign = ContentAlignment.TopLeft;
-            button5.Location = new Point(19, 341);
-            button5.Name = "button5";
-            button5.Size = new Size(238, 36);
-            button5.TabIndex = 9;
-            button5.Text = "Ромб";
-            button5.TextAlign = ContentAlignment.MiddleLeft;
-            button5.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button5.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(42, 56, 92);
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.TopLeft;
-            button2.Location = new Point(19, 299);
-            button2.Name = "button2";
-            button2.Size = new Size(238, 36);
-            button2.TabIndex = 8;
-            button2.Text = "Кръг";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(42, 56, 92);
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.TopLeft;
-            button1.Location = new Point(19, 257);
-            button1.Name = "button1";
-            button1.Size = new Size(238, 36);
-            button1.TabIndex = 7;
-            button1.Text = "Квадрат";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            button6.BackColor = Color.FromArgb(42, 56, 92);
-            button6.BackgroundImage = (Image)resources.GetObject("button6.BackgroundImage");
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button6.ForeColor = Color.White;
-            button6.Image = Properties.Resources.home;
-            button6.ImageAlign = ContentAlignment.TopLeft;
-            button6.Location = new Point(19, 47);
-            button6.Name = "button6";
-            button6.Size = new Size(238, 36);
-            button6.TabIndex = 6;
-            button6.Text = "     Начало";
-            button6.TextAlign = ContentAlignment.MiddleLeft;
-            button6.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button6.UseVisualStyleBackColor = false;
-            button6.Click += button6_Click;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(19, 18);
-            label3.Name = "label3";
-            label3.Size = new Size(159, 15);
-            label3.TabIndex = 5;
-            label3.Text = "Изберете желаната фигура:";
-            // 
-            // RhombusControlButton
-            // 
-            RhombusControlButton.BackColor = Color.FromArgb(42, 56, 92);
-            RhombusControlButton.BackgroundImage = (Image)resources.GetObject("RhombusControlButton.BackgroundImage");
-            RhombusControlButton.FlatAppearance.BorderSize = 0;
-            RhombusControlButton.FlatStyle = FlatStyle.Flat;
-            RhombusControlButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            RhombusControlButton.ForeColor = Color.White;
-            RhombusControlButton.Image = (Image)resources.GetObject("RhombusControlButton.Image");
-            RhombusControlButton.ImageAlign = ContentAlignment.TopLeft;
-            RhombusControlButton.Location = new Point(19, 215);
-            RhombusControlButton.Name = "RhombusControlButton";
-            RhombusControlButton.Size = new Size(238, 36);
-            RhombusControlButton.TabIndex = 4;
-            RhombusControlButton.Text = "Ромб";
-            RhombusControlButton.TextAlign = ContentAlignment.MiddleLeft;
-            RhombusControlButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-            RhombusControlButton.UseVisualStyleBackColor = false;
-            RhombusControlButton.Click += RhombusControlButton_Click;
-            // 
-            // ParallelogramButtonControl
-            // 
-            ParallelogramButtonControl.BackColor = Color.FromArgb(42, 56, 92);
-            ParallelogramButtonControl.BackgroundImage = (Image)resources.GetObject("ParallelogramButtonControl.BackgroundImage");
-            ParallelogramButtonControl.FlatAppearance.BorderSize = 0;
-            ParallelogramButtonControl.FlatStyle = FlatStyle.Flat;
-            ParallelogramButtonControl.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            ParallelogramButtonControl.ForeColor = Color.White;
-            ParallelogramButtonControl.Image = (Image)resources.GetObject("ParallelogramButtonControl.Image");
-            ParallelogramButtonControl.ImageAlign = ContentAlignment.TopLeft;
-            ParallelogramButtonControl.Location = new Point(19, 173);
-            ParallelogramButtonControl.Name = "ParallelogramButtonControl";
-            ParallelogramButtonControl.Size = new Size(238, 36);
-            ParallelogramButtonControl.TabIndex = 3;
-            ParallelogramButtonControl.Text = "Успоредник";
-            ParallelogramButtonControl.TextAlign = ContentAlignment.MiddleLeft;
-            ParallelogramButtonControl.TextImageRelation = TextImageRelation.ImageBeforeText;
-            ParallelogramButtonControl.UseVisualStyleBackColor = false;
-            ParallelogramButtonControl.Click += ParallelogramButtonControl_Click;
-            // 
-            // RectangleControlButton
-            // 
-            RectangleControlButton.BackColor = Color.FromArgb(42, 56, 92);
-            RectangleControlButton.BackgroundImage = (Image)resources.GetObject("RectangleControlButton.BackgroundImage");
-            RectangleControlButton.FlatAppearance.BorderSize = 0;
-            RectangleControlButton.FlatStyle = FlatStyle.Flat;
-            RectangleControlButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            RectangleControlButton.ForeColor = Color.White;
-            RectangleControlButton.Image = Properties.Resources.rectangle;
-            RectangleControlButton.ImageAlign = ContentAlignment.MiddleLeft;
-            RectangleControlButton.Location = new Point(19, 131);
-            RectangleControlButton.Name = "RectangleControlButton";
-            RectangleControlButton.Size = new Size(238, 36);
-            RectangleControlButton.TabIndex = 1;
-            RectangleControlButton.Text = " Правоъгълник";
-            RectangleControlButton.TextAlign = ContentAlignment.MiddleLeft;
-            RectangleControlButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-            RectangleControlButton.UseVisualStyleBackColor = false;
-            RectangleControlButton.Click += RectangleControlButton_Click;
+            panel1.Controls.Add(TriangleControlButton);
+            panel1.Controls.Add(button5);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(RectangleControlButton);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(ParallelogramButtonControl);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(RhombusControlButton);
+            panel1.Location = new Point(0, 60);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(268, 390);
+            panel1.TabIndex = 10;
             // 
             // TriangleControlButton
             // 
@@ -242,7 +105,7 @@
             TriangleControlButton.ForeColor = Color.White;
             TriangleControlButton.Image = (Image)resources.GetObject("TriangleControlButton.Image");
             TriangleControlButton.ImageAlign = ContentAlignment.TopLeft;
-            TriangleControlButton.Location = new Point(19, 89);
+            TriangleControlButton.Location = new Point(12, 46);
             TriangleControlButton.Name = "TriangleControlButton";
             TriangleControlButton.Size = new Size(238, 36);
             TriangleControlButton.TabIndex = 0;
@@ -251,6 +114,152 @@
             TriangleControlButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             TriangleControlButton.UseVisualStyleBackColor = false;
             TriangleControlButton.Click += button1_Click;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(42, 56, 92);
+            button5.BackgroundImage = (Image)resources.GetObject("button5.BackgroundImage");
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button5.ForeColor = Color.White;
+            button5.Image = (Image)resources.GetObject("button5.Image");
+            button5.ImageAlign = ContentAlignment.TopLeft;
+            button5.Location = new Point(12, 298);
+            button5.Name = "button5";
+            button5.Size = new Size(238, 36);
+            button5.TabIndex = 9;
+            button5.Text = "Ромб";
+            button5.TextAlign = ContentAlignment.MiddleLeft;
+            button5.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(12, 19);
+            label3.Name = "label3";
+            label3.Size = new Size(159, 15);
+            label3.TabIndex = 5;
+            label3.Text = "Изберете желаната фигура:";
+            // 
+            // RectangleControlButton
+            // 
+            RectangleControlButton.BackColor = Color.FromArgb(42, 56, 92);
+            RectangleControlButton.BackgroundImage = (Image)resources.GetObject("RectangleControlButton.BackgroundImage");
+            RectangleControlButton.FlatAppearance.BorderSize = 0;
+            RectangleControlButton.FlatStyle = FlatStyle.Flat;
+            RectangleControlButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            RectangleControlButton.ForeColor = Color.White;
+            RectangleControlButton.Image = Properties.Resources.rectangle;
+            RectangleControlButton.ImageAlign = ContentAlignment.MiddleLeft;
+            RectangleControlButton.Location = new Point(12, 88);
+            RectangleControlButton.Name = "RectangleControlButton";
+            RectangleControlButton.Size = new Size(238, 36);
+            RectangleControlButton.TabIndex = 1;
+            RectangleControlButton.Text = " Правоъгълник";
+            RectangleControlButton.TextAlign = ContentAlignment.MiddleLeft;
+            RectangleControlButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            RectangleControlButton.UseVisualStyleBackColor = false;
+            RectangleControlButton.Click += RectangleControlButton_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(42, 56, 92);
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button2.ForeColor = Color.White;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.TopLeft;
+            button2.Location = new Point(12, 256);
+            button2.Name = "button2";
+            button2.Size = new Size(238, 36);
+            button2.TabIndex = 8;
+            button2.Text = "Кръг";
+            button2.TextAlign = ContentAlignment.MiddleLeft;
+            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // ParallelogramButtonControl
+            // 
+            ParallelogramButtonControl.BackColor = Color.FromArgb(42, 56, 92);
+            ParallelogramButtonControl.BackgroundImage = (Image)resources.GetObject("ParallelogramButtonControl.BackgroundImage");
+            ParallelogramButtonControl.FlatAppearance.BorderSize = 0;
+            ParallelogramButtonControl.FlatStyle = FlatStyle.Flat;
+            ParallelogramButtonControl.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            ParallelogramButtonControl.ForeColor = Color.White;
+            ParallelogramButtonControl.Image = (Image)resources.GetObject("ParallelogramButtonControl.Image");
+            ParallelogramButtonControl.ImageAlign = ContentAlignment.TopLeft;
+            ParallelogramButtonControl.Location = new Point(12, 130);
+            ParallelogramButtonControl.Name = "ParallelogramButtonControl";
+            ParallelogramButtonControl.Size = new Size(238, 36);
+            ParallelogramButtonControl.TabIndex = 3;
+            ParallelogramButtonControl.Text = "Успоредник";
+            ParallelogramButtonControl.TextAlign = ContentAlignment.MiddleLeft;
+            ParallelogramButtonControl.TextImageRelation = TextImageRelation.ImageBeforeText;
+            ParallelogramButtonControl.UseVisualStyleBackColor = false;
+            ParallelogramButtonControl.Click += ParallelogramButtonControl_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(42, 56, 92);
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.TopLeft;
+            button1.Location = new Point(12, 214);
+            button1.Name = "button1";
+            button1.Size = new Size(238, 36);
+            button1.TabIndex = 7;
+            button1.Text = "Квадрат";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
+            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // RhombusControlButton
+            // 
+            RhombusControlButton.BackColor = Color.FromArgb(42, 56, 92);
+            RhombusControlButton.BackgroundImage = (Image)resources.GetObject("RhombusControlButton.BackgroundImage");
+            RhombusControlButton.FlatAppearance.BorderSize = 0;
+            RhombusControlButton.FlatStyle = FlatStyle.Flat;
+            RhombusControlButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            RhombusControlButton.ForeColor = Color.White;
+            RhombusControlButton.Image = (Image)resources.GetObject("RhombusControlButton.Image");
+            RhombusControlButton.ImageAlign = ContentAlignment.TopLeft;
+            RhombusControlButton.Location = new Point(12, 172);
+            RhombusControlButton.Name = "RhombusControlButton";
+            RhombusControlButton.Size = new Size(238, 36);
+            RhombusControlButton.TabIndex = 4;
+            RhombusControlButton.Text = "Ромб";
+            RhombusControlButton.TextAlign = ContentAlignment.MiddleLeft;
+            RhombusControlButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            RhombusControlButton.UseVisualStyleBackColor = false;
+            RhombusControlButton.Click += RhombusControlButton_Click;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.FromArgb(42, 56, 92);
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button6.ForeColor = Color.White;
+            button6.Image = Properties.Resources.home;
+            button6.ImageAlign = ContentAlignment.TopLeft;
+            button6.Location = new Point(12, 18);
+            button6.Name = "button6";
+            button6.Size = new Size(115, 36);
+            button6.TabIndex = 6;
+            button6.Text = "     Начало";
+            button6.TextAlign = ContentAlignment.MiddleLeft;
+            button6.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // pictureBox1
             // 
@@ -279,7 +288,8 @@
             Name = "CalculatorMainFrom";
             Text = "Shape Calculator";
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -301,6 +311,7 @@
         private Button button2;
         private OpenFileDialog openFileDialog1;
         private Button button5;
+        private Panel panel1;
     }
 
 }

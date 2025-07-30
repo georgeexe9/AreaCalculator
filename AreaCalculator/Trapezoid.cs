@@ -60,6 +60,8 @@
         {
             return SideA + SideB + SideC + SideD;
         }
+
+        [Obsolete]
         public override string GetShapeName()
         {
             return "Трапец";
