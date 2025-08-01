@@ -1,22 +1,17 @@
 ﻿using AreaCalculator.Triangles;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ScrollBar;
 
 namespace AreaCalculator
 {
     public partial class TriangleForm : UserControl
     {
 
-        //Конструктор
+
         public TriangleForm()
         {
             InitializeComponent();
             panelInfo.Visible = false;
             Infopanel.Visible = false;
             ClearAllTextBoxes();
-
-
-
-
         }
 
 
@@ -37,6 +32,7 @@ namespace AreaCalculator
             HeightBox.Enabled = true;
             InformationalLabel.Text = "";
             panelInfo.Visible = false;
+            
         }
 
         //Показва информация на избрания триъгълник
@@ -61,6 +57,10 @@ namespace AreaCalculator
             InformationalLabel.Text = message;
             InformationalLabel.ForeColor = forecolor;
         }
+        private void ShowShapeInfo(string information)
+        {
+
+        }
 
 
 
@@ -84,22 +84,23 @@ namespace AreaCalculator
                 double height = 0;
                 double area = 0;
                 double perimeter = 0;
-                string summary = "";
+                //string summary = "";
 
                 if (triangleType == "Произволен триъгълник")
                 {
                     sideC = double.Parse(SideCBox.Text);
                     height = double.Parse(HeightBox.Text);
                 }
+                
 
 
-
+                
                 switch (triangleType)
                 {
                     case "Правоъгълен триъгълник":
                         Shape rightTriangle = new RightTriangle(sideA, sideB);
                         area = rightTriangle.CalculateArea();
-                        perimeter = rightTriangle.CalculatePerimeter();                      
+                        perimeter = rightTriangle.CalculatePerimeter();
                         ShowMessageResult(area, perimeter, Color.White);
                         break;
 
@@ -111,6 +112,12 @@ namespace AreaCalculator
                         break;
 
                     case "Равнобедрен триъгълник":
+                        Shape isoscelestriangle = new Isoscelestriangle(sideA, sideB);
+                        area = isoscelestriangle.CalculateArea();
+                        perimeter = isoscelestriangle.CalculatePerimeter();
+                        double h = ((Isoscelestriangle)isoscelestriangle).Height;
+                        HeightBox.Text = h.ToString();
+                        ShowMessageResult(area, perimeter, Color.White);
                         break;
                     case "Равностранен триъгълник":
 
@@ -152,10 +159,19 @@ namespace AreaCalculator
                     SideCBox.Enabled = false;
                     HeightBox.Enabled = false;
                     ShowInformatioalPanel(triangleType, "Area = (1/2) * a * b \n Perimeter = a + b + c");
+                    ClearAllTextBoxes();
                     break;
                 case "Произволен триъгълник":
                     ShowInformatioalPanel(triangleType, "Area= 0.5 * a * h \n Perimeter = a + b + c");
+                    ClearAllTextBoxes();
                     break;
+                case "Равнобедрен триъгълник":
+                    //да сменя името на втория лейбъл на основа
+                    SideCBox.Enabled = false;
+                    HeightBox.Enabled = false;
+                    ClearAllTextBoxes();
+                    break;
+
             }
 
         }
@@ -165,6 +181,6 @@ namespace AreaCalculator
 
         }
 
-        
+
     }
 }
