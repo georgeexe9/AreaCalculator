@@ -1,14 +1,11 @@
-﻿namespace AreaCalculator
+﻿namespace AreaCalculator.Helpers
 {
     /// <summary>
-    /// Helper е статичен клас, съдържащ различни методи за UI визуализация на данните
-    /// 
+    /// Helper е статичен клас, който съдържа статични методи за показване и визуализация на данни и съобщения в потребителския интерфейс. Както информация,
+    /// така и за грешки. Не може да се инстанцира
     /// </summary>
     public static class Helper
     {
-        /// <summary>
-        /// 
-        /// </summary>
 
         public static void ShowInformationalPanel(Panel Infopanel, Label formulas, Label TriangleName, string shape, string formula)
         {
@@ -37,6 +34,8 @@
             InformationalLabel.Text = message;
             InformationalLabel.ForeColor = forecolor;
         }
+
+
 
     }
 }

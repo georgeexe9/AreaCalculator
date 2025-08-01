@@ -1,4 +1,5 @@
-﻿using AreaCalculator.Triangles;
+﻿using AreaCalculator.Helpers;
+using AreaCalculator.Triangles;
 
 namespace AreaCalculator
 {
@@ -43,21 +44,7 @@ namespace AreaCalculator
             TriangleName.Text = shape;
 
         }
-        //Показва резултата на избрания триъгълник
-        private void ShowMessageResult(double area, double perimeter, Color forecolor)
-        {
-            panelInfo.Visible = true;
-            InformationalLabel.Text = $"Лице: {area:F2} cm.\n Периметър: {perimeter:F2} cm.";
-            InformationalLabel.ForeColor = forecolor;
-        }
-        //Показва съобщение при грешка
-        
-        private void ShowShapeInfo(string information)
-        {
-
-        }
-
-
+      
          
         //Основен метод
         private void CalculateTriangle()
@@ -105,7 +92,7 @@ namespace AreaCalculator
                         Shape triangle = new Triangle(sideA, sideB, sideC, height);
                         area = triangle.CalculateArea();
                         perimeter = triangle.CalculatePerimeter();
-                        ShowMessageResult(area, perimeter, Color.White);
+                        Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter, Color.White);
                         break;
 
                     case "Равнобедрен триъгълник":
@@ -114,7 +101,8 @@ namespace AreaCalculator
                         perimeter = isoscelestriangle.CalculatePerimeter();
                         double h = ((Isoscelestriangle)isoscelestriangle).Height;
                         HeightBox.Text = h.ToString();
-                        ShowMessageResult(area, perimeter, Color.White);
+                        Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter, Color.White);
+                        
                         break;
                     case "Равностранен триъгълник":
 

@@ -12,13 +12,7 @@ namespace AreaCalculator.Triangles
     {
         public double Side { get; set; }
         public double BaseSide { get; set; }
-        public double Height
-        {
-            get
-            {
-                return Math.Sqrt(Math.Pow(Side, 2) - Math.Pow(BaseSide / 2.0, 2));
-            }
-        }
+        
 
         public Isoscelestriangle(double side, double baseSide)
         {
@@ -46,6 +40,13 @@ namespace AreaCalculator.Triangles
         {
             return (BaseSide * Height) / 2.0;
         }
-        
+        public double Height
+        {
+            get
+            {
+                return Math.Sqrt(Math.Pow(Side, 2) - Math.Pow(BaseSide / 2.0, 2));
+            }
+        }
+
     }
 }
