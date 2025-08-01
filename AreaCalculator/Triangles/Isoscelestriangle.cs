@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AreaCalculator.Triangles
 {
-    internal class Isoscelestriangle 
+    internal class Isoscelestriangle
 
     {
         

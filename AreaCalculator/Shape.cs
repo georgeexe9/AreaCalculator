@@ -3,7 +3,7 @@
 namespace AreaCalculator
 {
 
-    public abstract class Shape
+    public  abstract class Shape
     {
         /// <summary>
         /// Hides funtionality like George

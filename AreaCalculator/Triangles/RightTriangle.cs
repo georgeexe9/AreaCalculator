@@ -33,7 +33,7 @@ namespace AreaCalculator.Triangles
         {
             return 0.5 * SideA * SideB;
         }
-        
+
         public override double CalculatePerimeter()
         {
             return SideA + SideB + Hypotenuse;
@@ -44,10 +44,12 @@ namespace AreaCalculator.Triangles
         {
             return "Правоъгълен триъгълник";
         }
+
+
         public override string GetSummary()
         {
             StringBuilder newSBS = new StringBuilder();
-            newSBS.AppendLine($"Фигура: Триъгълник");
+            newSBS.AppendLine($"Фигура: Правоъгълен триъгълник");
             newSBS.AppendLine($"Страна a:{SideA}");
             newSBS.AppendLine($"Страна b:{SideB}");
             newSBS.AppendLine($"Хипотенуза c:{Hypotenuse:F2}");
@@ -55,5 +57,6 @@ namespace AreaCalculator.Triangles
             newSBS.AppendLine($"Периметър P - {CalculatePerimeter()}");
             return newSBS.ToString();
         }
+
     }
 }

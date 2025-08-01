@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorMainFrom));
             label1 = new Label();
             MainPanel = new Panel();
@@ -36,14 +37,14 @@
             TriangleControlButton = new Button();
             button5 = new Button();
             label3 = new Label();
-            RectangleControlButton = new Button();
             button2 = new Button();
             ParallelogramButtonControl = new Button();
             button1 = new Button();
             RhombusControlButton = new Button();
             button6 = new Button();
             pictureBox1 = new PictureBox();
-            openFileDialog1 = new OpenFileDialog();
+            RectangleControlButton = new Button();
+            contextMenuStrip1 = new ContextMenuStrip(components);
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -143,26 +144,6 @@
             label3.Size = new Size(159, 15);
             label3.TabIndex = 5;
             label3.Text = "Изберете желаната фигура:";
-            // 
-            // RectangleControlButton
-            // 
-            RectangleControlButton.BackColor = Color.FromArgb(42, 56, 92);
-            RectangleControlButton.BackgroundImage = (Image)resources.GetObject("RectangleControlButton.BackgroundImage");
-            RectangleControlButton.FlatAppearance.BorderSize = 0;
-            RectangleControlButton.FlatStyle = FlatStyle.Flat;
-            RectangleControlButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            RectangleControlButton.ForeColor = Color.White;
-            RectangleControlButton.Image = Properties.Resources.rectangle;
-            RectangleControlButton.ImageAlign = ContentAlignment.MiddleLeft;
-            RectangleControlButton.Location = new Point(12, 88);
-            RectangleControlButton.Name = "RectangleControlButton";
-            RectangleControlButton.Size = new Size(238, 36);
-            RectangleControlButton.TabIndex = 1;
-            RectangleControlButton.Text = " Правоъгълник";
-            RectangleControlButton.TextAlign = ContentAlignment.MiddleLeft;
-            RectangleControlButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-            RectangleControlButton.UseVisualStyleBackColor = false;
-            RectangleControlButton.Click += RectangleControlButton_Click;
             // 
             // button2
             // 
@@ -271,9 +252,30 @@
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
-            // openFileDialog1
+            // RectangleControlButton
             // 
-            openFileDialog1.FileName = "openFileDialog1";
+            RectangleControlButton.BackColor = Color.FromArgb(42, 56, 92);
+            RectangleControlButton.BackgroundImage = (Image)resources.GetObject("RectangleControlButton.BackgroundImage");
+            RectangleControlButton.FlatAppearance.BorderSize = 0;
+            RectangleControlButton.FlatStyle = FlatStyle.Flat;
+            RectangleControlButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            RectangleControlButton.ForeColor = Color.White;
+            RectangleControlButton.Image = Properties.Resources.rectangle;
+            RectangleControlButton.ImageAlign = ContentAlignment.MiddleLeft;
+            RectangleControlButton.Location = new Point(12, 88);
+            RectangleControlButton.Name = "RectangleControlButton";
+            RectangleControlButton.Size = new Size(238, 36);
+            RectangleControlButton.TabIndex = 1;
+            RectangleControlButton.Text = " Правоъгълник";
+            RectangleControlButton.TextAlign = ContentAlignment.MiddleLeft;
+            RectangleControlButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            RectangleControlButton.UseVisualStyleBackColor = false;
+            RectangleControlButton.Click += RectangleControlButton_Click;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // CalculatorMainFrom
             // 
@@ -302,16 +304,16 @@
         private Panel panel2;
         private Button RhombusControlButton;
         private Button ParallelogramButtonControl;
-        private Button RectangleControlButton;
         private Button TriangleControlButton;
         private Label label3;
         private Button button6;
         private PictureBox pictureBox1;
         private Button button1;
         private Button button2;
-        private OpenFileDialog openFileDialog1;
         private Button button5;
         private Panel panel1;
+        private Button RectangleControlButton;
+        private ContextMenuStrip contextMenuStrip1;
     }
 
 }

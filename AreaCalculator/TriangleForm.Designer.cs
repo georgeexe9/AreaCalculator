@@ -45,11 +45,15 @@
             InformationalLabel = new Label();
             label3 = new Label();
             pictureBox1 = new PictureBox();
-            label7 = new Label();
+            formulas = new Label();
             label8 = new Label();
+            TriangleChoiceBox = new ComboBox();
+            TriangleName = new Label();
+            Infopanel = new Panel();
             panel1.SuspendLayout();
             panelInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            Infopanel.SuspendLayout();
             SuspendLayout();
             // 
             // SideABox
@@ -123,11 +127,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(36, 26);
+            label2.Location = new Point(123, 27);
             label2.Name = "label2";
-            label2.Size = new Size(125, 30);
+            label2.Size = new Size(140, 30);
             label2.TabIndex = 7;
-            label2.Text = "Триъгълник";
+            label2.Text = "Триъгълници";
             // 
             // label4
             // 
@@ -217,7 +221,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(36, 144);
+            label3.Location = new Point(143, 43);
             label3.Name = "label3";
             label3.Size = new Size(81, 20);
             label3.TabIndex = 1;
@@ -226,54 +230,92 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(36, 231);
+            pictureBox1.Location = new Point(55, 126);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(296, 190);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Size = new Size(263, 170);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 21;
             pictureBox1.TabStop = false;
             // 
-            // label7
+            // formulas
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(36, 177);
-            label7.Name = "label7";
-            label7.Size = new Size(102, 40);
-            label7.TabIndex = 1;
-            label7.Text = "S = (a × h) / 2\r\nP = a + b + c\r\n";
+            formulas.AutoSize = true;
+            formulas.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            formulas.ForeColor = Color.White;
+            formulas.Location = new Point(132, 69);
+            formulas.Name = "formulas";
+            formulas.Size = new Size(0, 20);
+            formulas.TabIndex = 1;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(40, 63);
+            label8.Location = new Point(83, 67);
             label8.Name = "label8";
-            label8.Size = new Size(292, 15);
+            label8.Size = new Size(235, 15);
             label8.TabIndex = 23;
-            label8.Text = "Въведете дължините на трите страни и височината";
+            label8.Text = "Моля изберете желания вид триъгълник\r\n";
+            // 
+            // TriangleChoiceBox
+            // 
+            TriangleChoiceBox.BackColor = Color.FromArgb(37, 52, 92);
+            TriangleChoiceBox.FlatStyle = FlatStyle.Flat;
+            TriangleChoiceBox.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TriangleChoiceBox.ForeColor = Color.White;
+            TriangleChoiceBox.FormattingEnabled = true;
+            TriangleChoiceBox.Items.AddRange(new object[] { "Правоъгълен триъгълник", "Произволен триъгълник", "Равнобедрен триъгълник", "Равностранен триъгълник" });
+            TriangleChoiceBox.Location = new Point(106, 93);
+            TriangleChoiceBox.Name = "TriangleChoiceBox";
+            TriangleChoiceBox.RightToLeft = RightToLeft.No;
+            TriangleChoiceBox.Size = new Size(185, 25);
+            TriangleChoiceBox.TabIndex = 24;
+            TriangleChoiceBox.SelectedIndexChanged += TriangleChoiceBox_SelectedIndexChanged;
+            // 
+            // TriangleName
+            // 
+            TriangleName.AutoSize = true;
+            TriangleName.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TriangleName.ForeColor = Color.White;
+            TriangleName.Location = new Point(103, 19);
+            TriangleName.Name = "TriangleName";
+            TriangleName.Size = new Size(160, 20);
+            TriangleName.TabIndex = 25;
+            TriangleName.Text = ":Име на триъгълник:";
+            // 
+            // Infopanel
+            // 
+            Infopanel.BackColor = Color.FromArgb(41, 54, 89);
+            Infopanel.Controls.Add(label3);
+            Infopanel.Controls.Add(pictureBox1);
+            Infopanel.Controls.Add(TriangleName);
+            Infopanel.Controls.Add(formulas);
+            Infopanel.Location = new Point(0, 135);
+            Infopanel.Name = "Infopanel";
+            Infopanel.Size = new Size(377, 315);
+            Infopanel.TabIndex = 26;
+            Infopanel.Paint += Infopanel_Paint;
             // 
             // TriangleForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 60, 99);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(pictureBox1);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(TriangleChoiceBox);
             Controls.Add(panel1);
+            Controls.Add(label8);
+            Controls.Add(Infopanel);
+            Controls.Add(label2);
             Name = "TriangleForm";
             Size = new Size(725, 450);
-            Load += TriangleForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panelInfo.ResumeLayout(false);
             panelInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Infopanel.ResumeLayout(false);
+            Infopanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -296,7 +338,10 @@
         private Label InformationalLabel;
         private Label label3;
         private PictureBox pictureBox1;
-        private Label label7;
+        private Label formulas;
         private Label label8;
+        private ComboBox TriangleChoiceBox;
+        private Label TriangleName;
+        private Panel Infopanel;
     }
 }
