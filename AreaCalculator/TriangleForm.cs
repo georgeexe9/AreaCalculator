@@ -51,25 +51,20 @@ namespace AreaCalculator
             InformationalLabel.ForeColor = forecolor;
         }
         //Показва съобщение при грешка
-        private void ShowExceptionalMessage(string message, Color forecolor)
-        {
-            panelInfo.Visible = true;
-            InformationalLabel.Text = message;
-            InformationalLabel.ForeColor = forecolor;
-        }
+        
         private void ShowShapeInfo(string information)
         {
 
         }
 
 
-
+         
         //Основен метод
         private void CalculateTriangle()
         {
             if (TriangleChoiceBox.SelectedItem == null)
             {
-                ShowExceptionalMessage("Моля избери триъгълник!", Color.Red);
+                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля избери триъгълник!", Color.Red);
                 return;
             }
 
@@ -101,7 +96,9 @@ namespace AreaCalculator
                         Shape rightTriangle = new RightTriangle(sideA, sideB);
                         area = rightTriangle.CalculateArea();
                         perimeter = rightTriangle.CalculatePerimeter();
-                        ShowMessageResult(area, perimeter, Color.White);
+                        //ShowMessageResult(area, perimeter, Color.White);
+                        Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter, Color.White);
+                        
                         break;
 
                     case "Произволен триъгълник":
@@ -124,21 +121,21 @@ namespace AreaCalculator
                         break;
 
                     default:
-                        ShowExceptionalMessage("Няма такъв триъгълник! Неподдържана фигура!", Color.Red);
+                        Helper.ShowExceptionalMessage(panelInfo,InformationalLabel,"Няма такъв триъгълник! Неподдържана фигура!", Color.Red);
                         break;
                 }
             }
             catch (FormatException)
             {
-                ShowExceptionalMessage("Моля въведете числови стойности!", Color.Red);
+                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel,"Моля въведете числови стойности!", Color.Red);
             }
             catch (ArgumentException ex)
             {
-                ShowExceptionalMessage(ex.Message, Color.Red);
+                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, ex.Message, Color.Red);
             }
             catch (Exception ex)
             {
-                ShowExceptionalMessage(ex.Message, Color.Red);
+                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, ex.Message, Color.Red);
             }
         }
 
