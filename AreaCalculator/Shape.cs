@@ -2,13 +2,13 @@
 
 namespace AreaCalculator
 {
-
-    public  abstract class Shape
+    /// <summary>
+    ///A Shape abstract class defines the blueprint for all specific shapes.
+    ///It says: “Any real shape must tell me how to compute area and perimeter.”
+    ///Use me like a template
+    /// </summary>
+    public abstract class Shape
     {
-        /// <summary>
-        /// Hides funtionality like George
-        /// </summary>
-        /// <returns></returns>
 
         //изчислява лице/площ
         public abstract double CalculateArea();
@@ -21,7 +21,7 @@ namespace AreaCalculator
         }
 
         //STANDBY METHOD ;) 
-        [Obsolete("THROW OUT OF THE WINDOWWW!")]
+        [Obsolete("THROW OUT OF THE WINDOWWW!, Use GetShapeInfo instead dear")]
         public virtual string GetShapeName()
         {
             throw new NotSupportedException("Overrides in other classes");
@@ -47,7 +47,7 @@ namespace AreaCalculator
                         $"{GetShapeInfo}");
             return newSBS.ToString();
         }
-        
+
 
     }
 

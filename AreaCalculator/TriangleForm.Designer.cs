@@ -36,11 +36,12 @@
             CalculateButton = new Button();
             button1 = new Button();
             label2 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label10 = new Label();
+            SideBLabel = new Label();
+            SideCLabel = new Label();
+            HeightLabel = new Label();
+            SideALabel = new Label();
             panel1 = new Panel();
+            ResetTriangles = new Button();
             panelInfo = new Panel();
             InformationalLabel = new Label();
             label3 = new Label();
@@ -50,6 +51,8 @@
             TriangleChoiceBox = new ComboBox();
             TriangleName = new Label();
             Infopanel = new Panel();
+            formula = new Label();
+            NoTriangleLabel = new Label();
             panel1.SuspendLayout();
             panelInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -133,68 +136,80 @@
             label2.TabIndex = 7;
             label2.Text = "Триъгълници";
             // 
-            // label4
+            // SideBLabel
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(31, 120);
-            label4.Name = "label4";
-            label4.Size = new Size(83, 21);
-            label4.TabIndex = 9;
-            label4.Text = "Страна b:";
+            SideBLabel.AutoSize = true;
+            SideBLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            SideBLabel.ForeColor = Color.White;
+            SideBLabel.Location = new Point(31, 120);
+            SideBLabel.Name = "SideBLabel";
+            SideBLabel.Size = new Size(83, 21);
+            SideBLabel.TabIndex = 9;
+            SideBLabel.Text = "Страна b:";
             // 
-            // label5
+            // SideCLabel
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(31, 177);
-            label5.Name = "label5";
-            label5.Size = new Size(81, 21);
-            label5.TabIndex = 10;
-            label5.Text = "Страна c:";
+            SideCLabel.AutoSize = true;
+            SideCLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            SideCLabel.ForeColor = Color.White;
+            SideCLabel.Location = new Point(31, 177);
+            SideCLabel.Name = "SideCLabel";
+            SideCLabel.Size = new Size(81, 21);
+            SideCLabel.TabIndex = 10;
+            SideCLabel.Text = "Страна c:";
             // 
-            // label6
+            // HeightLabel
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(31, 237);
-            label6.Name = "label6";
-            label6.Size = new Size(105, 21);
-            label6.TabIndex = 11;
-            label6.Text = "Височина h:";
+            HeightLabel.AutoSize = true;
+            HeightLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            HeightLabel.ForeColor = Color.White;
+            HeightLabel.Location = new Point(31, 237);
+            HeightLabel.Name = "HeightLabel";
+            HeightLabel.Size = new Size(105, 21);
+            HeightLabel.TabIndex = 11;
+            HeightLabel.Text = "Височина h:";
             // 
-            // label10
+            // SideALabel
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(31, 63);
-            label10.Name = "label10";
-            label10.Size = new Size(82, 21);
-            label10.TabIndex = 18;
-            label10.Text = "Страна a:";
+            SideALabel.AutoSize = true;
+            SideALabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            SideALabel.ForeColor = Color.White;
+            SideALabel.Location = new Point(32, 62);
+            SideALabel.Name = "SideALabel";
+            SideALabel.Size = new Size(82, 21);
+            SideALabel.TabIndex = 18;
+            SideALabel.Text = "Страна a:";
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(37, 52, 92);
             panel1.Controls.Add(panelInfo);
             panel1.Controls.Add(button1);
-            panel1.Controls.Add(label10);
+            panel1.Controls.Add(SideALabel);
             panel1.Controls.Add(CalculateButton);
             panel1.Controls.Add(SideABox);
             panel1.Controls.Add(SideBBox);
-            panel1.Controls.Add(label5);
+            panel1.Controls.Add(SideCLabel);
             panel1.Controls.Add(SideCBox);
-            panel1.Controls.Add(label6);
+            panel1.Controls.Add(HeightLabel);
             panel1.Controls.Add(HeightBox);
-            panel1.Controls.Add(label4);
+            panel1.Controls.Add(SideBLabel);
             panel1.Location = new Point(367, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(358, 450);
             panel1.TabIndex = 20;
+            // 
+            // ResetTriangles
+            // 
+            ResetTriangles.BackColor = Color.White;
+            ResetTriangles.FlatStyle = FlatStyle.Flat;
+            ResetTriangles.Location = new Point(297, 93);
+            ResetTriangles.Name = "ResetTriangles";
+            ResetTriangles.Size = new Size(31, 25);
+            ResetTriangles.TabIndex = 23;
+            ResetTriangles.Text = "X";
+            ResetTriangles.UseVisualStyleBackColor = false;
+            ResetTriangles.Click += ResetTriangles_Click;
             // 
             // panelInfo
             // 
@@ -261,6 +276,7 @@
             // TriangleChoiceBox
             // 
             TriangleChoiceBox.BackColor = Color.FromArgb(37, 52, 92);
+            TriangleChoiceBox.DropDownStyle = ComboBoxStyle.DropDownList;
             TriangleChoiceBox.FlatStyle = FlatStyle.Flat;
             TriangleChoiceBox.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TriangleChoiceBox.ForeColor = Color.White;
@@ -287,26 +303,51 @@
             // Infopanel
             // 
             Infopanel.BackColor = Color.FromArgb(41, 54, 89);
+            Infopanel.Controls.Add(formula);
             Infopanel.Controls.Add(label3);
             Infopanel.Controls.Add(pictureBox1);
             Infopanel.Controls.Add(TriangleName);
             Infopanel.Controls.Add(formulas);
             Infopanel.Location = new Point(0, 135);
             Infopanel.Name = "Infopanel";
-            Infopanel.Size = new Size(377, 315);
+            Infopanel.Size = new Size(380, 315);
             Infopanel.TabIndex = 26;
-            Infopanel.Paint += Infopanel_Paint;
+            // 
+            // formula
+            // 
+            formula.AutoSize = true;
+            formula.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            formula.ForeColor = Color.White;
+            formula.Location = new Point(143, 76);
+            formula.Name = "formula";
+            formula.Size = new Size(81, 20);
+            formula.TabIndex = 26;
+            formula.Text = "Формули:";
+            // 
+            // NoTriangleLabel
+            // 
+            NoTriangleLabel.BackColor = Color.Transparent;
+            NoTriangleLabel.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NoTriangleLabel.ForeColor = Color.White;
+            NoTriangleLabel.Location = new Point(13, 224);
+            NoTriangleLabel.Name = "NoTriangleLabel";
+            NoTriangleLabel.Size = new Size(358, 54);
+            NoTriangleLabel.TabIndex = 27;
+            NoTriangleLabel.Text = "Няма избран триъгълник!";
+            NoTriangleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // TriangleForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 60, 99);
-            Controls.Add(TriangleChoiceBox);
+            Controls.Add(ResetTriangles);
             Controls.Add(panel1);
+            Controls.Add(TriangleChoiceBox);
             Controls.Add(label8);
             Controls.Add(Infopanel);
             Controls.Add(label2);
+            Controls.Add(NoTriangleLabel);
             Name = "TriangleForm";
             Size = new Size(725, 450);
             panel1.ResumeLayout(false);
@@ -329,10 +370,10 @@
         private Button CalculateButton;
         private Button button1;
         private Label label2;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label10;
+        private Label SideBLabel;
+        private Label SideCLabel;
+        private Label HeightLabel;
+        private Label SideALabel;
         private Panel panel1;
         private Panel panelInfo;
         private Label InformationalLabel;
@@ -343,5 +384,8 @@
         private ComboBox TriangleChoiceBox;
         private Label TriangleName;
         private Panel Infopanel;
+        private Label formula;
+        private Label NoTriangleLabel;
+        private Button ResetTriangles;
     }
 }

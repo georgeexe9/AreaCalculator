@@ -12,7 +12,8 @@ namespace AreaCalculator
             InitializeComponent();
             panelInfo.Visible = false;
             Infopanel.Visible = false;
-            ClearAllTextBoxes();
+            TriangleChoiceBox.Items.Insert(0, "-Избери триъгълник-");
+            TriangleChoiceBox.SelectedIndex = 0;
         }
 
 
@@ -21,7 +22,7 @@ namespace AreaCalculator
             CalculateTriangle();
         }
         //Изчиства съдържанието
-        private void ClearAllTextBoxes()
+        private void ResetAllTextBoxes()
         {
             SideABox.Clear();
             SideBBox.Clear();
@@ -31,141 +32,176 @@ namespace AreaCalculator
             SideBBox.Enabled = true;
             SideCBox.Enabled = true;
             HeightBox.Enabled = true;
+            SideABox.Visible = true;
+            SideBBox.Visible = true;
+            SideCBox.Visible = true;
+            HeightBox.Visible = true;
             InformationalLabel.Text = "";
             panelInfo.Visible = false;
-            
-        }
-
-        //Показва информация на избрания триъгълник
-        private void ShowInformatioalPanel(string shape, string formula)
-        {
-            Infopanel.Visible = true;
-            formulas.Text = formula;
-            TriangleName.Text = shape;
+            SideALabel.Text = "Страна а";
+            SideBLabel.Text = "Страна b";
+            SideCLabel.Text = "Страна c";
+            HeightLabel.Text = "Височина h";
+            Infopanel.Visible = false;
+            panelInfo.Visible = false;
 
         }
-      
-         
-        //Основен метод
-        private void CalculateTriangle()
+        public void ClearBox()
         {
-            if (TriangleChoiceBox.SelectedItem == null)
+            SideABox.Clear();
+            SideBBox.Clear();
+            SideCBox.Clear();
+            HeightBox.Clear();
+        }
+
+        //Тва ще се изнася в Helper класа
+        private void UITriangleControl()
+        {
+            //ResetAllTextBoxes();
+
+            int triangleType = TriangleChoiceBox.SelectedIndex;
+            string? triangleName = TriangleChoiceBox.Items[triangleType]?.ToString();
+            //clear the selection
+            if (triangleName == null)
             {
-                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля избери триъгълник!", Color.Red);
+
                 return;
             }
+            
+
+            switch (triangleType)
+            {
+                case 1:
+
+                    Helper.ShowInformationalPanel(Infopanel, formula, TriangleName, triangleName, "Area = (1/2) * a * b \n Perimeter = a + b + c");
+                    SideCBox.Enabled = false;
+                    HeightBox.Enabled = false;
+                    break;
+                case 2:
+                    Helper.ShowInformationalPanel(Infopanel, formula, TriangleName, triangleName, "Area= 0.5 * a * h \n Perimeter = a + b + c");
+
+                    break;
+                case 3:
+                    Helper.ShowInformationalPanel(Infopanel, formula, TriangleName, triangleName, "Area= (Base * Height) / 2 \n Perimeter = 2 * Side + Base");
+                    SideCBox.Enabled = false;
+                    SideALabel.Text = "Страна";
+                    SideBLabel.Text = "Основа";
+                    break;
+                case 4:
+                    Helper.ShowInformationalPanel(Infopanel, formula, TriangleName, triangleName, "Area= (Base * Height) / 2 \n Perimeter = 3 * Side");
+                    SideBBox.Enabled = false;
+                    SideCBox.Enabled = false;
+                    HeightBox.Enabled = false;
+                    SideALabel.Text = "Страна";
+                    break;
+            }
+
+        }
+
+
+        //Основен метод (за сега асинхронен)
+        private void CalculateTriangle()
+        {
 
             try
             {
-                string? triangleType = TriangleChoiceBox.SelectedItem.ToString();
 
+                if (TriangleChoiceBox.SelectedIndex == 0)
+                {
+                    Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля избери триъгълник!", Color.White, Color.Red);
+                    return;
 
-                double sideA = double.Parse(SideABox.Text);
-                double sideB = double.Parse(SideBBox.Text);
+                }
+                int triangleType = TriangleChoiceBox.SelectedIndex;
+                double sideA = 0;
+                double sideB = 0;
                 double sideC = 0;
                 double height = 0;
                 double area = 0;
                 double perimeter = 0;
-                //string summary = "";
 
-                if (triangleType == "Произволен триъгълник")
-                {
-                    sideC = double.Parse(SideCBox.Text);
-                    height = double.Parse(HeightBox.Text);
-                }
-                
-
-
-                
                 switch (triangleType)
                 {
-                    case "Правоъгълен триъгълник":
+
+                    //Правоъгълен триъгълник
+                    case 1:
+                        sideA = double.Parse(SideABox.Text);
+                        sideB = double.Parse(SideBBox.Text);
                         Shape rightTriangle = new RightTriangle(sideA, sideB);
                         area = rightTriangle.CalculateArea();
                         perimeter = rightTriangle.CalculatePerimeter();
-                        //ShowMessageResult(area, perimeter, Color.White);
-                        Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter, Color.White);
-                        
-                        break;
+                        Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
 
-                    case "Произволен триъгълник":
+                        break;
+                        //Произволен триъгълник
+                    case 2:
+                        sideA = double.Parse(SideABox.Text);
+                        sideB = double.Parse(SideBBox.Text);
+                        sideC = double.Parse(SideCBox.Text);
+                        height = double.Parse(HeightBox.Text);
                         Shape triangle = new Triangle(sideA, sideB, sideC, height);
                         area = triangle.CalculateArea();
                         perimeter = triangle.CalculatePerimeter();
-                        Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter, Color.White);
+                        Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
                         break;
+                        //Равнобедрен триъгълник
+                    case 3:
+                        sideA = double.Parse(SideABox.Text);
+                        sideB = double.Parse(SideBBox.Text);
 
-                    case "Равнобедрен триъгълник":
                         Shape isoscelestriangle = new Isoscelestriangle(sideA, sideB);
                         area = isoscelestriangle.CalculateArea();
                         perimeter = isoscelestriangle.CalculatePerimeter();
                         double h = ((Isoscelestriangle)isoscelestriangle).Height;
                         HeightBox.Text = h.ToString();
-                        Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter, Color.White);
-                        
-                        break;
-                    case "Равностранен триъгълник":
+                        Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
 
+                        break;
+                        //Равностранен триъгълник
+                    case 4:
+                        sideA = double.Parse(SideABox.Text);
+                        Shape equilateralTriangle = new EquilateralTriangle(sideA);
+                        area = equilateralTriangle.CalculateArea();
+                        perimeter = equilateralTriangle.CalculatePerimeter();
+                        Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
                         break;
 
                     default:
-                        Helper.ShowExceptionalMessage(panelInfo,InformationalLabel,"Няма такъв триъгълник! Неподдържана фигура!", Color.Red);
+                        Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Няма такъв триъгълник! Неподдържана фигура!", Color.White, Color.Red);
                         break;
                 }
             }
             catch (FormatException)
             {
-                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel,"Моля въведете числови стойности!", Color.Red);
+                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
             }
             catch (ArgumentException ex)
             {
-                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, ex.Message, Color.Red);
+                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, ex.Message, Color.White, Color.Red);
             }
             catch (Exception ex)
             {
-                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, ex.Message, Color.Red);
+                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, ex.Message, Color.White, Color.Red);
             }
+
+
         }
-
-
         private void button1_Click(object sender, EventArgs e)
         {
-            ClearAllTextBoxes();
-
+            ClearBox();
         }
+
         //Контрол над формите
         private void TriangleChoiceBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ClearAllTextBoxes();
-            string? triangleType = TriangleChoiceBox.SelectedItem?.ToString();
-            switch (triangleType)
-            {
-                case "Правоъгълен триъгълник":
-                    SideCBox.Enabled = false;
-                    HeightBox.Enabled = false;
-                    ShowInformatioalPanel(triangleType, "Area = (1/2) * a * b \n Perimeter = a + b + c");
-                    ClearAllTextBoxes();
-                    break;
-                case "Произволен триъгълник":
-                    ShowInformatioalPanel(triangleType, "Area= 0.5 * a * h \n Perimeter = a + b + c");
-                    ClearAllTextBoxes();
-                    break;
-                case "Равнобедрен триъгълник":
-                    //да сменя името на втория лейбъл на основа
-                    SideCBox.Enabled = false;
-                    HeightBox.Enabled = false;
-                    ClearAllTextBoxes();
-                    break;
-
-            }
-
+            UITriangleControl();
         }
 
-        private void Infopanel_Paint(object sender, PaintEventArgs e)
+        private void ResetTriangles_Click(object sender, EventArgs e)
         {
+            TriangleChoiceBox.SelectedIndex = 0;
+            ResetAllTextBoxes();
 
         }
-
-
     }
 }

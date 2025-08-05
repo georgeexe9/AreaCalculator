@@ -53,7 +53,11 @@
         {
             LoadControl(hc);
         }
-        
+
+        private void CalculatorMainFrom_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
     }
 }
 
