@@ -2,20 +2,13 @@
 namespace AreaCalculator.Helpers
 {
     /// <summary>
-    /// Helper е статичен клас, който съдържа статични методи за показване и визуализация на данни и съобщения в потребителския интерфейс. Както информация,
+    /// Helper е статичен клас, който съдържа статични методи за показване, валидиране и визуализация на данни и съобщения в потребителския интерфейс. Както информация,
     /// така и за грешки. Не може да се инстанцира.
     /// </summary>
 
     public static class Helper
     {
-        /// <summary>
-        /// Визуализира основен панел с кратка информация за избрания триъгълник
-        /// </summary>
-        /// <param name="Infopanel"></param>
-        /// <param name="formulas"></param>
-        /// <param name="TriangleName"></param>
-        /// <param name="shape"></param>
-        /// <param name="formula"></param>
+        //показва кратка информация за фигурата
         public static void ShowInformationalPanel(Panel Infopanel, Label formulas, Label TriangleName, string shape, string formula)
         {
 
@@ -23,13 +16,7 @@ namespace AreaCalculator.Helpers
             formulas.Text = formula;
             TriangleName.Text = shape;
         }
-        /// <summary>
-        /// Визуализира вторичен панел с изчисления резултат (Лице и Периметър).
-        /// </summary>
-        /// <param name="panelInfo"></param>
-        /// <param name="InformationalLabel"></param>
-        /// <param name="area"></param>
-        /// <param name="perimeter"></param>
+        //Показва резултата и панела,където се визуализира информацията
         public static void ShowMessageResult(Panel panelInfo, Label InformationalLabel, double area, double perimeter)
         {
             //Лейбъл конфигурации
@@ -45,16 +32,7 @@ namespace AreaCalculator.Helpers
 
         }
 
-
-        /// <summary>
-        /// //Визуализира вторичния панел, обаче при наличието на хвърлена грешка
-        /// </summary>
-        /// <param name="panelInfo"></param>
-        /// <param name="InformationalLabel"></param>
-        /// <param name="message"></param>
-        /// <param name="forecolor"></param>
-        /// <param name="backcolor"></param>
-
+        //Показва съобщение при грешка    
         public static void ShowExceptionalMessage(Panel panelInfo, Label InformationalLabel, string message, Color forecolor, Color backcolor)
         {
             panelInfo.Visible = true;
@@ -63,21 +41,36 @@ namespace AreaCalculator.Helpers
             InformationalLabel.BackColor = backcolor;
 
         }
-
-        public static void HideUnnecessaryBoxes(ComboBox combobox, string shapeType, TextBox SideABox, TextBox SideBBox, TextBox SideCBox, TextBox Height)
+        
+        public static bool VerifyValidation(TextBox SideABox, TextBox SideBBox, out double sideA, out double sideB)
         {
-            SideABox.Enabled = false;
-            SideBBox.Enabled = false;
-            SideCBox.Enabled = false;
-            Height.Enabled = false;
+            sideB = 0;
+            return double.TryParse(SideABox.Text, out sideA) &&
+            double.TryParse(SideBBox.Text, out sideB);
         }
-        public static void HideUnnecessaryBoxes()
+        public static bool VerifyValidation(TextBox SideABox, TextBox SideBBox, TextBox SideCBox, TextBox HeightBox, out double sideA, out double sideB, out double sideC, out double height)
         {
-
+            
+            sideB = 0;
+            sideC = 0;
+            height = 0;
+             return double.TryParse(SideABox.Text, out sideA) &&
+             double.TryParse(SideBBox.Text, out sideB) &&
+             double.TryParse(SideCBox.Text, out sideC) &&
+             double.TryParse(HeightBox.Text, out height);
         }
-
-
+        public static bool VerifyValidation(TextBox SideABox, out double sideA)
+        {
+            return double.TryParse(SideABox.Text, out sideA);
+        }
 
 
     }
+
+
+
+
+
+
 }
+

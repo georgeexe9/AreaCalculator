@@ -5,7 +5,7 @@ namespace AreaCalculator
 {
     public partial class TriangleForm : UserControl
     {
-
+        private int triangleType;
 
         public TriangleForm()
         {
@@ -14,6 +14,7 @@ namespace AreaCalculator
             Infopanel.Visible = false;
             TriangleChoiceBox.Items.Insert(0, "-Избери триъгълник-");
             TriangleChoiceBox.SelectedIndex = 0;
+
         }
 
 
@@ -53,13 +54,12 @@ namespace AreaCalculator
             SideCBox.Clear();
             HeightBox.Clear();
         }
-
         //Тва ще се изнася в Helper класа
         private void UITriangleControl()
         {
             //ResetAllTextBoxes();
 
-            int triangleType = TriangleChoiceBox.SelectedIndex;
+            triangleType = TriangleChoiceBox.SelectedIndex;
             string? triangleName = TriangleChoiceBox.Items[triangleType]?.ToString();
             //clear the selection
             if (triangleName == null)
@@ -67,7 +67,6 @@ namespace AreaCalculator
 
                 return;
             }
-            
 
             switch (triangleType)
             {
@@ -98,94 +97,100 @@ namespace AreaCalculator
 
         }
 
-
-        //Основен метод (за сега асинхронен)
         private void CalculateTriangle()
-        {
-
-            try
-            {
-
-                if (TriangleChoiceBox.SelectedIndex == 0)
+        {    
+                try
                 {
-                    Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля избери триъгълник!", Color.White, Color.Red);
-                    return;
+                        int triangleType = TriangleChoiceBox.SelectedIndex;
+                        double sideA = 0;
+                        double sideB = 0;
+                        double sideC = 0;
+                        double height = 0;
+                        double area = 0;
+                        double perimeter = 0;
 
-                }
-                int triangleType = TriangleChoiceBox.SelectedIndex;
-                double sideA = 0;
-                double sideB = 0;
-                double sideC = 0;
-                double height = 0;
-                double area = 0;
-                double perimeter = 0;
+                    if (triangleType == 0)
+                    {
+                        Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Няма избран триъгълник!", Color.White, Color.Red);
+                        ResetAllTextBoxes();
+                    }
+   
+                    switch (triangleType)
+                    {
 
-                switch (triangleType)
-                {
-
-                    //Правоъгълен триъгълник
-                    case 1:
-                        sideA = double.Parse(SideABox.Text);
-                        sideB = double.Parse(SideBBox.Text);
-                        Shape rightTriangle = new RightTriangle(sideA, sideB);
-                        area = rightTriangle.CalculateArea();
-                        perimeter = rightTriangle.CalculatePerimeter();
-                        Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
-
-                        break;
+                        //Правоъгълен триъгълник
+                        case 1:
+                        if (Helper.VerifyValidation(SideABox, SideBBox, out sideA, out sideB))
+                        {
+                            Shape rightTriangle = new RightTriangle(sideA, sideB);
+                            area = rightTriangle.CalculateArea();
+                            perimeter = rightTriangle.CalculatePerimeter();
+                            Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
+                        }
+                        
+                            break;
                         //Произволен триъгълник
-                    case 2:
-                        sideA = double.Parse(SideABox.Text);
-                        sideB = double.Parse(SideBBox.Text);
-                        sideC = double.Parse(SideCBox.Text);
-                        height = double.Parse(HeightBox.Text);
-                        Shape triangle = new Triangle(sideA, sideB, sideC, height);
-                        area = triangle.CalculateArea();
-                        perimeter = triangle.CalculatePerimeter();
-                        Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
-                        break;
+                        case 2:
+                        if (Helper.VerifyValidation(SideABox, SideBBox, SideCBox, HeightBox, out sideA, out sideB, out sideC, out height))
+                        {
+                            Shape triangle = new Triangle(sideA, sideB, sideC, height);
+                            area = triangle.CalculateArea();
+                            perimeter = triangle.CalculatePerimeter();
+                            Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
+                        }
+                        else
+                        {
+                            Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
+                        }
+
+                            break;
                         //Равнобедрен триъгълник
-                    case 3:
-                        sideA = double.Parse(SideABox.Text);
-                        sideB = double.Parse(SideBBox.Text);
+                        case 3:
+                        if (Helper.VerifyValidation(SideABox, SideABox, out sideA, out sideB))
+                        {
+                            Shape isoscelestriangle = new Isoscelestriangle(sideA, sideB);
+                            area = isoscelestriangle.CalculateArea();
+                            perimeter = isoscelestriangle.CalculatePerimeter();
 
-                        Shape isoscelestriangle = new Isoscelestriangle(sideA, sideB);
-                        area = isoscelestriangle.CalculateArea();
-                        perimeter = isoscelestriangle.CalculatePerimeter();
-                        double h = ((Isoscelestriangle)isoscelestriangle).Height;
-                        HeightBox.Text = h.ToString();
-                        Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
+                            double h = ((Isoscelestriangle)isoscelestriangle).Height;
 
+                            HeightBox.Text = h.ToString();
+                            Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
+                        }
+                        
                         break;
                         //Равностранен триъгълник
-                    case 4:
-                        sideA = double.Parse(SideABox.Text);
-                        Shape equilateralTriangle = new EquilateralTriangle(sideA);
-                        area = equilateralTriangle.CalculateArea();
-                        perimeter = equilateralTriangle.CalculatePerimeter();
-                        Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
+                        case 4:
+                        if (Helper.VerifyValidation(SideABox, out sideA))
+                        {
+                            Shape equilateralTriangle = new EquilateralTriangle(sideA);
+                            area = equilateralTriangle.CalculateArea();
+                            perimeter = equilateralTriangle.CalculatePerimeter();
+                            Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
+                        }
+                       
                         break;
 
-                    default:
-                        Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Няма такъв триъгълник! Неподдържана фигура!", Color.White, Color.Red);
+                        default:
+                            Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Няма такъв триъгълник! Неподдържана фигура!", Color.White, Color.Red);
                         break;
+                    }
+                }
+                catch (FormatException)
+                {
+                    Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
+                }
+                catch (ArgumentException ex)
+                {
+                    Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, ex.Message, Color.White, Color.Red);
+                }
+                catch (Exception ex)
+                {
+                    Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, ex.Message, Color.White, Color.Red);
                 }
             }
-            catch (FormatException)
-            {
-                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
-            }
-            catch (ArgumentException ex)
-            {
-                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, ex.Message, Color.White, Color.Red);
-            }
-            catch (Exception ex)
-            {
-                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, ex.Message, Color.White, Color.Red);
-            }
-
-
-        }
+            
+    
         private void button1_Click(object sender, EventArgs e)
         {
             ClearBox();
