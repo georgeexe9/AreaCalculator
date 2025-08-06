@@ -41,25 +41,36 @@ namespace AreaCalculator.Helpers
             InformationalLabel.BackColor = backcolor;
 
         }
-        
-        public static bool VerifyValidation(TextBox SideABox, TextBox SideBBox, out double sideA, out double sideB)
+        /// <summary>
+        /// Валидира страните дали са числови стойности 
+        /// (3 overloads според трита вида триъгълници)
+        /// </summary>
+        /// <param name="SideABox"></param>
+        /// <param name="SideBBox"></param>
+        /// <param name="sideA"></param>
+        /// <param name="sideB"></param>
+        /// <returns></returns>
+        public static bool VerifyValidationIsOk(TextBox SideABox, TextBox SideBBox, out double sideA, out double sideB)
         {
+
             sideB = 0;
             return double.TryParse(SideABox.Text, out sideA) &&
             double.TryParse(SideBBox.Text, out sideB);
         }
-        public static bool VerifyValidation(TextBox SideABox, TextBox SideBBox, TextBox SideCBox, TextBox HeightBox, out double sideA, out double sideB, out double sideC, out double height)
+
+        public static bool VerifyValidationIsOk(TextBox SideABox, TextBox SideBBox, TextBox SideCBox, TextBox HeightBox, out double sideA, out double sideB, out double sideC, out double height)
         {
-            
+
             sideB = 0;
             sideC = 0;
             height = 0;
-             return double.TryParse(SideABox.Text, out sideA) &&
-             double.TryParse(SideBBox.Text, out sideB) &&
-             double.TryParse(SideCBox.Text, out sideC) &&
-             double.TryParse(HeightBox.Text, out height);
+            return double.TryParse(SideABox.Text, out sideA) &&
+            double.TryParse(SideBBox.Text, out sideB) &&
+            double.TryParse(SideCBox.Text, out sideC) &&
+            double.TryParse(HeightBox.Text, out height);
         }
-        public static bool VerifyValidation(TextBox SideABox, out double sideA)
+
+        public static bool VerifyValidationIsOk(TextBox SideABox, out double sideA)
         {
             return double.TryParse(SideABox.Text, out sideA);
         }
