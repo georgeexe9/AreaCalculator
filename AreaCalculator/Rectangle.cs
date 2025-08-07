@@ -1,11 +1,11 @@
 ﻿namespace AreaCalculator
 {
     //съжалявам, но extends е по-добре от ":"
-   
+
 
     internal class Rectangle : Shape
     {
-       
+
         public double Sidea { get; set; }
         public double Sideb { get; set; }
 
@@ -20,17 +20,17 @@
         }
 
         public override double CalculateArea()
-        { 
+        {
             return Sidea * Sideb;
         }
         public override double CalculatePerimeter()
         {
-             return 2 * (Sidea + Sideb);
-            
+            return 2 * (Sidea + Sideb);
+
         }
         public override double CalculateDiagonal()
         {
-            return Math.Sqrt(Math.Pow(Sidea,2) + Math.Pow(Sideb,2));
+            return Math.Sqrt(Math.Pow(Sidea, 2) + Math.Pow(Sideb, 2));
         }
         public override string GetShapeName()
         {

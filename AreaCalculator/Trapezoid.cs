@@ -9,7 +9,7 @@
         public double SideD { get; set; }
         public double Height { get; set; }
 
-        public Trapezoid(double sideA, double sideB,double sideC,double sideD, double height)
+        public Trapezoid(double sideA, double sideB, double sideC, double sideD, double height)
         {
 
             if (sideA <= 0)
@@ -35,16 +35,16 @@
                 throw new ArgumentException("Височината трябва да бъде по-голяма от 0");
             }
             double difference = Math.Abs(sideA - sideB);
-            if (height >  difference)
+            if (height > difference)
             {
                 throw new ArgumentException("Височината не може да бъде по-голяма от разликата на основите! ");
             }
-            
-            if (sideC + sideD  < difference)
+
+            if (sideC + sideD < difference)
             {
                 throw new ArgumentException("Страната c и страната d не могат да се свържат, моля проверете дължините и височината");
             }
-            
+
             SideA = sideA;
             SideB = sideB;
             SideC = sideC;
@@ -53,7 +53,7 @@
         }
         public override double CalculateArea()
         {
-            
+
             return 0.5 * (SideA + SideB) * Height;
         }
         public override double CalculatePerimeter()

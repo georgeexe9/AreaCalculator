@@ -1,12 +1,10 @@
 ﻿using AreaCalculator.Helpers;
 using AreaCalculator.Triangles;
-using System.Reflection.Metadata;
 
 namespace AreaCalculator
 {
     /// <summary>
     /// Представлява UserControl отговорен за визуализацията и инстанцирането на различните триъгълници
-    ///
     /// </summary>
     public partial class TriangleForm : UserControl
     {
@@ -16,7 +14,7 @@ namespace AreaCalculator
         public double sideC;
         public double height;
         public double area;
-        public double perimeter;      
+        public double perimeter;
 
         public TriangleForm()
         {
@@ -110,53 +108,52 @@ namespace AreaCalculator
         private void CalculateTriangle()
         {
             try
-            { 
-                   //Взима индекса на текущия избран триъгълник(ред) от ComboBox
-                    triangleType = TriangleChoiceBox.SelectedIndex;
-                    if (triangleType == 0)
-                    {
-                        Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Няма избран триъгълник!", Color.White, Color.Red);
-                        ResetAllTextBoxes();
-                    }
-                    switch (triangleType)
-                    {
-                        case 1:
+            {
+                //Взима индекса на текущия избран триъгълник(ред(string)) от ComboBox
+                //int triangleType = 0 - "Избери триъгълник"
+                //int triangleType =  1 - Правоъгълен триъгълник, 2 - Произволен триъгълник, 3 - Равнобедрен, 4 - Равностранен
+                triangleType = TriangleChoiceBox.SelectedIndex;
+
+                if (triangleType == 0)
+                {
+                    Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Няма избран триъгълник!", Color.White, Color.Red);
+                    ResetAllTextBoxes();
+                }
+                switch (triangleType)
+                {
+                    case 1:
                         //Правоъгълен триъгълник
                         CalculateRightTriangle();
                         break;
-                        //Произволен триъгълник
-                        case 2:
+                    //Произволен триъгълник
+                    case 2:
                         CalculateTriangles();
                         break;
-                        //Равнобедрен триъгълник
-                        case 3:
+                    //Равнобедрен триъгълник
+                    case 3:
                         CalculateIsoscelestriangle();
                         break;
-                        //Равностранен триъгълник
-                        case 4:
+                    //Равностранен триъгълник
+                    case 4:
                         CalculateEquilateralTriangle();
                         break;
-                        //Ако не е избран триъгълник (или друга причина)
-                        default:
-                            Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Няма такъв триъгълник! Неподдържана фигура!", Color.White, Color.Red);
+                    //Ако не е избран триъгълник (или друга причина)
+                    default:
+                        Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Няма такъв триъгълник! Неподдържана фигура!", Color.White, Color.Red);
                         break;
-                    }
-                }
-                catch (FormatException)
-                {
-                    Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
-                }
-                catch (ArgumentException ex)
-                {
-                    Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, ex.Message, Color.White, Color.Red);
-                }
-                catch (Exception ex)
-                {
-                    Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, ex.Message, Color.White, Color.Red);
                 }
             }
-            
-    
+            catch (FormatException)
+            {
+                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
+            }
+            catch (ArgumentException ex)
+            {
+                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, ex.Message, Color.White, Color.Red);
+            }
+        }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             ClearBox();
@@ -235,7 +232,7 @@ namespace AreaCalculator
             {
                 Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови\n стойности!", Color.White, Color.Red);
             }
-            
+
         }
     }
 }

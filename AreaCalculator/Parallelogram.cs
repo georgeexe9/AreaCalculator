@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AreaCalculator
+﻿namespace AreaCalculator
 {
     internal class Parallelogram : Shape
     {
-        public double Side { get;  set; }
-        public double SideB {  get; set; }
+        public double Side { get; set; }
+        public double SideB { get; set; }
         public double Height { get; set; }
         public double Angle { get; set; }
 
-        public Parallelogram(double side, double height, double sideb, double angle) 
+        public Parallelogram(double side, double height, double sideb, double angle)
         {
-          //конструктора е чувствителен, ще иска и трите стойности
+            //конструктора е чувствителен, ще иска и трите стойности
             if (side <= 0)
             {
                 throw new ArgumentException("Страната на успоредника трябва да бъде по-голяма от 0");
@@ -36,7 +30,7 @@ namespace AreaCalculator
             SideB = sideb;
             Height = height;
             Angle = angle;
-            
+
         }
         public override double CalculateArea()
         {
@@ -44,17 +38,17 @@ namespace AreaCalculator
         }
         public override double CalculatePerimeter()
         {
-            return 2 * (Side +  SideB);
+            return 2 * (Side + SideB);
         }
         public override double CalculateDiagonal()
         {
             double radians = Angle * Math.PI / 180;
-            return Math.Sqrt(Math.Pow(Side,2)+ Math.Pow(SideB,2) + 2 * Side * SideB * Math.Cos(radians));
+            return Math.Sqrt(Math.Pow(Side, 2) + Math.Pow(SideB, 2) + 2 * Side * SideB * Math.Cos(radians));
         }
         public override string GetShapeName()
         {
             return "Успоредник";
         }
     }
-    
+
 }

@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AreaCalculator.Triangles
+﻿namespace AreaCalculator.Triangles
 {
     internal class Isoscelestriangle : Shape
 
     {
         public double Side { get; set; }
         public double BaseSide { get; set; }
-        
+
 
         public Isoscelestriangle(double side, double baseSide)
         {

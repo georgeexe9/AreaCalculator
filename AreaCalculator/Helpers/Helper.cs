@@ -8,6 +8,7 @@ namespace AreaCalculator.Helpers
 
     public static class Helper
     {
+
         //показва кратка информация за фигурата
         public static void ShowInformationalPanel(Panel Infopanel, Label formulas, Label TriangleName, string shape, string formula)
         {
@@ -58,7 +59,8 @@ namespace AreaCalculator.Helpers
             double.TryParse(SideBBox.Text, out sideB);
         }
 
-        public static bool VerifyValidationIsOk(TextBox SideABox, TextBox SideBBox, TextBox SideCBox, TextBox HeightBox, out double sideA, out double sideB, out double sideC, out double height)
+        public static bool VerifyValidationIsOk(TextBox SideABox, TextBox SideBBox, TextBox SideCBox, 
+            TextBox HeightBox, out double sideA, out double sideB, out double sideC, out double height)
         {
 
             sideB = 0;

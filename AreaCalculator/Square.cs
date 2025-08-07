@@ -6,7 +6,7 @@
 
         public Square(double sidea)
         {
-           
+
             if (sidea <= 0)
             {
                 throw new ArgumentException("Страната на квадрата трябва да бъде по-голяма от 0");

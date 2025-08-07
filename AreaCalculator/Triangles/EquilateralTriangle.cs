@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AreaCalculator.Triangles
+﻿namespace AreaCalculator.Triangles
 {
     internal class EquilateralTriangle : Shape
     {
@@ -21,7 +15,7 @@ namespace AreaCalculator.Triangles
         }
         public override double CalculateArea()
         {
-            return (Side * Side* Math.Sqrt(3)) / 4;
+            return (Side * Side * Math.Sqrt(3)) / 4;
         }
         public override double CalculatePerimeter()
         {
