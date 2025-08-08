@@ -1,12 +1,12 @@
-﻿//Written by George
-namespace AreaCalculator.Helpers
+﻿namespace AreaCalculator.Helpers
 {
     /// <summary>
     /// Helper е статичен клас, който съдържа статични методи за показване, валидиране и визуализация на данни и съобщения в потребителския интерфейс. Както информация,
     /// така и за грешки. Не може да се инстанцира.
+    /// 
     /// </summary>
 
-    public static class Helper
+    public  static class Helper
     {
 
         //показва кратка информация за фигурата
@@ -59,7 +59,7 @@ namespace AreaCalculator.Helpers
             double.TryParse(SideBBox.Text, out sideB);
         }
 
-        public static bool VerifyValidationIsOk(TextBox SideABox, TextBox SideBBox, TextBox SideCBox, 
+        public static bool VerifyValidationIsOk(TextBox SideABox, TextBox SideBBox, TextBox SideCBox,
             TextBox HeightBox, out double sideA, out double sideB, out double sideC, out double height)
         {
 
@@ -76,6 +76,53 @@ namespace AreaCalculator.Helpers
         {
             return double.TryParse(SideABox.Text, out sideA);
         }
+
+
+
+        /// <summary>
+        /// Конфигурира базов дизайн на listSummary
+        /// </summary>
+        /// <param name="ListView"></param>
+        public static void ConfigureListView(ListView listSummary)
+        {
+            listSummary.View = View.Details;
+
+            listSummary.Columns.Add("Кратка информация:", -2, HorizontalAlignment.Left);
+
+        }
+        /// <summary>
+        /// Изтрива всеки елемент от listSummary
+        /// </summary>
+        /// <param name="listSummary"></param>
+        public static void ClearListView(ListView listSummary)
+        {
+            if (listSummary.Items.Count > 0)
+            {
+                listSummary.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Няма нищо за изтриване!");
+            }
+        }
+
+
+        /// <summary>
+        /// Вмъква информацията в listSummary
+        /// </summary>
+        /// <param name="listSummary"></param>
+        /// <param name="summary"></param>
+        public static void FillListSummary(ListView listSummary, string summary)
+        {
+            ClearListView(listSummary);
+            ConfigureListView(listSummary);
+            if (string.IsNullOrEmpty(summary))
+            {
+                summary = "Няма информация!";
+            }
+            listSummary.Items.Add(summary);
+        }
+
 
 
     }

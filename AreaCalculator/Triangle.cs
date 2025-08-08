@@ -48,7 +48,7 @@ namespace AreaCalculator
         {
             return Side + SideB + SideC;
         }
-        [Obsolete]
+        [Obsolete("Този метод ще хвърчи през прозореца, използвайте GetShapeInfo()")]
         public override string GetShapeName()
         {
             return "Триъгълник";
@@ -57,13 +57,13 @@ namespace AreaCalculator
         public override string GetShapeInfo()
         {
             StringBuilder newSBS = new StringBuilder();
-            newSBS.AppendLine($"Фигура: Триъгълник");
-            newSBS.AppendLine($"Страна a:{Side}");
-            newSBS.AppendLine($"Страна b:{SideB}");
-            newSBS.AppendLine($"Страна c:{SideC}");
+            newSBS.AppendLine($"Фигура: Триъгълник\n");
+            newSBS.AppendLine($"Страна a: {Side}\n");
+            newSBS.AppendLine($"Страна b: {SideB}\n");
+            newSBS.AppendLine($"Страна c: {SideC}\n");
             newSBS.AppendLine($"Височина h: {Height}");
-            newSBS.AppendLine($"Лице/Площ S - {CalculateArea()}");
-            newSBS.AppendLine($"Периметър P - {CalculatePerimeter()}");
+            newSBS.AppendLine($"Лице/Площ S - {CalculateArea()}\n");
+            newSBS.AppendLine($"Периметър P - {CalculatePerimeter()}\n");
             return newSBS.ToString();
         }
 

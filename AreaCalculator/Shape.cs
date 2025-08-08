@@ -14,11 +14,12 @@ namespace AreaCalculator
         public abstract double CalculateArea();
 
         //връща пълна информация за фигурата
-        public virtual string GetShapeInfo()
+        //not required for now
+        public virtual string GetShapeInfo() 
         {
-            //търси логика в другите класове в тва assembly
-            throw new NotSupportedException("temporary method");
+            throw new NotSupportedException("не днес, не си познал!");
         }
+        
 
         //STANDBY METHOD ;) 
         [Obsolete("THROW OUT OF THE WINDOWWW!, Use GetShapeInfo instead dear")]
@@ -26,11 +27,9 @@ namespace AreaCalculator
         {
             throw new NotSupportedException("Overrides in other classes");
         }
-        //virtual - not required
-        public virtual double CalculatePerimeter()
-        {
-            throw new NotSupportedException("Calculates Perimeter in child classes");
-        }
+        
+        public abstract double CalculatePerimeter();
+        
         public virtual void Draw()
         {
             throw new NotSupportedException("I do not touch that shit");
@@ -43,8 +42,8 @@ namespace AreaCalculator
         {
 
             StringBuilder newSBS = new StringBuilder();
-            newSBS.Append("Благодаря, че използвахте калкулатора! Кратка информация:\n" +
-                        $"{GetShapeInfo}");
+            newSBS.Append("Благодаря, че използвахте калкулатора!\n  Кратка информация:\n" +
+                        $"{GetShapeInfo()}");
             return newSBS.ToString();
         }
 

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TriangleForm));
             SideABox = new TextBox();
             SideBBox = new TextBox();
             SideCBox = new TextBox();
@@ -41,21 +40,19 @@
             HeightLabel = new Label();
             SideALabel = new Label();
             panel1 = new Panel();
-            ResetTriangles = new Button();
             panelInfo = new Panel();
             InformationalLabel = new Label();
-            label3 = new Label();
-            pictureBox1 = new PictureBox();
+            ResetTriangles = new Button();
             formulas = new Label();
             label8 = new Label();
             TriangleChoiceBox = new ComboBox();
             TriangleName = new Label();
             Infopanel = new Panel();
-            formula = new Label();
             NoTriangleLabel = new Label();
+            formula = new Label();
+            listSummary = new ListView();
             panel1.SuspendLayout();
             panelInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             Infopanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -199,18 +196,6 @@
             panel1.Size = new Size(358, 450);
             panel1.TabIndex = 20;
             // 
-            // ResetTriangles
-            // 
-            ResetTriangles.BackColor = Color.White;
-            ResetTriangles.FlatStyle = FlatStyle.Flat;
-            ResetTriangles.Location = new Point(297, 93);
-            ResetTriangles.Name = "ResetTriangles";
-            ResetTriangles.Size = new Size(31, 25);
-            ResetTriangles.TabIndex = 23;
-            ResetTriangles.Text = "X";
-            ResetTriangles.UseVisualStyleBackColor = false;
-            ResetTriangles.Click += ResetTriangles_Click;
-            // 
             // panelInfo
             // 
             panelInfo.BackColor = Color.FromArgb(33, 47, 83);
@@ -231,26 +216,17 @@
             InformationalLabel.TabIndex = 0;
             InformationalLabel.Text = "label7";
             // 
-            // label3
+            // ResetTriangles
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(143, 43);
-            label3.Name = "label3";
-            label3.Size = new Size(81, 20);
-            label3.TabIndex = 1;
-            label3.Text = "Формули:";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(55, 126);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(263, 170);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 21;
-            pictureBox1.TabStop = false;
+            ResetTriangles.BackColor = Color.White;
+            ResetTriangles.FlatStyle = FlatStyle.Flat;
+            ResetTriangles.Location = new Point(297, 93);
+            ResetTriangles.Name = "ResetTriangles";
+            ResetTriangles.Size = new Size(31, 25);
+            ResetTriangles.TabIndex = 23;
+            ResetTriangles.Text = "X";
+            ResetTriangles.UseVisualStyleBackColor = false;
+            ResetTriangles.Click += ResetTriangles_Click;
             // 
             // formulas
             // 
@@ -282,7 +258,7 @@
             TriangleChoiceBox.ForeColor = Color.White;
             TriangleChoiceBox.FormattingEnabled = true;
             TriangleChoiceBox.Items.AddRange(new object[] { "Правоъгълен триъгълник", "Произволен триъгълник", "Равнобедрен триъгълник", "Равностранен триъгълник" });
-            TriangleChoiceBox.Location = new Point(106, 93);
+            TriangleChoiceBox.Location = new Point(103, 93);
             TriangleChoiceBox.Name = "TriangleChoiceBox";
             TriangleChoiceBox.RightToLeft = RightToLeft.No;
             TriangleChoiceBox.Size = new Size(185, 25);
@@ -303,26 +279,14 @@
             // Infopanel
             // 
             Infopanel.BackColor = Color.FromArgb(41, 54, 89);
+            Infopanel.Controls.Add(listSummary);
             Infopanel.Controls.Add(formula);
-            Infopanel.Controls.Add(label3);
-            Infopanel.Controls.Add(pictureBox1);
             Infopanel.Controls.Add(TriangleName);
             Infopanel.Controls.Add(formulas);
             Infopanel.Location = new Point(0, 135);
             Infopanel.Name = "Infopanel";
             Infopanel.Size = new Size(380, 315);
             Infopanel.TabIndex = 26;
-            // 
-            // formula
-            // 
-            formula.AutoSize = true;
-            formula.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            formula.ForeColor = Color.White;
-            formula.Location = new Point(143, 76);
-            formula.Name = "formula";
-            formula.Size = new Size(81, 20);
-            formula.TabIndex = 26;
-            formula.Text = "Формули:";
             // 
             // NoTriangleLabel
             // 
@@ -335,6 +299,23 @@
             NoTriangleLabel.TabIndex = 27;
             NoTriangleLabel.Text = "Няма избран триъгълник!";
             NoTriangleLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // formula
+            // 
+            formula.AutoSize = true;
+            formula.Location = new Point(158, 48);
+            formula.Name = "formula";
+            formula.Size = new Size(49, 15);
+            formula.TabIndex = 26;
+            formula.Text = "formula";
+            // 
+            // listSummary
+            // 
+            listSummary.Location = new Point(45, 78);
+            listSummary.Name = "listSummary";
+            listSummary.Size = new Size(300, 195);
+            listSummary.TabIndex = 27;
+            listSummary.UseCompatibleStateImageBehavior = false;
             // 
             // TriangleForm
             // 
@@ -354,7 +335,6 @@
             panel1.PerformLayout();
             panelInfo.ResumeLayout(false);
             panelInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             Infopanel.ResumeLayout(false);
             Infopanel.PerformLayout();
             ResumeLayout(false);
@@ -377,15 +357,14 @@
         private Panel panel1;
         private Panel panelInfo;
         private Label InformationalLabel;
-        private Label label3;
-        private PictureBox pictureBox1;
         private Label formulas;
         private Label label8;
         private ComboBox TriangleChoiceBox;
         private Label TriangleName;
         private Panel Infopanel;
-        private Label formula;
         private Label NoTriangleLabel;
         private Button ResetTriangles;
+        private Label formula;
+        private ListView listSummary;
     }
 }

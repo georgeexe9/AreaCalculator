@@ -4,7 +4,8 @@ using AreaCalculator.Triangles;
 namespace AreaCalculator
 {
     /// <summary>
-    /// Представлява UserControl отговорен за визуализацията и инстанцирането на различните триъгълници
+    ///  Summary:
+    ///      
     /// </summary>
     public partial class TriangleForm : UserControl
     {
@@ -16,6 +17,8 @@ namespace AreaCalculator
         public double area;
         public double perimeter;
 
+
+
         public TriangleForm()
         {
             InitializeComponent();
@@ -23,6 +26,9 @@ namespace AreaCalculator
             Infopanel.Visible = false;
             TriangleChoiceBox.Items.Insert(0, "-Избери триъгълник-");
             TriangleChoiceBox.SelectedIndex = 0;
+            
+            
+
 
         }
 
@@ -111,7 +117,10 @@ namespace AreaCalculator
             {
                 //Взима индекса на текущия избран триъгълник(ред(string)) от ComboBox
                 //int triangleType = 0 - "Избери триъгълник"
-                //int triangleType =  1 - Правоъгълен триъгълник, 2 - Произволен триъгълник, 3 - Равнобедрен, 4 - Равностранен
+                //int triangleType =  1 - Правоъгълен триъгълник,
+                //2 - Произволен триъгълник,
+                //3 - Равнобедрен,
+                //4 - Равностранен
                 triangleType = TriangleChoiceBox.SelectedIndex;
 
                 if (triangleType == 0)
@@ -178,12 +187,15 @@ namespace AreaCalculator
                 Shape triangle = new Triangle(sideA, sideB, sideC, height);
                 area = triangle.CalculateArea();
                 perimeter = triangle.CalculatePerimeter();
+                string summaryInfo = triangle.GetSummary();
+                Helper.FillListSummary(listSummary, summaryInfo);
                 Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
             }
             else
             {
                 Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови\n стойности!", Color.White, Color.Red);
             }
+           
         }
         public void CalculateRightTriangle()
         {
@@ -192,6 +204,8 @@ namespace AreaCalculator
                 Shape rightTriangle = new RightTriangle(sideA, sideB);
                 area = rightTriangle.CalculateArea();
                 perimeter = rightTriangle.CalculatePerimeter();
+                string summaryInfo = rightTriangle.GetSummary();
+                Helper.FillListSummary(listSummary, summaryInfo);
                 Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
             }
             else
@@ -207,9 +221,11 @@ namespace AreaCalculator
                 Shape isoscelestriangle = new Isoscelestriangle(sideA, sideB);
                 area = isoscelestriangle.CalculateArea();
                 perimeter = isoscelestriangle.CalculatePerimeter();
-                //tried casting for fist time.
+                //tried casting for first time
+                //Кажи на Равнобедрения триъгълник, че е равнобедрен триъгълник, а не общо , че е фигура ;)
                 double h = ((Isoscelestriangle)isoscelestriangle).Height;
-
+                string summaryInfo = isoscelestriangle.GetSummary();
+                Helper.FillListSummary(listSummary,summaryInfo);
                 HeightBox.Text = h.ToString();
                 Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
             }
@@ -226,6 +242,8 @@ namespace AreaCalculator
                 Shape equilateralTriangle = new EquilateralTriangle(sideA);
                 area = equilateralTriangle.CalculateArea();
                 perimeter = equilateralTriangle.CalculatePerimeter();
+                string summaryInfo = equilateralTriangle.GetSummary();
+                Helper.FillListSummary(listSummary,summaryInfo);
                 Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
             }
             else
@@ -234,5 +252,9 @@ namespace AreaCalculator
             }
 
         }
+        
+        
+
+
     }
 }

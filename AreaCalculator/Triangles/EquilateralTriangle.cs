@@ -1,9 +1,12 @@
-﻿namespace AreaCalculator.Triangles
+﻿using System.Text;
+
+namespace AreaCalculator.Triangles
 {
     internal class EquilateralTriangle : Shape
     {
-        //само една страна, равностранен триъгълник Side = Side = Side
+        //само едно пропърти, всичките страни равни! 
         public double Side { get; set; }
+
 
         public EquilateralTriangle(double side)
         {
@@ -20,6 +23,21 @@
         public override double CalculatePerimeter()
         {
             return 3 * Side;
+        }
+        [Obsolete("Ще се трие, използвай, GetShapeName()!")]
+        public override string GetShapeName()
+        {
+            return "Равнобедрен триъгълник";
+        }
+        public override string GetShapeInfo()
+        {
+            StringBuilder newSBS = new StringBuilder();
+            newSBS.AppendLine($"Равностранен триъгълник");
+            newSBS.AppendLine($"Страна {Side}, всички страни са еднакви!");
+            newSBS.AppendLine($"Лице/Площ - {CalculateArea()}");
+            newSBS.AppendLine($"Периметър/Обиколка - {CalculatePerimeter()}");
+            return newSBS.ToString();
+
         }
 
     }
