@@ -100,10 +100,7 @@
             {
                 listSummary.Clear();
             }
-            else
-            {
-                MessageBox.Show("Няма нищо за изтриване!");
-            }
+           
         }
 
 
@@ -112,15 +109,22 @@
         /// </summary>
         /// <param name="listSummary"></param>
         /// <param name="summary"></param>
-        public static void FillListSummary(ListView listSummary, string summary)
+        public static void FillListSummary(ListView listSummary, List<string> summaryList)
         {
             ClearListView(listSummary);
             ConfigureListView(listSummary);
-            if (string.IsNullOrEmpty(summary))
+            if(summaryList.Count < 0)
             {
-                summary = "Няма информация!";
+                return;
             }
-            listSummary.Items.Add(summary);
+            else
+            {
+                foreach (string item in summaryList)
+                {
+                    listSummary.Items.Add(item);
+                }
+            }
+                
         }
 
 

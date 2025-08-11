@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace AreaCalculator.Triangles
+﻿namespace AreaCalculator.Triangles
 {
     //Ще наследява Shape, а не Triangle
     internal class RightTriangle : Shape
@@ -46,16 +44,17 @@ namespace AreaCalculator.Triangles
         }
 
 
-        public override string GetSummary()
+        public override List<string> GetSummary()
         {
-            StringBuilder newSBS = new StringBuilder();
-            newSBS.AppendLine($"Фигура: Правоъгълен триъгълник");
-            newSBS.AppendLine($"Страна a:{SideA}");
-            newSBS.AppendLine($"Страна b:{SideB}");
-            newSBS.AppendLine($"Хипотенуза c:{Hypotenuse:F2}");
-            newSBS.AppendLine($"Лице/Площ S - {CalculateArea()}");
-            newSBS.AppendLine($"Периметър P - {CalculatePerimeter()}");
-            return newSBS.ToString();
+            return new List<string>
+            {
+                $"Правоъгълен триъгълник",
+                $"Страна а: {SideA}",
+                $"Страна b: {SideB}",
+                $"Хипотенуза c: {Hypotenuse:F2}",
+                $"Лице/Площ: {CalculateArea():F2}",
+                $"Периметър: {CalculatePerimeter():F2}"
+            };
         }
 
     }

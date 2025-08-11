@@ -110,6 +110,7 @@ namespace AreaCalculator
             }
 
         }
+      
 
         private void CalculateTriangle()
         {
@@ -132,19 +133,36 @@ namespace AreaCalculator
                 {
                     case 1:
                         //Правоъгълен триъгълник
-                        CalculateRightTriangle();
+                        if (Helper.VerifyValidationIsOk(SideABox,SideBBox,out sideA,out sideB))
+                        {
+                            var rightTriangle = new RightTriangle(sideA,sideB);
+                            GetCalculatedTriangle(rightTriangle);
+                        }
                         break;
                     //Произволен триъгълник
                     case 2:
-                        CalculateTriangles();
+                        if (Helper.VerifyValidationIsOk(SideABox,SideBBox,SideCBox,HeightBox,out sideA,out sideB,out sideC,out height))
+                        {
+                            var triangle = new Triangle(sideA,sideB,sideC, height);
+                            GetCalculatedTriangle(triangle);
+                        }
                         break;
                     //Равнобедрен триъгълник
                     case 3:
-                        CalculateIsoscelestriangle();
+                        if(Helper.VerifyValidationIsOk(SideABox,SideBBox, out sideA,out sideB))
+                        {
+                            var isosceleTriangle = new Isoscelestriangle(sideA, sideB);
+                            GetCalculatedTriangle(isosceleTriangle);
+                        }
                         break;
                     //Равностранен триъгълник
                     case 4:
-                        CalculateEquilateralTriangle();
+                       if(Helper.VerifyValidationIsOk(SideABox, out sideA))
+                        {
+                            var equilateralTriangle = new EquilateralTriangle(sideA);
+                            GetCalculatedTriangle(equilateralTriangle);
+               
+                        }
                         break;
                     //Ако не е избран триъгълник (или друга причина)
                     default:
@@ -180,80 +198,20 @@ namespace AreaCalculator
             ResetAllTextBoxes();
 
         }
-        public void CalculateTriangles()
+        private void GetCalculatedTriangle(Shape triangle)
         {
-            if (Helper.VerifyValidationIsOk(SideABox, SideBBox, SideCBox, HeightBox, out sideA, out sideB, out sideC, out height))
-            {
-                Shape triangle = new Triangle(sideA, sideB, sideC, height);
-                area = triangle.CalculateArea();
-                perimeter = triangle.CalculatePerimeter();
-                string summaryInfo = triangle.GetSummary();
-                Helper.FillListSummary(listSummary, summaryInfo);
-                Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
-            }
-            else
-            {
-                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови\n стойности!", Color.White, Color.Red);
-            }
-           
-        }
-        public void CalculateRightTriangle()
-        {
-            if (Helper.VerifyValidationIsOk(SideABox, SideBBox, out sideA, out sideB))
-            {
-                Shape rightTriangle = new RightTriangle(sideA, sideB);
-                area = rightTriangle.CalculateArea();
-                perimeter = rightTriangle.CalculatePerimeter();
-                string summaryInfo = rightTriangle.GetSummary();
-                Helper.FillListSummary(listSummary, summaryInfo);
-                Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
-            }
-            else
-            {
-                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови\n стойности!", Color.White, Color.Red);
-            }
+
+            area = triangle.CalculateArea();
+            perimeter = triangle.CalculatePerimeter();
+            List<string> summary = triangle.GetSummary();
+            Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
+            Helper.FillListSummary(listSummary, summary);
 
         }
-        private void CalculateIsoscelestriangle()
-        {
-            if (Helper.VerifyValidationIsOk(SideABox, SideABox, out sideA, out sideB))
-            {
-                Shape isoscelestriangle = new Isoscelestriangle(sideA, sideB);
-                area = isoscelestriangle.CalculateArea();
-                perimeter = isoscelestriangle.CalculatePerimeter();
-                //tried casting for first time
-                //Кажи на Равнобедрения триъгълник, че е равнобедрен триъгълник, а не общо , че е фигура ;)
-                double h = ((Isoscelestriangle)isoscelestriangle).Height;
-                string summaryInfo = isoscelestriangle.GetSummary();
-                Helper.FillListSummary(listSummary,summaryInfo);
-                HeightBox.Text = h.ToString();
-                Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
-            }
-            else
-            {
-                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови\n стойности!", Color.White, Color.Red);
-            }
 
-        }
-        private void CalculateEquilateralTriangle()
-        {
-            if (Helper.VerifyValidationIsOk(SideABox, out sideA))
-            {
-                Shape equilateralTriangle = new EquilateralTriangle(sideA);
-                area = equilateralTriangle.CalculateArea();
-                perimeter = equilateralTriangle.CalculatePerimeter();
-                string summaryInfo = equilateralTriangle.GetSummary();
-                Helper.FillListSummary(listSummary,summaryInfo);
-                Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
-            }
-            else
-            {
-                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови\n стойности!", Color.White, Color.Red);
-            }
 
-        }
-        
-        
+
+
 
 
     }

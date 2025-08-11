@@ -38,13 +38,13 @@ namespace AreaCalculator
         {
             throw new NotSupportedException("Only in rectangle and parallelogram");
         }
-        public virtual string GetSummary()
+        public virtual List<string> GetSummary()
         {
+            return new List<string>()
+            {
 
-            StringBuilder newSBS = new StringBuilder();
-            newSBS.Append("Благодаря, че използвахте калкулатора!\n  Кратка информация:\n" +
-                        $"{GetShapeInfo()}");
-            return newSBS.ToString();
+            };
+           
         }
 
 

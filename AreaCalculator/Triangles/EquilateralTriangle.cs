@@ -29,16 +29,16 @@ namespace AreaCalculator.Triangles
         {
             return "Равнобедрен триъгълник";
         }
-        public override string GetShapeInfo()
-        {
-            StringBuilder newSBS = new StringBuilder();
-            newSBS.AppendLine($"Равностранен триъгълник");
-            newSBS.AppendLine($"Страна {Side}, всички страни са еднакви!");
-            newSBS.AppendLine($"Лице/Площ - {CalculateArea()}");
-            newSBS.AppendLine($"Периметър/Обиколка - {CalculatePerimeter()}");
-            return newSBS.ToString();
+        //public override string GetShapeInfo()
+        //{
+        //    StringBuilder newSBS = new StringBuilder();
+        //    newSBS.AppendLine($"Равностранен триъгълник");
+        //    newSBS.AppendLine($"Страна {Side}, всички страни са еднакви!");
+        //    newSBS.AppendLine($"Лице/Площ - {CalculateArea()}");
+        //    newSBS.AppendLine($"Периметър/Обиколка - {CalculatePerimeter()}");
+        //    return newSBS.ToString();
 
-        }
+        //}
 
     }
 

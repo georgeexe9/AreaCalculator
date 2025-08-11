@@ -48,9 +48,9 @@
             TriangleChoiceBox = new ComboBox();
             TriangleName = new Label();
             Infopanel = new Panel();
-            NoTriangleLabel = new Label();
-            formula = new Label();
             listSummary = new ListView();
+            formula = new Label();
+            NoTriangleLabel = new Label();
             panel1.SuspendLayout();
             panelInfo.SuspendLayout();
             Infopanel.SuspendLayout();
@@ -288,6 +288,25 @@
             Infopanel.Size = new Size(380, 315);
             Infopanel.TabIndex = 26;
             // 
+            // listSummary
+            // 
+            listSummary.BackColor = SystemColors.MenuBar;
+            listSummary.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+            listSummary.Location = new Point(45, 78);
+            listSummary.Name = "listSummary";
+            listSummary.Size = new Size(300, 195);
+            listSummary.TabIndex = 27;
+            listSummary.UseCompatibleStateImageBehavior = false;
+            // 
+            // formula
+            // 
+            formula.AutoSize = true;
+            formula.Location = new Point(158, 48);
+            formula.Name = "formula";
+            formula.Size = new Size(49, 15);
+            formula.TabIndex = 26;
+            formula.Text = "formula";
+            // 
             // NoTriangleLabel
             // 
             NoTriangleLabel.BackColor = Color.Transparent;
@@ -299,23 +318,6 @@
             NoTriangleLabel.TabIndex = 27;
             NoTriangleLabel.Text = "Няма избран триъгълник!";
             NoTriangleLabel.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // formula
-            // 
-            formula.AutoSize = true;
-            formula.Location = new Point(158, 48);
-            formula.Name = "formula";
-            formula.Size = new Size(49, 15);
-            formula.TabIndex = 26;
-            formula.Text = "formula";
-            // 
-            // listSummary
-            // 
-            listSummary.Location = new Point(45, 78);
-            listSummary.Name = "listSummary";
-            listSummary.Size = new Size(300, 195);
-            listSummary.TabIndex = 27;
-            listSummary.UseCompatibleStateImageBehavior = false;
             // 
             // TriangleForm
             // 
