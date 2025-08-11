@@ -6,7 +6,7 @@
     /// 
     /// </summary>
 
-    public  static class Helper
+    public static class Helper
     {
 
         //показва кратка информация за фигурата
@@ -80,27 +80,28 @@
 
 
         /// <summary>
-        /// Конфигурира базов дизайн на listSummary
+        /// Конфигурира базов дизайн на listViewSummary
         /// </summary>
         /// <param name="ListView"></param>
-        public static void ConfigureListView(ListView listSummary)
+        public static void ConfigureListView(ListView listViewSummary)
         {
-            listSummary.View = View.Details;
+            listViewSummary.View = View.Details;
 
-            listSummary.Columns.Add("Кратка информация:", -2, HorizontalAlignment.Left);
+            listViewSummary.Columns.Add("Кратка информация:", -2, HorizontalAlignment.Left);
 
         }
         /// <summary>
         /// Изтрива всеки елемент от listSummary
         /// </summary>
         /// <param name="listSummary"></param>
-        public static void ClearListView(ListView listSummary)
+        public static void ClearListView(ListView listViewSummary)
         {
-            if (listSummary.Items.Count > 0)
+            if (listViewSummary.Items.Count > 0)
             {
-                listSummary.Clear();
+                listViewSummary.Clear();
             }
            
+
         }
 
 
@@ -109,22 +110,16 @@
         /// </summary>
         /// <param name="listSummary"></param>
         /// <param name="summary"></param>
-        public static void FillListSummary(ListView listSummary, List<string> summaryList)
+        public static void FillListSummary(ListView listViewSummary, List<string> summaryList)
         {
-            ClearListView(listSummary);
-            ConfigureListView(listSummary);
-            if(summaryList.Count < 0)
+            ClearListView(listViewSummary);
+            ConfigureListView(listViewSummary);
+            foreach (string item in summaryList)
             {
-                return;
+                listViewSummary.Items.Add(item);
             }
-            else
-            {
-                foreach (string item in summaryList)
-                {
-                    listSummary.Items.Add(item);
-                }
-            }
-                
+
+
         }
 
 

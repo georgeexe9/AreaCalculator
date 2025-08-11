@@ -16,6 +16,7 @@ namespace AreaCalculator
         public double height;
         public double area;
         public double perimeter;
+        
 
 
 
@@ -26,8 +27,15 @@ namespace AreaCalculator
             Infopanel.Visible = false;
             TriangleChoiceBox.Items.Insert(0, "-Избери триъгълник-");
             TriangleChoiceBox.SelectedIndex = 0;
-            
-            
+
+        }
+        public enum TriangleChoices
+        {
+            Non = 0,
+            Right_Triangle = 1,
+            Triangle = 2,
+            IsoscelesTriangle = 3,
+            EquilateralTriangle = 4,
 
 
         }
@@ -110,58 +118,52 @@ namespace AreaCalculator
             }
 
         }
-      
+
 
         private void CalculateTriangle()
         {
             try
             {
-                //Взима индекса на текущия избран триъгълник(ред(string)) от ComboBox
-                //int triangleType = 0 - "Избери триъгълник"
-                //int triangleType =  1 - Правоъгълен триъгълник,
-                //2 - Произволен триъгълник,
-                //3 - Равнобедрен,
-                //4 - Равностранен
                 triangleType = TriangleChoiceBox.SelectedIndex;
-
-                if (triangleType == 0)
+                TriangleChoices type = (TriangleChoices)triangleType;
+                switch (type)
                 {
-                    Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Няма избран триъгълник!", Color.White, Color.Red);
-                    ResetAllTextBoxes();
-                }
-                switch (triangleType)
-                {
-                    case 1:
+                    case TriangleChoices.Non:
+                        MessageBox.Show("Няма избран триъгълник!","Информация",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        //Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Няма избран триъгълник!", Color.White, Color.Red);
+                        ResetAllTextBoxes();
+                        break;
+                    case TriangleChoices.Right_Triangle:
                         //Правоъгълен триъгълник
-                        if (Helper.VerifyValidationIsOk(SideABox,SideBBox,out sideA,out sideB))
+                        if (Helper.VerifyValidationIsOk(SideABox, SideBBox, out sideA, out sideB))
                         {
-                            var rightTriangle = new RightTriangle(sideA,sideB);
+                            var rightTriangle = new RightTriangle(sideA, sideB);
                             GetCalculatedTriangle(rightTriangle);
                         }
                         break;
                     //Произволен триъгълник
-                    case 2:
-                        if (Helper.VerifyValidationIsOk(SideABox,SideBBox,SideCBox,HeightBox,out sideA,out sideB,out sideC,out height))
+                    case TriangleChoices.Triangle:
+                        if (Helper.VerifyValidationIsOk(SideABox, SideBBox, SideCBox, HeightBox, out sideA, out sideB, out sideC, out height))
                         {
-                            var triangle = new Triangle(sideA,sideB,sideC, height);
+                            var triangle = new Triangle(sideA, sideB, sideC, height);
                             GetCalculatedTriangle(triangle);
                         }
                         break;
                     //Равнобедрен триъгълник
-                    case 3:
-                        if(Helper.VerifyValidationIsOk(SideABox,SideBBox, out sideA,out sideB))
+                    case TriangleChoices.IsoscelesTriangle:
+                        if (Helper.VerifyValidationIsOk(SideABox, SideBBox, out sideA, out sideB))
                         {
                             var isosceleTriangle = new Isoscelestriangle(sideA, sideB);
                             GetCalculatedTriangle(isosceleTriangle);
                         }
                         break;
                     //Равностранен триъгълник
-                    case 4:
-                       if(Helper.VerifyValidationIsOk(SideABox, out sideA))
+                    case TriangleChoices.EquilateralTriangle:
+                        if (Helper.VerifyValidationIsOk(SideABox, out sideA))
                         {
                             var equilateralTriangle = new EquilateralTriangle(sideA);
                             GetCalculatedTriangle(equilateralTriangle);
-               
+
                         }
                         break;
                     //Ако не е избран триъгълник (или друга причина)
@@ -190,6 +192,8 @@ namespace AreaCalculator
         private void TriangleChoiceBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             UITriangleControl();
+            Helper.ClearListView(listSummary);
+            ClearBox();
         }
 
         private void ResetTriangles_Click(object sender, EventArgs e)
@@ -206,6 +210,7 @@ namespace AreaCalculator
             List<string> summary = triangle.GetSummary();
             Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
             Helper.FillListSummary(listSummary, summary);
+
 
         }
 
