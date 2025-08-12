@@ -11,6 +11,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="images\**" />
+    <Compile Remove="Kvadratopodobni\**" />
+    <EmbeddedResource Remove="images\**" />
+    <EmbeddedResource Remove="Kvadratopodobni\**" />
+    <None Remove="images\**" />
+    <None Remove="Kvadratopodobni\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="22.ico" />
   </ItemGroup>
 
@@ -32,11 +41,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="images\" />
-    <Folder Include="Kvadratopodobni\" />
   </ItemGroup>
 
   <ItemGroup>

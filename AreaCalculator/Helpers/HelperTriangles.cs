@@ -3,24 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AreaCalculator.Helpers;
 using AreaCalculator.Triangles;
+
 
 namespace AreaCalculator.Helpers
 {
     /// <summary>
     /// Представлява статичен клас, пълен със статични методи, които помагат за правилната визуализация на 
-    /// UI контролите в TrianlgeControl прозореца
+    /// UI контролите в TrianlgeControl
+    /// САМО ЗА ТРИЪГЪЛНИЦИ, НЕ МОЖЕ ДА СЕ ИЗПОЛЗВА ЗА ДРУГИ ФИГУРИ
+    /// НЕ ПИПАЙ using AreaCalculator.Triangles; РАБОТЯТ ЗАЕДНО ❤️
     /// </summary>
     public static class HelperTriangles
     {
-        public static void ConfigureUILabels(ComboBox combo, Label SideALabel,
-        Label SideBLabel,
-        Panel infoPanel,
-        Label formulaLabel,
-        Label triangleNameLabel)
-        {
 
-        }
         public static void ConfigureUITextBox(TriangleChoices type, TextBox SideABox, TextBox SideBBox, TextBox SideCBox, TextBox HeightBox)
         {
 

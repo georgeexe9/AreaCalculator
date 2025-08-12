@@ -9,7 +9,7 @@ namespace AreaCalculator
     /// </summary>
     public partial class TriangleForm : UserControl
     {
-       
+
         private int triangleType;
         private double sideA;
         private double sideB;
@@ -25,7 +25,7 @@ namespace AreaCalculator
             panelInfo.Visible = false;
             Infopanel.Visible = false;
             Helper.ConfigureChoiceBox(TriangleChoiceBox);
-          
+
 
         }
 
@@ -66,14 +66,14 @@ namespace AreaCalculator
             HeightBox.Clear();
         }
         //Тва ще се изнася в Helper класа
-      
+
         private void CalculateTriangle()
         {
             try
             {
                 triangleType = TriangleChoiceBox.SelectedIndex;
                 TriangleChoices type = (TriangleChoices)triangleType;
-              
+
                 switch (type)
                 {
                     case TriangleChoices.Non:
@@ -134,16 +134,20 @@ namespace AreaCalculator
         {
             ClearBox();
         }
-
-        //Контрол над формите
-        private void TriangleChoiceBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void UIControlTriangle()
         {
             var type = (TriangleChoices)TriangleChoiceBox.SelectedIndex;
             string? nameTriangle = TriangleChoiceBox.GetItemText(TriangleChoiceBox.SelectedIndex);
             HelperTriangles.ConfigureUITextBox(type, SideABox, SideBBox, SideCBox, HeightBox);
-            HelperTriangles.ConfigureUITriangleLabels(type, SideALabel, SideBLabel,Infopanel, formula, InformationalLabel, nameTriangle);
+            HelperTriangles.ConfigureUITriangleLabels(type, SideALabel, SideBLabel, Infopanel, formula, InformationalLabel, nameTriangle);
             Helper.ClearListView(listSummary);
             ClearBox();
+        }
+
+        //Контрол над формите
+        private void TriangleChoiceBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UIControlTriangle();
         }
 
         private void ResetTriangles_Click(object sender, EventArgs e)
@@ -166,5 +170,7 @@ namespace AreaCalculator
             Helper.FillListSummary(listSummary, summary);
 
         }
+
+       
     }
 }

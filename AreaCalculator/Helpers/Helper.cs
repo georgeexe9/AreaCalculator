@@ -5,7 +5,7 @@ namespace AreaCalculator.Helpers
     /// <summary>
     /// Helper е статичен клас, който съдържа статични методи за показване, валидиране и визуализация на данни и съобщения в потребителския интерфейс. Както информация,
     /// така и за грешки. Не може да се инстанцира.
-    /// 
+    /// Обща логика за всички фигури
     /// </summary>
 
     public static class Helper
@@ -19,7 +19,6 @@ namespace AreaCalculator.Helpers
             TriangleChoiceBox.Items.Insert(0, "-Избери-");
             TriangleChoiceBox.FlatStyle = FlatStyle.System;
             TriangleChoiceBox.SelectedIndex = 0;
-
 
         }
 

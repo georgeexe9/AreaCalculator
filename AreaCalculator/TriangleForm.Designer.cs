@@ -264,6 +264,7 @@
             TriangleChoiceBox.Size = new Size(185, 25);
             TriangleChoiceBox.TabIndex = 24;
             TriangleChoiceBox.SelectedIndexChanged += TriangleChoiceBox_SelectedIndexChanged;
+       
             // 
             // TriangleName
             // 
