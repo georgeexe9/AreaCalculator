@@ -1,4 +1,6 @@
-﻿namespace AreaCalculator.Helpers
+﻿using AreaCalculator.Triangles;
+
+namespace AreaCalculator.Helpers
 {
     /// <summary>
     /// Helper е статичен клас, който съдържа статични методи за показване, валидиране и визуализация на данни и съобщения в потребителския интерфейс. Както информация,
@@ -8,6 +10,18 @@
 
     public static class Helper
     {
+        /// <summary>
+        /// Конфигурира начални настройки на ComboBox
+        /// </summary>
+        /// <param name="TriangleChoiceBox"></param>
+        public static void ConfigureChoiceBox(ComboBox TriangleChoiceBox)
+        {
+            TriangleChoiceBox.Items.Insert(0, "-Избери-");
+            TriangleChoiceBox.FlatStyle = FlatStyle.System;
+            TriangleChoiceBox.SelectedIndex = 0;
+
+
+        }
 
         //показва кратка информация за фигурата
         public static void ShowInformationalPanel(Panel Infopanel, Label formulas, Label TriangleName, string shape, string formula)
@@ -76,7 +90,7 @@
         {
             return double.TryParse(SideABox.Text, out sideA);
         }
-
+        
 
 
         /// <summary>
@@ -100,7 +114,7 @@
             {
                 listViewSummary.Clear();
             }
-           
+
 
         }
 
@@ -109,11 +123,13 @@
         /// Вмъква информацията в listSummary
         /// </summary>
         /// <param name="listSummary"></param>
+        /// 
         /// <param name="summary"></param>
         public static void FillListSummary(ListView listViewSummary, List<string> summaryList)
         {
             ClearListView(listViewSummary);
             ConfigureListView(listViewSummary);
+
             foreach (string item in summaryList)
             {
                 listViewSummary.Items.Add(item);

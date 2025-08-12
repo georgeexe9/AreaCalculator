@@ -30,10 +30,7 @@ namespace AreaCalculator
         
         public abstract double CalculatePerimeter();
         
-        public virtual void Draw()
-        {
-            throw new NotSupportedException("I do not touch that shit");
-        }
+       
         public virtual double CalculateDiagonal()
         {
             throw new NotSupportedException("Only in rectangle and parallelogram");
@@ -42,7 +39,8 @@ namespace AreaCalculator
         {
             return new List<string>()
             {
-
+                //will return this if the getsummary is not yeat implemented
+                "Няма информация"
             };
            
         }

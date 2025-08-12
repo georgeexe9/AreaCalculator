@@ -5,38 +5,27 @@ namespace AreaCalculator
 {
     /// <summary>
     ///  Summary:
-    ///      
+    ///  Displays all about => TRIANGLES <=
     /// </summary>
     public partial class TriangleForm : UserControl
     {
+       
         private int triangleType;
-        public double sideA;
-        public double sideB;
-        public double sideC;
-        public double height;
-        public double area;
-        public double perimeter;
-        
-
-
+        private double sideA;
+        private double sideB;
+        private double sideC;
+        private double height;
+        private double area;
+        private double perimeter;
+        private List<string> summary = new List<string>();
 
         public TriangleForm()
         {
             InitializeComponent();
             panelInfo.Visible = false;
             Infopanel.Visible = false;
-            TriangleChoiceBox.Items.Insert(0, "-Избери триъгълник-");
-            TriangleChoiceBox.SelectedIndex = 0;
-
-        }
-        public enum TriangleChoices
-        {
-            Non = 0,
-            Right_Triangle = 1,
-            Triangle = 2,
-            IsoscelesTriangle = 3,
-            EquilateralTriangle = 4,
-
+            Helper.ConfigureChoiceBox(TriangleChoiceBox);
+          
 
         }
 
@@ -77,59 +66,18 @@ namespace AreaCalculator
             HeightBox.Clear();
         }
         //Тва ще се изнася в Helper класа
-        private void UITriangleControl()
-        {
-            //ResetAllTextBoxes();
-
-            triangleType = TriangleChoiceBox.SelectedIndex;
-            string? triangleName = TriangleChoiceBox.Items[triangleType]?.ToString();
-            //clear the selection
-            if (triangleName == null)
-            {
-
-                return;
-            }
-
-            switch (triangleType)
-            {
-                case 1:
-
-                    Helper.ShowInformationalPanel(Infopanel, formula, TriangleName, triangleName, "Area = (1/2) * a * b \n Perimeter = a + b + c");
-                    SideCBox.Enabled = false;
-                    HeightBox.Enabled = false;
-                    break;
-                case 2:
-                    Helper.ShowInformationalPanel(Infopanel, formula, TriangleName, triangleName, "Area= 0.5 * a * h \n Perimeter = a + b + c");
-
-                    break;
-                case 3:
-                    Helper.ShowInformationalPanel(Infopanel, formula, TriangleName, triangleName, "Area= (Base * Height) / 2 \n Perimeter = 2 * Side + Base");
-                    SideCBox.Enabled = false;
-                    SideALabel.Text = "Страна:";
-                    SideBLabel.Text = "Основа:";
-                    break;
-                case 4:
-                    Helper.ShowInformationalPanel(Infopanel, formula, TriangleName, triangleName, "Area= (Base * Height) / 2 \n Perimeter = 3 * Side");
-                    SideBBox.Enabled = false;
-                    SideCBox.Enabled = false;
-                    HeightBox.Enabled = false;
-                    SideALabel.Text = "Страна:";
-                    break;
-            }
-
-        }
-
-
+      
         private void CalculateTriangle()
         {
             try
             {
                 triangleType = TriangleChoiceBox.SelectedIndex;
                 TriangleChoices type = (TriangleChoices)triangleType;
+              
                 switch (type)
                 {
                     case TriangleChoices.Non:
-                        MessageBox.Show("Няма избран триъгълник!","Информация",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        MessageBox.Show("Няма избран триъгълник!", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Няма избран триъгълник!", Color.White, Color.Red);
                         ResetAllTextBoxes();
                         break;
@@ -182,7 +130,6 @@ namespace AreaCalculator
             }
         }
 
-
         private void button1_Click(object sender, EventArgs e)
         {
             ClearBox();
@@ -191,7 +138,10 @@ namespace AreaCalculator
         //Контрол над формите
         private void TriangleChoiceBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UITriangleControl();
+            var type = (TriangleChoices)TriangleChoiceBox.SelectedIndex;
+            string? nameTriangle = TriangleChoiceBox.GetItemText(TriangleChoiceBox.SelectedIndex);
+            HelperTriangles.ConfigureUITextBox(type, SideABox, SideBBox, SideCBox, HeightBox);
+            HelperTriangles.ConfigureUITriangleLabels(type, SideALabel, SideBLabel,Infopanel, formula, InformationalLabel, nameTriangle);
             Helper.ClearListView(listSummary);
             ClearBox();
         }
@@ -202,22 +152,19 @@ namespace AreaCalculator
             ResetAllTextBoxes();
 
         }
+        /// <summary>
+        /// Calculates area and perimeter of shape triangles object
+        /// </summary>
+        /// <param name="triangle"></param>
         private void GetCalculatedTriangle(Shape triangle)
         {
 
             area = triangle.CalculateArea();
             perimeter = triangle.CalculatePerimeter();
-            List<string> summary = triangle.GetSummary();
+            summary = triangle.GetSummary();
             Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
             Helper.FillListSummary(listSummary, summary);
 
-
         }
-
-
-
-
-
-
     }
 }
