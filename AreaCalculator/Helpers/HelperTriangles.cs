@@ -20,7 +20,7 @@ namespace AreaCalculator.Helpers
     {
     
 
-        public static void ConfigureUITextBox(TriangleUIControls UI, TriangleChoices type)
+        public static void ConfigureUITextBox(HelperTriangleUIControls UI, TriangleChoices type)
         {
 
             switch (type)
@@ -42,7 +42,7 @@ namespace AreaCalculator.Helpers
 
             }
         }
-        public static void ConfigureUITriangleLabels(TriangleUIControls UI,TriangleChoices type,
+        public static void ConfigureUITriangleLabels(HelperTriangleUIControls UI,TriangleChoices type,
         Panel infoPanel,
         Label formulaLabel,
         Label triangleNameLabel,
@@ -74,14 +74,14 @@ namespace AreaCalculator.Helpers
             }
         }
 
-        public static void ConfigureLabelsbyDefauth(TriangleUIControls UI)
+        public static void ConfigureLabelsbyDefauth(HelperTriangleUIControls UI)
         {
             UI.SideALabel.Text = "Страна а:";
             UI.SideBLabel.Text = "Страна b:";
             UI.SideCLabel.Text = "Страна c:";
             UI.HeightLabel.Text = "Височина h:";
         }
-        public static void ConfigureTextBoxesbyDefauth(TriangleUIControls UI)
+        public static void ConfigureTextBoxesbyDefauth(HelperTriangleUIControls UI)
         {
             UI.SideABox.Enabled = UI.SideABox.Visible = true;
             UI.SideBBox.Enabled = UI.SideBBox.Visible = true;

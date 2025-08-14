@@ -80,7 +80,7 @@
   <Class Name="AreaCalculator.RectangleControl" Collapsed="true">
     <Position X="27.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAABEAAICAAAAEgIICAAIAGBKIIAgAQAEBAAQAogAE=</HashCode>
+      <HashCode>AAAABEAAICAAABEgIICAAIAGBKIIAgAQAEBAAQAskAE=</HashCode>
       <FileName>RectangleControl.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -122,7 +122,7 @@
   <Class Name="AreaCalculator.TriangleForm" Collapsed="true">
     <Position X="27.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACQUABIiAQAJUgIACAAIAHBMIKAgAQAEBAQQA4ggE=</HashCode>
+      <HashCode>AAACQUABIiAQAJUgIACAAIAHBMIKAgAQAEBAQQA4kgE=</HashCode>
       <FileName>TriangleForm.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -141,14 +141,14 @@
   <Class Name="AreaCalculator.Helpers.Helper" Collapsed="true">
     <Position X="29" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAASIAAAAAAAAAAAAGAQARAABAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAASIAAAAAAAAAAAAGAQARAABAAAAAAAAAAAAAEAA=</HashCode>
       <FileName>Helpers\Helper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AreaCalculator.Helpers.HelperTriangles" Collapsed="true">
     <Position X="30.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAgAgIA=</HashCode>
       <FileName>Helpers\HelperTriangles.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -167,7 +167,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="AreaCalculator.Triangles.EquilateralTriangle">
-    <Position X="2.75" Y="1.75" Width="1.5" />
+    <Position X="2.75" Y="1.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAABAAAAAAICAAAAAAA=</HashCode>
       <FileName>Triangles\EquilateralTriangle.cs</FileName>
@@ -182,6 +182,14 @@
   </Class>
   <Class Name="AreaCalculator.Triangles.RightTriangle">
     <Position X="11.75" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="AreaCalculator.Shape" FixedFromPoint="true">
+      <Path>
+        <Point X="12.438" Y="1.062" />
+        <Point X="12.438" Y="1.437" />
+        <Point X="12.5" Y="1.437" />
+        <Point X="12.5" Y="1.75" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAEAACAAAAAAACBAAAAAAICAAAAAAA=</HashCode>
       <FileName>Triangles\RightTriangle.cs</FileName>

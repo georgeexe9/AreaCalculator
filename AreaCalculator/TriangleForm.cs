@@ -18,7 +18,7 @@ namespace AreaCalculator
         private double area;
         private double perimeter;
         private List<string> summary = new List<string>();
-        private TriangleUIControls UI;
+        private HelperTriangleUIControls UI;
 
 
         public TriangleForm()
@@ -27,7 +27,7 @@ namespace AreaCalculator
             panelInfo.Visible = false;
             Infopanel.Visible = false;
             Helper.ConfigureChoiceBox(TriangleChoiceBox);
-            UI = new TriangleUIControls(SideABox, SideBBox, SideCBox, HeightBox, SideALabel, SideBLabel, SideCLabel, HeightLabel);
+            UI = new HelperTriangleUIControls(SideABox, SideBBox, SideCBox, HeightBox, SideALabel, SideBLabel, SideCLabel, HeightLabel);
 
         }
 

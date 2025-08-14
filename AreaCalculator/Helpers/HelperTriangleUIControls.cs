@@ -1,9 +1,9 @@
 ﻿namespace AreaCalculator.Helpers
 {
     /// <summary>
-    /// Defines the UI controls used in the TriangleControl class.
+    /// Defines the UI controls used in the TriangleControl - Helper - HelperTriangles classes.
     /// </summary>
-    public class TriangleUIControls
+    public class HelperTriangleUIControls
     {
         public TextBox SideABox { get; }
         public TextBox SideBBox { get; }
@@ -14,7 +14,7 @@
         public Label SideCLabel { get; }
         public Label HeightLabel { get; }
 
-        public TriangleUIControls(TextBox sideABox, TextBox sideBBox, TextBox sideCBox, TextBox heightBox,
+        public HelperTriangleUIControls(TextBox sideABox, TextBox sideBBox, TextBox sideCBox, TextBox heightBox,
             Label sideALabel, Label sideBLabel, Label sideCLabel, Label heightLabel)
         {
             SideABox = sideABox;
@@ -25,6 +25,8 @@
             SideBLabel = sideBLabel;
             SideCLabel = sideCLabel;
             HeightLabel = heightLabel;
-        }   
+        }  
+        
+      
     }
 }

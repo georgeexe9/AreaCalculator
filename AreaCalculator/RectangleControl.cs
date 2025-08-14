@@ -10,7 +10,7 @@ namespace AreaCalculator
         private double area;
         private double perimeter;
         private List<string> summary = new List<string>();
-        private TriangleUIControls UI;
+        private HelperTriangleUIControls UI;
 
         public RectangleControl()
         {

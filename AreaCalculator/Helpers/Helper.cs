@@ -11,7 +11,7 @@ namespace AreaCalculator.Helpers
 
     public static class Helper
     {
-        public static TriangleUIControls UI;
+        public static HelperTriangleUIControls UI;
 
         public static void ConfigureChoiceBox(ComboBox TriangleChoiceBox)
         {
@@ -56,7 +56,7 @@ namespace AreaCalculator.Helpers
 
         }
 
-        public static bool VerifyValidationIsOk(TriangleUIControls UI, out double sideA, out double sideB)
+        public static bool VerifyValidationIsOk(HelperTriangleUIControls UI, out double sideA, out double sideB)
         {
             
             sideB = 0;
@@ -64,7 +64,7 @@ namespace AreaCalculator.Helpers
             double.TryParse(UI.SideBBox.Text, out sideB);
         }
 
-        public static bool VerifyValidationIsOk(TriangleUIControls UI, out double sideA, out double sideB, out double sideC, out double height)
+        public static bool VerifyValidationIsOk(HelperTriangleUIControls UI, out double sideA, out double sideB, out double sideC, out double height)
         {
 
             sideB = 0;
@@ -77,7 +77,7 @@ namespace AreaCalculator.Helpers
         }
            
 
-        public static bool VerifyValidationIsOk(TriangleUIControls UI, out double sideA)
+        public static bool VerifyValidationIsOk(HelperTriangleUIControls UI, out double sideA)
         {
            
             return double.TryParse(UI.SideABox.Text, out sideA);
