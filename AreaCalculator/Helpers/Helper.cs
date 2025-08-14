@@ -1,19 +1,15 @@
-﻿using AreaCalculator.Triangles;
-
-namespace AreaCalculator.Helpers
+﻿namespace AreaCalculator.Helpers
 {
     /// <summary>
     /// Helper е статичен клас, който съдържа статични методи за показване, валидиране и визуализация на данни и съобщения в потребителския интерфейс. Както информация,
     /// така и за грешки. Не може да се инстанцира.
     /// Обща логика за всички фигури
+    /// 
     /// </summary>
 
     public static class Helper
     {
-        /// <summary>
-        /// Конфигурира начални настройки на ComboBox
-        /// </summary>
-        /// <param name="TriangleChoiceBox"></param>
+
         public static void ConfigureChoiceBox(ComboBox TriangleChoiceBox)
         {
             TriangleChoiceBox.Items.Insert(0, "-Избери-");
@@ -55,15 +51,7 @@ namespace AreaCalculator.Helpers
             InformationalLabel.BackColor = backcolor;
 
         }
-        /// <summary>
-        /// Валидира страните дали са числови стойности 
-        /// (3 overloads според трита вида триъгълници)
-        /// </summary>
-        /// <param name="SideABox"></param>
-        /// <param name="SideBBox"></param>
-        /// <param name="sideA"></param>
-        /// <param name="sideB"></param>
-        /// <returns></returns>
+
         public static bool VerifyValidationIsOk(TextBox SideABox, TextBox SideBBox, out double sideA, out double sideB)
         {
 
@@ -89,31 +77,20 @@ namespace AreaCalculator.Helpers
         {
             return double.TryParse(SideABox.Text, out sideA);
         }
-        
 
-
-        /// <summary>
-        /// Конфигурира базов дизайн на listViewSummary
-        /// </summary>
-        /// <param name="ListView"></param>
         public static void ConfigureListView(ListView listViewSummary)
         {
             listViewSummary.View = View.Details;
-
             listViewSummary.Columns.Add("Кратка информация:", -2, HorizontalAlignment.Left);
 
         }
-        /// <summary>
-        /// Изтрива всеки елемент от listSummary
-        /// </summary>
-        /// <param name="listSummary"></param>
+
         public static void ClearListView(ListView listViewSummary)
         {
             if (listViewSummary.Items.Count > 0)
             {
                 listViewSummary.Clear();
             }
-
 
         }
 
@@ -136,6 +113,36 @@ namespace AreaCalculator.Helpers
 
 
         }
+
+        public static void ClearAllTextBoxes(TextBox SideABox, TextBox SideBBox, TextBox SideCBox, TextBox HeightBox)
+        {
+            
+                SideABox.Clear();
+                SideBBox.Clear();
+                SideCBox.Clear();
+                HeightBox.Clear();
+            
+               
+        }
+        public static void ClearAllTextBoxes(TextBox SideABox, TextBox SideBBox)
+        {
+            SideABox.Clear();
+            SideBBox.Clear();
+        }
+        public static void ClearAllTextBoxes(TextBox SideABox)
+        {
+            SideABox.Clear();
+        }
+        //public static void ClearAllTextBoxesWithParams(params TextBox[] Textbox)
+        //{
+        //    foreach(var box in Textbox)
+        //    {
+        //        box.Clear();
+        //    }
+        //}
+
+
+
 
 
 

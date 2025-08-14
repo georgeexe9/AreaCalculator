@@ -34,37 +34,19 @@ namespace AreaCalculator
             CalculateTriangle();
         }
         //Изчиства съдържанието
+        //тва ще се раздели на три метода
         private void ResetAllTextBoxes()
         {
-            SideABox.Clear();
-            SideBBox.Clear();
-            SideCBox.Clear();
-            HeightBox.Clear();
-            SideABox.Enabled = true;
-            SideBBox.Enabled = true;
-            SideCBox.Enabled = true;
-            HeightBox.Enabled = true;
-            SideABox.Visible = true;
-            SideBBox.Visible = true;
-            SideCBox.Visible = true;
-            HeightBox.Visible = true;
+           Helper.ClearAllTextBoxes(SideABox, SideBBox, SideCBox, HeightBox);
+            HelperTriangles.ConfigureLabelsbyDefauth(SideALabel, SideBLabel, SideBLabel, HeightLabel);
+            HelperTriangles.ConfigureTextBoxesbyDefauth(SideABox, SideBBox, SideCBox, HeightBox);
             InformationalLabel.Text = "";
-            panelInfo.Visible = false;
-            SideALabel.Text = "Страна а:";
-            SideBLabel.Text = "Страна b:";
-            SideCLabel.Text = "Страна c:";
-            HeightLabel.Text = "Височина h:";
+            panelInfo.Visible = false;         
             Infopanel.Visible = false;
-            panelInfo.Visible = false;
+            
 
         }
-        public void ClearBox()
-        {
-            SideABox.Clear();
-            SideBBox.Clear();
-            SideCBox.Clear();
-            HeightBox.Clear();
-        }
+    
         //Тва ще се изнася в Helper класа
 
         private void CalculateTriangle()
@@ -132,16 +114,20 @@ namespace AreaCalculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ClearBox();
+
+            Helper.ClearAllTextBoxes(SideABox, SideBBox, SideCBox, HeightBox);
         }
         private void UIControlTriangle()
         {
             var type = (TriangleChoices)TriangleChoiceBox.SelectedIndex;
+
             string? nameTriangle = TriangleChoiceBox.GetItemText(TriangleChoiceBox.SelectedIndex);
+
             HelperTriangles.ConfigureUITextBox(type, SideABox, SideBBox, SideCBox, HeightBox);
             HelperTriangles.ConfigureUITriangleLabels(type, SideALabel, SideBLabel, Infopanel, formula, InformationalLabel, nameTriangle);
             Helper.ClearListView(listSummary);
-            ClearBox();
+            Helper.ClearAllTextBoxes(SideABox, SideBBox, SideCBox, HeightBox);
+
         }
 
         //Контрол над формите

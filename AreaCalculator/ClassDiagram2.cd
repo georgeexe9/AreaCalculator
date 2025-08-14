@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AreaCalculator.CalculatorMainFrom" Collapsed="true">
+    <Position X="25.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAIDACIAABCACACBAAACAIAZQAAEAFASAQBAAAA=</HashCode>
+      <FileName>Area.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Circle">
+    <Position X="5" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAABAAAAAAICAAAAAAA=</HashCode>
+      <FileName>Circle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.CustomControl1" Collapsed="true">
+    <Position X="27.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomControl1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Ellipse">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAQAAAAAAAAAAAAAABAAAAAAICAAAAAAA=</HashCode>
+      <FileName>Ellipse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Home" Collapsed="true">
+    <Position X="25.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAQACAAAACAAAYAAAAAEAAAQAAAAA=</HashCode>
+      <FileName>Home.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.HomeControlcs" Collapsed="true">
+    <Position X="27.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAACAAAACAAAAAAAQAAAAAQBAAAA=</HashCode>
+      <FileName>HomeControlcs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Parallelogram">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAgAAAAAAAAAAAAgCBAAAAAEICAAAAAAA=</HashCode>
+      <FileName>Parallelogram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.ParallelogramControl" Collapsed="true">
+    <Position X="29" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAQAAAICAAABAAIACAAAACAIAAAAABAABAAABoAAA=</HashCode>
+      <FileName>ParallelogramControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.PhombusControl" Collapsed="true">
+    <Position X="30.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PhombusControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Program" Collapsed="true">
+    <Position X="25.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Rectangle" Collapsed="true">
+    <Position X="20.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAACAAAAAEgABAAAAAAICAAAAAAA=</HashCode>
+      <FileName>Rectangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.RectangleControl" Collapsed="true">
+    <Position X="27.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABEAAICAAAAEgIICAAIAGBKIIAgAQAEBAAQAogAE=</HashCode>
+      <FileName>RectangleControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Rhombus" Collapsed="true">
+    <Position X="30.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rhombus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Shape" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAACAAAAAAgABAAAAAAICAAAAAAA=</HashCode>
+      <FileName>Shape.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Square">
+    <Position X="9.25" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAICAAAAAAA=</HashCode>
+      <FileName>Square.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Trapezoid" Collapsed="true">
+    <Position X="17.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBAAAAAABAAAAAAAAAAAAAAAAACBAABAAAICAAAAAAA=</HashCode>
+      <FileName>Trapezoid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Triangle">
+    <Position X="22.5" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAQAgAAAAAAAAAAAAACBAABAAAICAAAAAAA=</HashCode>
+      <FileName>Triangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.TriangleForm" Collapsed="true">
+    <Position X="27.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACQUABIiAQAJUgIACAAIAHBMIKAgAQAEBAQQA4ggE=</HashCode>
+      <FileName>TriangleForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Properties.Resources" Collapsed="true">
+    <Position X="29" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAgAIAAAJECAAAQABAAAEAAAAAAAAIIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Properties.Settings" Collapsed="true">
+    <Position X="25.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Helpers.Helper" Collapsed="true">
+    <Position X="29" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAASIAAAAAAAAAAAAGAQARAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\Helper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Helpers.HelperTriangles" Collapsed="true">
+    <Position X="30.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Helpers\HelperTriangles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Trapezoids.IsoscelesTrapezoid" Collapsed="true">
+    <Position X="16.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAICAAAAAAA=</HashCode>
+      <FileName>Trapezoids\IsoscelesTrapezoid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Trapezoids.RightTrapezoid" Collapsed="true">
+    <Position X="18.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAICAAAAAAA=</HashCode>
+      <FileName>Trapezoids\RightTrapezoid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Triangles.EquilateralTriangle">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAABAAAAAAICAAAAAAA=</HashCode>
+      <FileName>Triangles\EquilateralTriangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Triangles.Isoscelestriangle">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAgAAAAAAAAAAAAAAAAAAAAAICAAEAAAA=</HashCode>
+      <FileName>Triangles\Isoscelestriangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaCalculator.Triangles.RightTriangle">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAEAACAAAAAAACBAAAAAAICAAAAAAA=</HashCode>
+      <FileName>Triangles\RightTriangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="AreaCalculator.Triangles.TriangleChoices">
+    <Position X="25.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAACAABAAAAAAAAgCAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Triangles\TriangleChoices.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

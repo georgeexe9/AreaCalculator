@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TriangleForm));
             SideABox = new TextBox();
             SideBBox = new TextBox();
             SideCBox = new TextBox();
@@ -40,6 +41,7 @@
             HeightLabel = new Label();
             SideALabel = new Label();
             panel1 = new Panel();
+            label3 = new Label();
             panelInfo = new Panel();
             InformationalLabel = new Label();
             ResetTriangles = new Button();
@@ -51,6 +53,7 @@
             listSummary = new ListView();
             formula = new Label();
             NoTriangleLabel = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
             panelInfo.SuspendLayout();
             Infopanel.SuspendLayout();
@@ -180,6 +183,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(37, 52, 92);
+            panel1.Controls.Add(label3);
             panel1.Controls.Add(panelInfo);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(SideALabel);
@@ -195,6 +199,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(358, 450);
             panel1.TabIndex = 20;
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Image = (Image)resources.GetObject("label3.Image");
+            label3.ImageAlign = ContentAlignment.MiddleLeft;
+            label3.Location = new Point(33, 27);
+            label3.Name = "label3";
+            label3.Size = new Size(290, 14);
+            label3.TabIndex = 35;
+            label3.Text = "Въведи нужните страни и натисни \"Изчисли\"";
+            label3.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panelInfo
             // 
@@ -245,9 +262,8 @@
             label8.ForeColor = Color.White;
             label8.Location = new Point(83, 67);
             label8.Name = "label8";
-            label8.Size = new Size(235, 15);
+            label8.Size = new Size(0, 15);
             label8.TabIndex = 23;
-            label8.Text = "Моля изберете желания вид триъгълник\r\n";
             // 
             // TriangleChoiceBox
             // 
@@ -258,20 +274,19 @@
             TriangleChoiceBox.ForeColor = Color.White;
             TriangleChoiceBox.FormattingEnabled = true;
             TriangleChoiceBox.Items.AddRange(new object[] { "Правоъгълен триъгълник", "Произволен триъгълник", "Равнобедрен триъгълник", "Равностранен триъгълник" });
-            TriangleChoiceBox.Location = new Point(103, 93);
+            TriangleChoiceBox.Location = new Point(89, 92);
             TriangleChoiceBox.Name = "TriangleChoiceBox";
             TriangleChoiceBox.RightToLeft = RightToLeft.No;
-            TriangleChoiceBox.Size = new Size(185, 25);
+            TriangleChoiceBox.Size = new Size(202, 25);
             TriangleChoiceBox.TabIndex = 24;
             TriangleChoiceBox.SelectedIndexChanged += TriangleChoiceBox_SelectedIndexChanged;
-       
             // 
             // TriangleName
             // 
             TriangleName.AutoSize = true;
             TriangleName.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TriangleName.ForeColor = Color.White;
-            TriangleName.Location = new Point(103, 19);
+            TriangleName.Location = new Point(123, 19);
             TriangleName.Name = "TriangleName";
             TriangleName.Size = new Size(160, 20);
             TriangleName.TabIndex = 25;
@@ -320,11 +335,23 @@
             NoTriangleLabel.Text = "Няма избран триъгълник!";
             NoTriangleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(89, 62);
+            label1.Name = "label1";
+            label1.Size = new Size(207, 15);
+            label1.TabIndex = 34;
+            label1.Text = "Избери вид триъгълник от списъка:";
+            // 
             // TriangleForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 60, 99);
+            Controls.Add(label1);
             Controls.Add(ResetTriangles);
             Controls.Add(panel1);
             Controls.Add(TriangleChoiceBox);
@@ -369,5 +396,7 @@
         private Button ResetTriangles;
         private Label formula;
         private ListView listSummary;
+        private Label label1;
+        private Label label3;
     }
 }

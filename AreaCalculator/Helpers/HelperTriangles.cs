@@ -72,7 +72,27 @@ namespace AreaCalculator.Helpers
 
             }
         }
+
+        public static void ConfigureLabelsbyDefauth(Label SideALabel, Label SideBLabel, Label SideCLabel, Label HeightLabel)
+        {
+            SideALabel.Text = "Страна а:";
+            SideBLabel.Text = "Страна b:";
+            SideCLabel.Text = "Страна c:";
+            HeightLabel.Text = "Височина h:";
+        }
+        public static void ConfigureTextBoxesbyDefauth(TextBox SideABox,TextBox SideBBox, TextBox SideCBox, TextBox HeightBox)
+        {
+            SideABox.Enabled = SideABox.Visible = true;
+            SideBBox.Enabled = SideBBox.Visible = true;
+            SideCBox.Enabled = SideCBox.Visible = true;
+            HeightBox.Enabled = HeightBox.Visible = true;
+
+
+            
+        }
+
     }
+    
 }
 
 

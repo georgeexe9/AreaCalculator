@@ -1,67 +1,70 @@
-﻿namespace AreaCalculator
+﻿
+using AreaCalculator.Helpers;
+
+namespace AreaCalculator
 {
     public partial class RectangleControl : UserControl
     {
+        private double side;
+        private double sideB;
+        private double area;
+        private double perimeter;
+        private List<string> summary = new List<string>();
+
         public RectangleControl()
         {
             InitializeComponent();
+            Infopanel.Visible = false;
+            panelInfo.Visible = false;
+        }
+
+        public void CalculateRectangle()
+        {
+            try
+            {
+                if (Helper.VerifyValidationIsOk(SideABox, SideBBox, out side, out sideB))
+                {
+                    var rectangle = new Rectangle(side, sideB);
+                    Calculate(rectangle);
+
+                    Helper.ShowInformationalPanel(Infopanel, formula, RectangleName, "Правоъгълник", "ee");
+                }
+                else
+                {
+                    Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
+                }
+
+            }
+            catch (ArgumentException ex)
+            {
+                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, ex.Message, Color.White, Color.Red);
+            }
+
         }
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
             CalculateRectangle();
         }
-        private void CalculateRectangle()
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(SideABox.Text) && !string.IsNullOrEmpty(SideBBox.Text))
-            {
-                try
-                {
-                    double sideA = double.Parse(SideABox.Text);
-                    double sideB = double.Parse(SideBBox.Text);
-                    Shape rectangle = new Rectangle(sideA, sideB);
-
-                    double area = rectangle.CalculateArea();
-                    double perimeter = rectangle.CalculatePerimeter();
-
-                    if (diagonalRadioButton.Checked)
-                    {
-                        double diagonal = rectangle.CalculateDiagonal();
-                        InformationalLabel.Text = $"Лице/Площ - {area}, Периметър - {perimeter}, " +
-                            $"Диагонал - {diagonal:F2}";
-                    }
-                    else
-                    {
-                        InformationalLabel.Text = $"Лице/Площ - {area}, Периметър - {perimeter}";
-                    }
-                }
-                catch (ArgumentException ex)
-                {
-                    MessageBox.Show(ex.Message, "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                catch (FormatException)
-                {
-                    MessageBox.Show("Моля, въведете правилни стойности!", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Моля, въведете стойности!", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-
+            Helper.ClearAllTextBoxes(SideABox, SideBBox);
+            Helper.ClearListView(listSummary);
+            Infopanel.Visible = false;
+            panelInfo.Visible = false;
+        }
+        private void Calculate(Shape rectangle)
+        {
+            perimeter = rectangle.CalculatePerimeter();
+            area = rectangle.CalculateArea();
+            summary = rectangle.GetSummary();
+            Helper.ShowMessageResult(panelInfo, InformationalLabel, area, perimeter);
+            Helper.FillListSummary(listSummary, summary);
         }
 
-        private void ClearButton_Click(object sender, EventArgs e)
+        private void RectangleName_Click(object sender, EventArgs e)
         {
-            ClearAllTextBoxes();
-        }
-
-        private void ClearAllTextBoxes()
-        {
-            SideABox.Clear();
-            SideBBox.Clear();
-            diagonalRadioButton.Checked = false;
 
         }
     }

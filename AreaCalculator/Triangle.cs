@@ -30,7 +30,7 @@ namespace AreaCalculator
             {
                 throw new ArgumentException("Височината на триъгълника трябва да бъде по-голяма от 0");
             }
-
+         
             Side = side;
             SideB = sideB;
             SideC = sideC;

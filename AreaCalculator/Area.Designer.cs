@@ -58,7 +58,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(110, 40);
+            label1.Location = new Point(133, 45);
             label1.Name = "label1";
             label1.Size = new Size(312, 47);
             label1.TabIndex = 0;
@@ -76,9 +76,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(19, 21);
+            pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(85, 79);
+            pictureBox1.Size = new Size(115, 103);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
@@ -302,6 +302,8 @@
             Controls.Add(label1);
             Controls.Add(MainPanel);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximumSize = new Size(1004, 614);
+            MinimumSize = new Size(1004, 614);
             Name = "CalculatorMainFrom";
             Text = "Shape Calculator";
             FormClosing += CalculatorMainFrom_FormClosing;

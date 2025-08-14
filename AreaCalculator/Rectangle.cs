@@ -1,4 +1,5 @@
-﻿namespace AreaCalculator
+﻿
+namespace AreaCalculator
 {
     //съжалявам, но extends е по-добре от ":"
 
@@ -11,9 +12,13 @@
 
         public Rectangle(double sidea, double sideb)
         {
-            if (sidea <= 0 || sideb <= 0)
+            if (sidea <= 0)
             {
-                throw new ArgumentException("Страните на правоъгълника трябва да бъдат по-големи от нула.");
+                throw new ArgumentException("Страната а на правоъгълника трябва да бъдат по-големи от нула.");
+            }
+            if (sideb <= 0)
+            {
+                throw new ArgumentException("Страната b на правоъгълника трябва да бъдат по-големи от нула.");
             }
             Sidea = sidea;
             Sideb = sideb;
@@ -35,6 +40,18 @@
         public override string GetShapeName()
         {
             return "Правоъгълник";
+        }
+        public override List<string> GetSummary()
+        {
+            return new List<string>()
+            {
+                $"Правоъгълник",
+                $"Страна а: {Sidea}",
+                $"Страна b: {Sideb}",
+                $"Диагонал - {CalculateDiagonal():F2}",
+                $"Лице/Площ - {CalculateArea():F2}",
+                $"Периметър - {CalculatePerimeter():F2}",
+            };
         }
     }
 }

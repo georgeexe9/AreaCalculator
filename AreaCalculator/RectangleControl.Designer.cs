@@ -28,173 +28,243 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RectangleControl));
-            label7 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            ClearButton = new Button();
+            panel1 = new Panel();
+            panelInfo = new Panel();
             InformationalLabel = new Label();
+            button1 = new Button();
+            SideALabel = new Label();
             CalculateButton = new Button();
-            SideBBox = new TextBox();
             SideABox = new TextBox();
-            pictureBox1 = new PictureBox();
-            diagonalRadioButton = new RadioButton();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SideBBox = new TextBox();
+            SideBLabel = new Label();
+            Infopanel = new Panel();
+            listSummary = new ListView();
+            formula = new Label();
+            TriangleName = new Label();
+            formulas = new Label();
+            RectangleName = new Label();
+            label1 = new Label();
+            panel1.SuspendLayout();
+            panelInfo.SuspendLayout();
+            Infopanel.SuspendLayout();
             SuspendLayout();
             // 
-            // label7
+            // panel1
             // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(37, 75);
-            label7.Name = "label7";
-            label7.Size = new Size(474, 45);
-            label7.TabIndex = 29;
-            label7.Text = "Правоъгълникът е геометрична фигура с четири страни, където всички ъгли са 90°. \r\nАко всички страни на правоъгълника са с еднаква дължина, \r\nтой обикновено се нарича квадрат.";
+            panel1.BackColor = Color.FromArgb(37, 52, 92);
+            panel1.Controls.Add(panelInfo);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(SideALabel);
+            panel1.Controls.Add(CalculateButton);
+            panel1.Controls.Add(SideABox);
+            panel1.Controls.Add(SideBBox);
+            panel1.Controls.Add(SideBLabel);
+            panel1.Location = new Point(367, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(358, 453);
+            panel1.TabIndex = 28;
             // 
-            // label4
+            // panelInfo
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(37, 212);
-            label4.Name = "label4";
-            label4.Size = new Size(58, 15);
-            label4.TabIndex = 26;
-            label4.Text = "Страна b:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(37, 173);
-            label3.Name = "label3";
-            label3.Size = new Size(57, 15);
-            label3.TabIndex = 25;
-            label3.Text = "Страна a:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(28, 35);
-            label2.Name = "label2";
-            label2.Size = new Size(151, 30);
-            label2.TabIndex = 24;
-            label2.Text = "Правоъгълник";
-            // 
-            // ClearButton
-            // 
-            ClearButton.BackColor = Color.White;
-            ClearButton.FlatStyle = FlatStyle.Flat;
-            ClearButton.Location = new Point(148, 348);
-            ClearButton.Name = "ClearButton";
-            ClearButton.Size = new Size(94, 30);
-            ClearButton.TabIndex = 23;
-            ClearButton.Text = "Изтрий";
-            ClearButton.UseVisualStyleBackColor = false;
-            ClearButton.Click += ClearButton_Click;
+            panelInfo.BackColor = Color.FromArgb(33, 47, 83);
+            panelInfo.Controls.Add(InformationalLabel);
+            panelInfo.Location = new Point(0, 369);
+            panelInfo.Name = "panelInfo";
+            panelInfo.Size = new Size(358, 81);
+            panelInfo.TabIndex = 22;
             // 
             // InformationalLabel
             // 
             InformationalLabel.AutoSize = true;
-            InformationalLabel.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            InformationalLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             InformationalLabel.ForeColor = Color.White;
-            InformationalLabel.Location = new Point(37, 295);
+            InformationalLabel.Location = new Point(16, 18);
             InformationalLabel.Name = "InformationalLabel";
-            InformationalLabel.Size = new Size(120, 32);
-            InformationalLabel.TabIndex = 22;
-            InformationalLabel.Text = ":Резултат:";
+            InformationalLabel.Size = new Size(57, 21);
+            InformationalLabel.TabIndex = 0;
+            InformationalLabel.Text = "label7";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(142, 315);
+            button1.Name = "button1";
+            button1.Size = new Size(105, 30);
+            button1.TabIndex = 6;
+            button1.Text = "Изтрий";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // SideALabel
+            // 
+            SideALabel.AutoSize = true;
+            SideALabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            SideALabel.ForeColor = Color.White;
+            SideALabel.Location = new Point(31, 97);
+            SideALabel.Name = "SideALabel";
+            SideALabel.Size = new Size(82, 21);
+            SideALabel.TabIndex = 18;
+            SideALabel.Text = "Страна a:";
             // 
             // CalculateButton
             // 
             CalculateButton.BackColor = Color.White;
             CalculateButton.FlatStyle = FlatStyle.Flat;
+            CalculateButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             CalculateButton.ForeColor = Color.Black;
-            CalculateButton.Location = new Point(37, 348);
+            CalculateButton.Location = new Point(31, 315);
             CalculateButton.Name = "CalculateButton";
             CalculateButton.Size = new Size(105, 30);
-            CalculateButton.TabIndex = 21;
+            CalculateButton.TabIndex = 4;
             CalculateButton.Text = "Изчисли";
             CalculateButton.UseVisualStyleBackColor = false;
             CalculateButton.Click += CalculateButton_Click;
             // 
-            // SideBBox
-            // 
-            SideBBox.Location = new Point(117, 209);
-            SideBBox.Name = "SideBBox";
-            SideBBox.Size = new Size(100, 23);
-            SideBBox.TabIndex = 18;
-            // 
             // SideABox
             // 
-            SideABox.Location = new Point(117, 170);
+            SideABox.BorderStyle = BorderStyle.FixedSingle;
+            SideABox.Font = new Font("Segoe UI", 12F);
+            SideABox.Location = new Point(31, 132);
             SideABox.Multiline = true;
             SideABox.Name = "SideABox";
-            SideABox.Size = new Size(100, 23);
-            SideABox.TabIndex = 17;
+            SideABox.Size = new Size(175, 30);
+            SideABox.TabIndex = 0;
             // 
-            // pictureBox1
+            // SideBBox
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(268, 148);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(228, 144);
-            pictureBox1.TabIndex = 30;
-            pictureBox1.TabStop = false;
+            SideBBox.BorderStyle = BorderStyle.FixedSingle;
+            SideBBox.Font = new Font("Segoe UI", 12F);
+            SideBBox.Location = new Point(31, 210);
+            SideBBox.Multiline = true;
+            SideBBox.Name = "SideBBox";
+            SideBBox.Size = new Size(175, 30);
+            SideBBox.TabIndex = 1;
             // 
-            // diagonalRadioButton
+            // SideBLabel
             // 
-            diagonalRadioButton.AutoSize = true;
-            diagonalRadioButton.ForeColor = Color.White;
-            diagonalRadioButton.Location = new Point(37, 261);
-            diagonalRadioButton.Name = "diagonalRadioButton";
-            diagonalRadioButton.Size = new Size(137, 19);
-            diagonalRadioButton.TabIndex = 31;
-            diagonalRadioButton.TabStop = true;
-            diagonalRadioButton.Text = "Изчисли диагонал d";
-            diagonalRadioButton.UseVisualStyleBackColor = true;
+            SideBLabel.AutoSize = true;
+            SideBLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            SideBLabel.ForeColor = Color.White;
+            SideBLabel.Location = new Point(31, 175);
+            SideBLabel.Name = "SideBLabel";
+            SideBLabel.Size = new Size(83, 21);
+            SideBLabel.TabIndex = 9;
+            SideBLabel.Text = "Страна b:";
+            // 
+            // Infopanel
+            // 
+            Infopanel.BackColor = Color.FromArgb(41, 54, 89);
+            Infopanel.Controls.Add(listSummary);
+            Infopanel.Controls.Add(formula);
+            Infopanel.Controls.Add(TriangleName);
+            Infopanel.Controls.Add(formulas);
+            Infopanel.Location = new Point(0, 138);
+            Infopanel.Name = "Infopanel";
+            Infopanel.Size = new Size(380, 315);
+            Infopanel.TabIndex = 32;
+            // 
+            // listSummary
+            // 
+            listSummary.BackColor = SystemColors.MenuBar;
+            listSummary.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+            listSummary.Location = new Point(43, 78);
+            listSummary.Name = "listSummary";
+            listSummary.Size = new Size(285, 195);
+            listSummary.TabIndex = 27;
+            listSummary.UseCompatibleStateImageBehavior = false;
+            // 
+            // formula
+            // 
+            formula.AutoSize = true;
+            formula.Location = new Point(153, 45);
+            formula.Name = "formula";
+            formula.Size = new Size(49, 15);
+            formula.TabIndex = 26;
+            formula.Text = "formula";
+            // 
+            // TriangleName
+            // 
+            TriangleName.AutoSize = true;
+            TriangleName.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TriangleName.ForeColor = Color.White;
+            TriangleName.Location = new Point(147, 28);
+            TriangleName.Name = "TriangleName";
+            TriangleName.Size = new Size(0, 20);
+            TriangleName.TabIndex = 25;
+            // 
+            // formulas
+            // 
+            formulas.AutoSize = true;
+            formulas.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            formulas.ForeColor = Color.White;
+            formulas.Location = new Point(132, 69);
+            formulas.Name = "formulas";
+            formulas.Size = new Size(0, 20);
+            formulas.TabIndex = 1;
+            // 
+            // RectangleName
+            // 
+            RectangleName.AutoSize = true;
+            RectangleName.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RectangleName.ForeColor = Color.White;
+            RectangleName.Location = new Point(113, 177);
+            RectangleName.Name = "RectangleName";
+            RectangleName.RightToLeft = RightToLeft.No;
+            RectangleName.Size = new Size(159, 30);
+            RectangleName.TabIndex = 27;
+            RectangleName.Text = "Правоъгълник";
+            RectangleName.Click += RectangleName_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(72, 219);
+            label1.Name = "label1";
+            label1.Size = new Size(254, 15);
+            label1.TabIndex = 33;
+            label1.Text = "Въведи страните и кликни върху \"Изчисли\".";
             // 
             // RectangleControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 60, 99);
-            Controls.Add(diagonalRadioButton);
-            Controls.Add(pictureBox1);
-            Controls.Add(label7);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(ClearButton);
-            Controls.Add(InformationalLabel);
-            Controls.Add(CalculateButton);
-            Controls.Add(SideBBox);
-            Controls.Add(SideABox);
+            Controls.Add(panel1);
+            Controls.Add(Infopanel);
+            Controls.Add(RectangleName);
+            Controls.Add(label1);
             Name = "RectangleControl";
             Size = new Size(725, 450);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panelInfo.ResumeLayout(false);
+            panelInfo.PerformLayout();
+            Infopanel.ResumeLayout(false);
+            Infopanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label7;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Button ClearButton;
+        private Panel panel1;
+        private Panel panelInfo;
         private Label InformationalLabel;
+        private Button button1;
+        private Label SideALabel;
         private Button CalculateButton;
-        private TextBox SideBBox;
         private TextBox SideABox;
-        private PictureBox pictureBox1;
-        private RadioButton diagonalRadioButton;
+        private TextBox SideBBox;
+        private Label SideBLabel;
+        private Panel Infopanel;
+        private ListView listSummary;
+        private Label formula;
+        private Label TriangleName;
+        private Label formulas;
+        private Label RectangleName;
+        private Label label1;
     }
 }

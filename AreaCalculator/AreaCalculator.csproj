@@ -24,6 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="C:\Users\george\OneDrive\ClassDiagram2.cd" Link="ClassDiagram2.cd" />
+    <None Include="C:\Users\george\OneDrive\Desktop\ClassDiagram2.cd" Link="ClassDiagram2.cd" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

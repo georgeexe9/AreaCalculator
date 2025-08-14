@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeControlcs));
             panel1 = new Panel();
+            label3 = new Label();
             label2 = new Label();
             panelInfo = new Panel();
             pictureBox1 = new PictureBox();
-            label1 = new Label();
-            label3 = new Label();
             panel1.SuspendLayout();
             panelInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -50,22 +50,36 @@
             panel1.Size = new Size(725, 453);
             panel1.TabIndex = 24;
             // 
+            // label3
+            // 
+            label3.AllowDrop = true;
+            label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Image = (Image)resources.GetObject("label3.Image");
+            label3.ImageAlign = ContentAlignment.MiddleLeft;
+            label3.Location = new Point(233, 218);
+            label3.Name = "label3";
+            label3.RightToLeft = RightToLeft.No;
+            label3.Size = new Size(241, 21);
+            label3.TabIndex = 26;
+            label3.Text = "Избери фигура от панела в ляво";
+            label3.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(19, 178);
+            label2.Location = new Point(233, 178);
             label2.Name = "label2";
             label2.RightToLeft = RightToLeft.No;
-            label2.Size = new Size(649, 40);
+            label2.Size = new Size(259, 40);
             label2.TabIndex = 23;
-            label2.Text = "I made WinForms to looks like MAUI and WPF\r\n";
+            label2.Text = "Shaper Calculator\r\n";
             // 
             // panelInfo
             // 
             panelInfo.BackColor = Color.FromArgb(33, 47, 83);
-            panelInfo.Controls.Add(label1);
             panelInfo.Controls.Add(pictureBox1);
             panelInfo.Location = new Point(0, 369);
             panelInfo.Name = "panelInfo";
@@ -81,30 +95,6 @@
             pictureBox1.TabIndex = 25;
             pictureBox1.TabStop = false;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(308, 17);
-            label1.Name = "label1";
-            label1.RightToLeft = RightToLeft.No;
-            label1.Size = new Size(129, 40);
-            label1.TabIndex = 24;
-            label1.Text = "SAMPLE";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(308, 36);
-            label3.Name = "label3";
-            label3.RightToLeft = RightToLeft.No;
-            label3.Size = new Size(129, 40);
-            label3.TabIndex = 26;
-            label3.Text = "SAMPLE";
-            // 
             // HomeControlcs
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -116,7 +106,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panelInfo.ResumeLayout(false);
-            panelInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -127,6 +116,5 @@
         private Label label2;
         private PictureBox pictureBox1;
         private Label label3;
-        private Label label1;
     }
 }
