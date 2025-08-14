@@ -10,6 +10,7 @@ namespace AreaCalculator
         private double area;
         private double perimeter;
         private List<string> summary = new List<string>();
+        private TriangleUIControls UI;
 
         public RectangleControl()
         {
@@ -22,7 +23,7 @@ namespace AreaCalculator
         {
             try
             {
-                if (Helper.VerifyValidationIsOk(SideABox, SideBBox, out side, out sideB))
+                if (Helper.VerifyValidationIsOk(UI,out side, out sideB))
                 {
                     var rectangle = new Rectangle(side, sideB);
                     Calculate(rectangle);

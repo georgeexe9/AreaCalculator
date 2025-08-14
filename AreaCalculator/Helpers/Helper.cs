@@ -1,4 +1,6 @@
-﻿namespace AreaCalculator.Helpers
+﻿using static System.Windows.Forms.VisualStyles.VisualStyleElement.ScrollBar;
+
+namespace AreaCalculator.Helpers
 {
     /// <summary>
     /// Helper е статичен клас, който съдържа статични методи за показване, валидиране и визуализация на данни и съобщения в потребителския интерфейс. Както информация,
@@ -9,12 +11,14 @@
 
     public static class Helper
     {
+        public static TriangleUIControls UI;
 
         public static void ConfigureChoiceBox(ComboBox TriangleChoiceBox)
         {
             TriangleChoiceBox.Items.Insert(0, "-Избери-");
             TriangleChoiceBox.FlatStyle = FlatStyle.System;
             TriangleChoiceBox.SelectedIndex = 0;
+          
 
         }
 
@@ -52,30 +56,31 @@
 
         }
 
-        public static bool VerifyValidationIsOk(TextBox SideABox, TextBox SideBBox, out double sideA, out double sideB)
+        public static bool VerifyValidationIsOk(TriangleUIControls UI, out double sideA, out double sideB)
         {
-
+            
             sideB = 0;
-            return double.TryParse(SideABox.Text, out sideA) &&
-            double.TryParse(SideBBox.Text, out sideB);
+            return double.TryParse(UI.SideABox.Text, out sideA) &&
+            double.TryParse(UI.SideBBox.Text, out sideB);
         }
 
-        public static bool VerifyValidationIsOk(TextBox SideABox, TextBox SideBBox, TextBox SideCBox,
-            TextBox HeightBox, out double sideA, out double sideB, out double sideC, out double height)
+        public static bool VerifyValidationIsOk(TriangleUIControls UI, out double sideA, out double sideB, out double sideC, out double height)
         {
 
             sideB = 0;
             sideC = 0;
             height = 0;
-            return double.TryParse(SideABox.Text, out sideA) &&
-            double.TryParse(SideBBox.Text, out sideB) &&
-            double.TryParse(SideCBox.Text, out sideC) &&
-            double.TryParse(HeightBox.Text, out height);
+            return double.TryParse(UI.SideABox.Text, out sideA) &&
+            double.TryParse(UI.SideBBox.Text, out sideB) &&
+            double.TryParse(UI.SideCBox.Text, out sideC) &&
+            double.TryParse(UI.HeightBox.Text, out height);
         }
+           
 
-        public static bool VerifyValidationIsOk(TextBox SideABox, out double sideA)
+        public static bool VerifyValidationIsOk(TriangleUIControls UI, out double sideA)
         {
-            return double.TryParse(SideABox.Text, out sideA);
+           
+            return double.TryParse(UI.SideABox.Text, out sideA);
         }
 
         public static void ConfigureListView(ListView listViewSummary)

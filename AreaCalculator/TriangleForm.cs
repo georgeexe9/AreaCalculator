@@ -18,6 +18,8 @@ namespace AreaCalculator
         private double area;
         private double perimeter;
         private List<string> summary = new List<string>();
+        private TriangleUIControls UI;
+
 
         public TriangleForm()
         {
@@ -25,7 +27,7 @@ namespace AreaCalculator
             panelInfo.Visible = false;
             Infopanel.Visible = false;
             Helper.ConfigureChoiceBox(TriangleChoiceBox);
-
+            UI = new TriangleUIControls(SideABox, SideBBox, SideCBox, HeightBox, SideALabel, SideBLabel, SideCLabel, HeightLabel);
 
         }
 
@@ -37,9 +39,9 @@ namespace AreaCalculator
         //тва ще се раздели на три метода
         private void ResetAllTextBoxes()
         {
-           Helper.ClearAllTextBoxes(SideABox, SideBBox, SideCBox, HeightBox);
-            HelperTriangles.ConfigureLabelsbyDefauth(SideALabel, SideBLabel, SideBLabel, HeightLabel);
-            HelperTriangles.ConfigureTextBoxesbyDefauth(SideABox, SideBBox, SideCBox, HeightBox);
+           Helper.ClearAllTextBoxes(SideABox,SideABox);
+            HelperTriangles.ConfigureLabelsbyDefauth(UI);
+            HelperTriangles.ConfigureTextBoxesbyDefauth(UI);
             InformationalLabel.Text = "";
             panelInfo.Visible = false;         
             Infopanel.Visible = false;
@@ -65,34 +67,55 @@ namespace AreaCalculator
                         break;
                     case TriangleChoices.Right_Triangle:
                         //Правоъгълен триъгълник
-                        if (Helper.VerifyValidationIsOk(SideABox, SideBBox, out sideA, out sideB))
+                        if (Helper.VerifyValidationIsOk(UI, out sideA, out sideB))
                         {
                             var rightTriangle = new RightTriangle(sideA, sideB);
                             GetCalculatedTriangle(rightTriangle);
                         }
+                        else
+                        {
+                            Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
+                        }
+
                         break;
                     //Произволен триъгълник
                     case TriangleChoices.Triangle:
-                        if (Helper.VerifyValidationIsOk(SideABox, SideBBox, SideCBox, HeightBox, out sideA, out sideB, out sideC, out height))
+                        if (Helper.VerifyValidationIsOk(UI, out sideA, out sideB, out sideC, out height))
                         {
                             var triangle = new Triangle(sideA, sideB, sideC, height);
                             GetCalculatedTriangle(triangle);
                         }
+                        else
+                        {
+                            Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
+
+                        }
+
                         break;
                     //Равнобедрен триъгълник
                     case TriangleChoices.IsoscelesTriangle:
-                        if (Helper.VerifyValidationIsOk(SideABox, SideBBox, out sideA, out sideB))
+                        if (Helper.VerifyValidationIsOk(UI, out sideA, out sideB))
                         {
                             var isosceleTriangle = new Isoscelestriangle(sideA, sideB);
                             GetCalculatedTriangle(isosceleTriangle);
                         }
+                        else
+                        {
+                            Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
+
+                        }
                         break;
                     //Равностранен триъгълник
                     case TriangleChoices.EquilateralTriangle:
-                        if (Helper.VerifyValidationIsOk(SideABox, out sideA))
+                        if (Helper.VerifyValidationIsOk(UI,out sideA))
                         {
                             var equilateralTriangle = new EquilateralTriangle(sideA);
                             GetCalculatedTriangle(equilateralTriangle);
+
+                        }
+                        else
+                        {
+                            Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
 
                         }
                         break;
@@ -102,6 +125,7 @@ namespace AreaCalculator
                         break;
                 }
             }
+            
             catch (FormatException)
             {
                 Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
@@ -115,7 +139,7 @@ namespace AreaCalculator
         private void button1_Click(object sender, EventArgs e)
         {
 
-            Helper.ClearAllTextBoxes(SideABox, SideBBox, SideCBox, HeightBox);
+            Helper.ClearAllTextBoxes(SideABox,SideBBox,SideCBox,HeightBox);
         }
         private void UIControlTriangle()
         {
@@ -123,8 +147,8 @@ namespace AreaCalculator
 
             string? nameTriangle = TriangleChoiceBox.GetItemText(TriangleChoiceBox.SelectedIndex);
 
-            HelperTriangles.ConfigureUITextBox(type, SideABox, SideBBox, SideCBox, HeightBox);
-            HelperTriangles.ConfigureUITriangleLabels(type, SideALabel, SideBLabel, Infopanel, formula, InformationalLabel, nameTriangle);
+            HelperTriangles.ConfigureUITextBox(UI,type);
+            HelperTriangles.ConfigureUITriangleLabels(UI,type, Infopanel, formula, InformationalLabel, nameTriangle);
             Helper.ClearListView(listSummary);
             Helper.ClearAllTextBoxes(SideABox, SideBBox, SideCBox, HeightBox);
 

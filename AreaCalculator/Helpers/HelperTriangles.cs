@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AreaCalculator.Helpers;
 using AreaCalculator.Triangles;
 
 
@@ -15,33 +14,35 @@ namespace AreaCalculator.Helpers
     /// САМО ЗА ТРИЪГЪЛНИЦИ, НЕ МОЖЕ ДА СЕ ИЗПОЛЗВА ЗА ДРУГИ ФИГУРИ
     /// НЕ ПИПАЙ using AreaCalculator.Triangles; РАБОТЯТ ЗАЕДНО ❤️
     /// </summary>
+    /// 
+    //
     public static class HelperTriangles
     {
+    
 
-        public static void ConfigureUITextBox(TriangleChoices type, TextBox SideABox, TextBox SideBBox, TextBox SideCBox, TextBox HeightBox)
+        public static void ConfigureUITextBox(TriangleUIControls UI, TriangleChoices type)
         {
 
             switch (type)
             {
                 case TriangleChoices.Right_Triangle:
-                    SideCBox.Enabled = false;
-                    HeightBox.Enabled = false;
+                    UI.SideCBox.Enabled = false;
+                    UI.HeightBox.Enabled = false;
                     break;
                 case TriangleChoices.Triangle:
                     break;
                 case TriangleChoices.IsoscelesTriangle:
-                    SideCBox.Enabled = false;
+                    UI.SideCBox.Enabled = false;
                     break;
                 case TriangleChoices.EquilateralTriangle:
-                    SideBBox.Enabled = false;
-                    SideCBox.Enabled = false;
-                    HeightBox.Enabled = false;
+                    UI.SideBBox.Enabled = false;
+                    UI.SideCBox.Enabled = false;
+                    UI.HeightBox.Enabled = false;
                     break;
 
             }
         }
-        public static void ConfigureUITriangleLabels(TriangleChoices type, Label SideALabel,
-        Label SideBLabel,
+        public static void ConfigureUITriangleLabels(TriangleUIControls UI,TriangleChoices type,
         Panel infoPanel,
         Label formulaLabel,
         Label triangleNameLabel,
@@ -60,32 +61,32 @@ namespace AreaCalculator.Helpers
                 case TriangleChoices.IsoscelesTriangle:
                     Helper.ShowInformationalPanel(infoPanel, formulaLabel, triangleNameLabel, nameTriangle,
                         "Area = (Base * Height) / 2 \n Perimeter = 2 * Side + Base");
-                    SideALabel.Text = "Страна:";
-                    SideBLabel.Text = "Основа:";
+                    UI.SideALabel.Text = "Страна:";
+                    UI.SideBLabel.Text = "Основа:";
                     break;
                 case TriangleChoices.EquilateralTriangle:
                     Helper.ShowInformationalPanel(infoPanel, formulaLabel, triangleNameLabel, nameTriangle,
                        "Area = (Base * Height) / 2 \n Perimeter = 3 * Side");
-                    SideALabel.Text = "Страна:";
+                    UI.SideALabel.Text = "Страна:";
                     break;
 
 
             }
         }
 
-        public static void ConfigureLabelsbyDefauth(Label SideALabel, Label SideBLabel, Label SideCLabel, Label HeightLabel)
+        public static void ConfigureLabelsbyDefauth(TriangleUIControls UI)
         {
-            SideALabel.Text = "Страна а:";
-            SideBLabel.Text = "Страна b:";
-            SideCLabel.Text = "Страна c:";
-            HeightLabel.Text = "Височина h:";
+            UI.SideALabel.Text = "Страна а:";
+            UI.SideBLabel.Text = "Страна b:";
+            UI.SideCLabel.Text = "Страна c:";
+            UI.HeightLabel.Text = "Височина h:";
         }
-        public static void ConfigureTextBoxesbyDefauth(TextBox SideABox,TextBox SideBBox, TextBox SideCBox, TextBox HeightBox)
+        public static void ConfigureTextBoxesbyDefauth(TriangleUIControls UI)
         {
-            SideABox.Enabled = SideABox.Visible = true;
-            SideBBox.Enabled = SideBBox.Visible = true;
-            SideCBox.Enabled = SideCBox.Visible = true;
-            HeightBox.Enabled = HeightBox.Visible = true;
+            UI.SideABox.Enabled = UI.SideABox.Visible = true;
+            UI.SideBBox.Enabled = UI.SideBBox.Visible = true;
+            UI.SideCBox.Enabled = UI.SideCBox.Visible = true;
+            UI.HeightBox.Enabled = UI.HeightBox.Visible = true;
 
 
             
