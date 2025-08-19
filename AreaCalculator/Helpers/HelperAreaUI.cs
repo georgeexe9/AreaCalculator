@@ -8,9 +8,12 @@ using System.Windows.Forms;
 namespace AreaCalculator.Helpers
 {
     /// <summary>
-    /// Defines the UI controls used in the AreaControl - Helper - HelperAreaUI classes.
+    /// Defines the UI logic controls used in the AreaControl - Helper - HelperAreaUI classes.
+    /// Independent from specific shapes, this class provides methods to configure navigation bars in 
+    /// MainWindows, Do not modify or use this class for specific instances of shape.
+    /// 
     /// </summary>
-    internal class HelperAreaUI
+    public static class HelperAreaUI
     {
         public static void ConfigureNavBars(SplitContainer spC,Panel panel)
         {
@@ -25,16 +28,16 @@ namespace AreaCalculator.Helpers
             panel.Dock = DockStyle.Fill;
         }
 
-        public static void ConfigureButtonClicks(SplitContainer spc,Panel panel3,Panel panel2,Button button, MouseEventArgs clickTimes)
+        public static void ConfigureButtonClicks(SplitContainer spc,Panel panel3D,Panel panel2D,Button button, MouseEventArgs clickTimes)
         {
         {
             if (clickTimes.Clicks == 2)
             {
-                ConfigureNavBars(spc, panel2);
+                ConfigureNavBars(spc, panel2D);
             }
             else if (clickTimes.Clicks == 1)
             {
-                ConfigureNavBars(spc, panel3);
+                ConfigureNavBars(spc, panel3D);
             }
         }
         }
