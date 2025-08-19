@@ -74,14 +74,14 @@ namespace AreaCalculator.Helpers
             }
         }
 
-        public static void ConfigureLabelsbyDefauth(HelperTriangleUIControls UI)
+        public static void ConfigureLabelsByDefault(HelperTriangleUIControls UI)
         {
             UI.SideALabel.Text = "Страна а:";
             UI.SideBLabel.Text = "Страна b:";
             UI.SideCLabel.Text = "Страна c:";
             UI.HeightLabel.Text = "Височина h:";
         }
-        public static void ConfigureTextBoxesbyDefauth(HelperTriangleUIControls UI)
+        public static void ConfigureTextBoxesByDefault(HelperTriangleUIControls UI)
         {
             UI.SideABox.Enabled = UI.SideABox.Visible = true;
             UI.SideBBox.Enabled = UI.SideBBox.Visible = true;

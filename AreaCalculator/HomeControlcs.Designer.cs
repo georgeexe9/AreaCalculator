@@ -57,12 +57,12 @@
             label3.ForeColor = Color.White;
             label3.Image = (Image)resources.GetObject("label3.Image");
             label3.ImageAlign = ContentAlignment.MiddleLeft;
-            label3.Location = new Point(233, 218);
+            label3.Location = new Point(177, 218);
             label3.Name = "label3";
             label3.RightToLeft = RightToLeft.No;
-            label3.Size = new Size(241, 21);
+            label3.Size = new Size(382, 21);
             label3.TabIndex = 26;
-            label3.Text = "Избери фигура от панела в ляво";
+            label3.Text = "Просто решение за изчисляване на площ и периметър.\r\n                                 Кликни върху \"Избери\" един път за 3D фигури и два пъти за 2D.";
             label3.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label2

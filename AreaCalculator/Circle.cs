@@ -3,7 +3,7 @@
     internal class Circle : Shape
 
     {
-        public double Radius { get; set; }
+        public double Radius { get;  }
 
         public Circle(double radius)
         {
@@ -26,6 +26,7 @@
 
             return 2 * Math.PI * Radius;
         }
+        [Obsolete]
         public override string GetShapeName()
         {
             return "Кръг";

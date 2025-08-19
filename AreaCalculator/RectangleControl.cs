@@ -1,5 +1,6 @@
 ﻿
 using AreaCalculator.Helpers;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ScrollBar;
 
 namespace AreaCalculator
 {
@@ -10,20 +11,21 @@ namespace AreaCalculator
         private double area;
         private double perimeter;
         private List<string> summary = new List<string>();
-        private HelperTriangleUIControls UI;
+        private HelperRectangleUIControls RecUI;
 
         public RectangleControl()
         {
             InitializeComponent();
             Infopanel.Visible = false;
             panelInfo.Visible = false;
+            RecUI = new HelperRectangleUIControls(SideABox, SideBBox, SideALabel, SideBLabel);
         }
 
         public void CalculateRectangle()
         {
             try
             {
-                if (Helper.VerifyValidationIsOk(UI,out side, out sideB))
+                if (Helper.VerifyValidationIsOk(RecUI,out side, out sideB))
                 {
                     var rectangle = new Rectangle(side, sideB);
                     Calculate(rectangle);

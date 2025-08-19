@@ -6,7 +6,7 @@
     public class HelperTriangleUIControls
     {
         public TextBox SideABox { get; }
-        public TextBox SideBBox { get; }
+        public TextBox SideBBox { get; } 
         public TextBox SideCBox { get; }
         public TextBox HeightBox { get; }
         public Label SideALabel { get; }
@@ -25,8 +25,8 @@
             SideBLabel = sideBLabel;
             SideCLabel = sideCLabel;
             HeightLabel = heightLabel;
-        }  
-        
-      
+        }
+
+
     }
 }

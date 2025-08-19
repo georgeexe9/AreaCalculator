@@ -55,4 +55,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="AreaHelpers\" />
+  </ItemGroup>
+
 </Project>

@@ -11,15 +11,13 @@ namespace AreaCalculator.Helpers
 
     public static class Helper
     {
-        public static HelperTriangleUIControls UI;
+        
 
         public static void ConfigureChoiceBox(ComboBox TriangleChoiceBox)
         {
             TriangleChoiceBox.Items.Insert(0, "-Избери-");
             TriangleChoiceBox.FlatStyle = FlatStyle.System;
             TriangleChoiceBox.SelectedIndex = 0;
-          
-
         }
 
         //показва кратка информация за фигурата
@@ -63,6 +61,13 @@ namespace AreaCalculator.Helpers
             return double.TryParse(UI.SideABox.Text, out sideA) &&
             double.TryParse(UI.SideBBox.Text, out sideB);
         }
+        public static bool VerifyValidationIsOk(HelperRectangleUIControls recUI, out double sideA, out double sideB)
+        {
+
+            sideB = 0;
+            return double.TryParse(recUI.SideABox.Text, out sideA) &&
+            double.TryParse(recUI.SideBBox.Text, out sideB);
+        }
 
         public static bool VerifyValidationIsOk(HelperTriangleUIControls UI, out double sideA, out double sideB, out double sideC, out double height)
         {
@@ -75,6 +80,7 @@ namespace AreaCalculator.Helpers
             double.TryParse(UI.SideCBox.Text, out sideC) &&
             double.TryParse(UI.HeightBox.Text, out height);
         }
+        
            
 
         public static bool VerifyValidationIsOk(HelperTriangleUIControls UI, out double sideA)

@@ -1,4 +1,5 @@
-﻿namespace AreaCalculator
+﻿using AreaCalculator.Helpers;
+namespace AreaCalculator
 {
 
     public partial class CalculatorMainFrom : Form
@@ -8,56 +9,46 @@
         public CalculatorMainFrom()
         {
             InitializeComponent();
-            MainPanel.Controls.Add(hc);
-
+            HelperAreaUI.ConfigureMainPanel(MainPanel,hc);
+            HelperAreaUI.ConfigureNavBars(splitContainer1,panel2D);
         }
-        private void LoadControl(UserControl uc)
-        {
-            MainPanel.Controls.Clear();
-            uc.Dock = DockStyle.Fill;
-            MainPanel.Controls.Add(uc);
-
-        }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
             TriangleForm tr = new TriangleForm();
-            LoadControl(tr);
+            HelperAreaUI.ConfigureUserControls(MainPanel, tr);
         }
 
         private void RectangleControlButton_Click(object sender, EventArgs e)
         {
             RectangleControl r = new RectangleControl();
-            LoadControl(r);
+            HelperAreaUI.ConfigureUserControls(MainPanel, r);
         }
 
         private void ParallelogramButtonControl_Click(object sender, EventArgs e)
         {
             ParallelogramControl para = new ParallelogramControl();
-            LoadControl(para);
+            HelperAreaUI.ConfigureUserControls(MainPanel, para);
         }
 
         private void RhombusControlButton_Click(object sender, EventArgs e)
         {
             PhombusControl rhom = new PhombusControl();
-            LoadControl(rhom);
+            HelperAreaUI.ConfigureUserControls(MainPanel, rhom);
         }
 
-        private void MainPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            LoadControl(hc);
+            HelperAreaUI.ConfigureUserControls(MainPanel, hc);
         }
 
-        private void CalculatorMainFrom_FormClosing(object sender, FormClosingEventArgs e)
+        private void navbarr3D_MouseDown(object sender, MouseEventArgs clickTimes)
         {
-
+           HelperAreaUI.ConfigureButtonClicks(splitContainer1, panel2D, panel3D, (Button)sender, clickTimes);
         }
+
+       
     }
 }
 

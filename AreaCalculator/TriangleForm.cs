@@ -4,8 +4,9 @@ using AreaCalculator.Triangles;
 namespace AreaCalculator
 {
     /// <summary>
-    ///  Summary:
-    ///  Displays all about => TRIANGLES <=
+    ///  Displays Triangle Control
+    ///  - Calculates every triangle
+    /// 
     /// </summary>
     public partial class TriangleForm : UserControl
     {
@@ -18,7 +19,7 @@ namespace AreaCalculator
         private double area;
         private double perimeter;
         private List<string> summary = new List<string>();
-        private HelperTriangleUIControls UI;
+        private readonly HelperTriangleUIControls triangleUI;
 
 
         public TriangleForm()
@@ -27,7 +28,7 @@ namespace AreaCalculator
             panelInfo.Visible = false;
             Infopanel.Visible = false;
             Helper.ConfigureChoiceBox(TriangleChoiceBox);
-            UI = new HelperTriangleUIControls(SideABox, SideBBox, SideCBox, HeightBox, SideALabel, SideBLabel, SideCLabel, HeightLabel);
+            triangleUI = new HelperTriangleUIControls(SideABox, SideBBox, SideCBox, HeightBox, SideALabel, SideBLabel, SideCLabel, HeightLabel);
 
         }
 
@@ -35,20 +36,18 @@ namespace AreaCalculator
         {
             CalculateTriangle();
         }
-        //Изчиства съдържанието
-        //тва ще се раздели на три метода
         private void ResetAllTextBoxes()
         {
-           Helper.ClearAllTextBoxes(SideABox,SideABox);
-            HelperTriangles.ConfigureLabelsbyDefauth(UI);
-            HelperTriangles.ConfigureTextBoxesbyDefauth(UI);
+            Helper.ClearAllTextBoxes(SideABox, SideABox);
+            HelperTriangles.ConfigureLabelsByDefault(triangleUI);
+            HelperTriangles.ConfigureTextBoxesByDefault(triangleUI);
             InformationalLabel.Text = "";
-            panelInfo.Visible = false;         
+            panelInfo.Visible = false;
             Infopanel.Visible = false;
-            
+
 
         }
-    
+
         //Тва ще се изнася в Helper класа
 
         private void CalculateTriangle()
@@ -67,9 +66,9 @@ namespace AreaCalculator
                         break;
                     case TriangleChoices.Right_Triangle:
                         //Правоъгълен триъгълник
-                        if (Helper.VerifyValidationIsOk(UI, out sideA, out sideB))
+                        if (Helper.VerifyValidationIsOk(triangleUI, out sideA, out sideB))
                         {
-                            var rightTriangle = new RightTriangle(sideA, sideB);
+                            RightTriangle rightTriangle = new RightTriangle(sideA, sideB);
                             GetCalculatedTriangle(rightTriangle);
                         }
                         else
@@ -80,9 +79,9 @@ namespace AreaCalculator
                         break;
                     //Произволен триъгълник
                     case TriangleChoices.Triangle:
-                        if (Helper.VerifyValidationIsOk(UI, out sideA, out sideB, out sideC, out height))
+                        if (Helper.VerifyValidationIsOk(triangleUI, out sideA, out sideB, out sideC, out height))
                         {
-                            var triangle = new Triangle(sideA, sideB, sideC, height);
+                            Triangle triangle = new Triangle(sideA, sideB, sideC, height);
                             GetCalculatedTriangle(triangle);
                         }
                         else
@@ -94,9 +93,9 @@ namespace AreaCalculator
                         break;
                     //Равнобедрен триъгълник
                     case TriangleChoices.IsoscelesTriangle:
-                        if (Helper.VerifyValidationIsOk(UI, out sideA, out sideB))
+                        if (Helper.VerifyValidationIsOk(triangleUI, out sideA, out sideB))
                         {
-                            var isosceleTriangle = new Isoscelestriangle(sideA, sideB);
+                            Isoscelestriangle isosceleTriangle = new Isoscelestriangle(sideA, sideB);
                             GetCalculatedTriangle(isosceleTriangle);
                         }
                         else
@@ -107,9 +106,9 @@ namespace AreaCalculator
                         break;
                     //Равностранен триъгълник
                     case TriangleChoices.EquilateralTriangle:
-                        if (Helper.VerifyValidationIsOk(UI,out sideA))
+                        if (Helper.VerifyValidationIsOk(triangleUI, out sideA))
                         {
-                            var equilateralTriangle = new EquilateralTriangle(sideA);
+                            EquilateralTriangle equilateralTriangle = new EquilateralTriangle(sideA);
                             GetCalculatedTriangle(equilateralTriangle);
 
                         }
@@ -125,7 +124,7 @@ namespace AreaCalculator
                         break;
                 }
             }
-            
+
             catch (FormatException)
             {
                 Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
@@ -139,7 +138,7 @@ namespace AreaCalculator
         private void button1_Click(object sender, EventArgs e)
         {
 
-            Helper.ClearAllTextBoxes(SideABox,SideBBox,SideCBox,HeightBox);
+            Helper.ClearAllTextBoxes(SideABox, SideBBox, SideCBox, HeightBox);
         }
         private void UIControlTriangle()
         {
@@ -147,8 +146,8 @@ namespace AreaCalculator
 
             string? nameTriangle = TriangleChoiceBox.GetItemText(TriangleChoiceBox.SelectedIndex);
 
-            HelperTriangles.ConfigureUITextBox(UI,type);
-            HelperTriangles.ConfigureUITriangleLabels(UI,type, Infopanel, formula, InformationalLabel, nameTriangle);
+            HelperTriangles.ConfigureUITextBox(triangleUI, type);
+            HelperTriangles.ConfigureUITriangleLabels(triangleUI, type, Infopanel, formula, InformationalLabel, nameTriangle);
             Helper.ClearListView(listSummary);
             Helper.ClearAllTextBoxes(SideABox, SideBBox, SideCBox, HeightBox);
 
@@ -166,10 +165,7 @@ namespace AreaCalculator
             ResetAllTextBoxes();
 
         }
-        /// <summary>
-        /// Calculates area and perimeter of shape triangles object
-        /// </summary>
-        /// <param name="triangle"></param>
+
         private void GetCalculatedTriangle(Shape triangle)
         {
 
@@ -181,6 +177,6 @@ namespace AreaCalculator
 
         }
 
-       
+
     }
 }
