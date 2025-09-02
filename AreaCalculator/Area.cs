@@ -9,8 +9,8 @@ namespace AreaCalculator
         public CalculatorMainFrom()
         {
             InitializeComponent();
-            HelperAreaUI.ConfigureMainPanel(MainPanel,hc);
-            HelperAreaUI.ConfigureNavBars(splitContainer1,panel2D);
+            HelperAreaUI.ConfigureMainPanel(MainPanel, hc);
+            HelperAreaUI.ConfigureNavBars(splitContainer1, panel2D);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -18,6 +18,7 @@ namespace AreaCalculator
             TriangleForm tr = new TriangleForm();
             HelperAreaUI.ConfigureUserControls(MainPanel, tr);
         }
+        
 
         private void RectangleControlButton_Click(object sender, EventArgs e)
         {
@@ -45,10 +46,13 @@ namespace AreaCalculator
 
         private void navbarr3D_MouseDown(object sender, MouseEventArgs clickTimes)
         {
-           HelperAreaUI.ConfigureButtonClicks(splitContainer1, panel2D, panel3D, (Button)sender, clickTimes);
+            HelperAreaUI.ConfigureButtonClicks(splitContainer1, panel2D, panel3D, (Button)sender, clickTimes);
         }
 
-       
+        private void TriangleControlButton_MouseDown(object sender, MouseEventArgs e)
+        {
+           
+        }
     }
 }
 

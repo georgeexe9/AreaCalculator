@@ -1,4 +1,4 @@
-﻿using static System.Windows.Forms.VisualStyles.VisualStyleElement.ScrollBar;
+﻿
 
 namespace AreaCalculator.Helpers
 {

@@ -51,6 +51,7 @@ namespace AreaCalculator.Helpers
 
             switch (type)
             {
+                
                 case TriangleChoices.Right_Triangle:
                     Helper.ShowInformationalPanel(infoPanel, formulaLabel, triangleNameLabel, nameTriangle, "Area = (1/2) * a * b \n Perimeter = a + b + c");
                     break;
@@ -87,9 +88,7 @@ namespace AreaCalculator.Helpers
             UI.SideBBox.Enabled = UI.SideBBox.Visible = true;
             UI.SideCBox.Enabled = UI.SideCBox.Visible = true;
             UI.HeightBox.Enabled = UI.HeightBox.Visible = true;
-
-
-            
+    
         }
 
     }

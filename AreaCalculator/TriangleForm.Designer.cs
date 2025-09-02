@@ -229,9 +229,9 @@
             InformationalLabel.ForeColor = Color.White;
             InformationalLabel.Location = new Point(16, 18);
             InformationalLabel.Name = "InformationalLabel";
-            InformationalLabel.Size = new Size(57, 21);
+            InformationalLabel.Size = new Size(112, 21);
             InformationalLabel.TabIndex = 0;
-            InformationalLabel.Text = "label7";
+            InformationalLabel.Text = "Sample Label";
             // 
             // ResetTriangles
             // 

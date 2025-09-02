@@ -305,6 +305,7 @@
             TriangleControlButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             TriangleControlButton.UseVisualStyleBackColor = false;
             TriangleControlButton.Click += button1_Click;
+            TriangleControlButton.MouseDown += TriangleControlButton_MouseDown;
             // 
             // button5
             // 
