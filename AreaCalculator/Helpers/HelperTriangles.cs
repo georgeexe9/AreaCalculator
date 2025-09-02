@@ -20,7 +20,7 @@ namespace AreaCalculator.Helpers
     {
     
 
-        public static void ConfigureUITextBox(HelperTriangleUIControls UI, TriangleChoices type)
+        public static void ConfigureUITextBox(TriangleUIControls UI, TriangleChoices type)
         {
 
             switch (type)
@@ -42,47 +42,51 @@ namespace AreaCalculator.Helpers
 
             }
         }
-        public static void ConfigureUITriangleLabels(HelperTriangleUIControls UI,TriangleChoices type,
-        Panel infoPanel,
-        Label formulaLabel,
-        Label triangleNameLabel,
-        string nameTriangle)
+        
+        
+        public static void ConfigureUITriangleLabels(TriangleUIControls UI, TriangleChoices type, Panel InfoPanel)
         {
-
-            switch (type)
+            switch(type)
             {
-                
                 case TriangleChoices.Right_Triangle:
-                    Helper.ShowInformationalPanel(infoPanel, formulaLabel, triangleNameLabel, nameTriangle, "Area = (1/2) * a * b \n Perimeter = a + b + c");
+                    UI.TriangleNameType.Text = "Правоъгълен триъгълник";
+                    UI.FormulaLabel.Text = "Формули: Area S = (1/2) * a * b \nPerimeter P = a + b + c";
+                    UI.FunFactLabel.Text = "Fun Fact: The Pythagorean theorem states that in a right triangle, \nthe square of the hypotenuse (the side opposite the right angle)\nis equal to the sum of the squares of the other two sides.";
+                    Helper.ShowInformationalPanel(InfoPanel);
                     break;
                 case TriangleChoices.Triangle:
-                    Helper.ShowInformationalPanel(infoPanel, formulaLabel, triangleNameLabel, nameTriangle,
-                       "Area = 0.5 * a * h \n Perimeter = a + b + c");
+                    UI.TriangleNameType.Text = "Произволен Триъгълник";
+                    UI.FormulaLabel.Text = "Формули: Area S = 0.5 * a * h \nPerimeter P = a + b + c";
+                    UI.FunFactLabel.Text = "Fun Fact: The sum of the interior angles of any triangle \nis always 180 degrees.";
+                    Helper.ShowInformationalPanel(InfoPanel);
                     break;
                 case TriangleChoices.IsoscelesTriangle:
-                    Helper.ShowInformationalPanel(infoPanel, formulaLabel, triangleNameLabel, nameTriangle,
-                        "Area = (Base * Height) / 2 \n Perimeter = 2 * Side + Base");
+                    UI.TriangleNameType.Text = "Равнобедрен триъгълник";
+                    UI.FormulaLabel.Text = "Формули: Area S = (Base * Height) / 2 \nPerimeter P = 2 * Side + Base";
                     UI.SideALabel.Text = "Страна:";
                     UI.SideBLabel.Text = "Основа:";
+                    UI.FunFactLabel.Text = "Fun Fact: In an isosceles triangle, \nthe angles opposite the equal sides are also equal.";
+                    Helper.ShowInformationalPanel(InfoPanel);
                     break;
                 case TriangleChoices.EquilateralTriangle:
-                    Helper.ShowInformationalPanel(infoPanel, formulaLabel, triangleNameLabel, nameTriangle,
-                       "Area = (Base * Height) / 2 \n Perimeter = 3 * Side");
+                    UI.TriangleNameType.Text = "Равностранен триъгълник";
+                    UI.FormulaLabel.Text = "Формули: Area S = (Base * Height) / 2 \nPerimeter P = 3 * Side";
                     UI.SideALabel.Text = "Страна:";
+                    UI.FunFactLabel.Text = "Fun Fact: All angles in an equilateral triangle \nare equal to 60 degrees.";
+                    Helper.ShowInformationalPanel(InfoPanel);
                     break;
-
-
             }
         }
 
-        public static void ConfigureLabelsByDefault(HelperTriangleUIControls UI)
+
+        public static void ConfigureLabelsByDefault(TriangleUIControls UI)
         {
             UI.SideALabel.Text = "Страна а:";
             UI.SideBLabel.Text = "Страна b:";
             UI.SideCLabel.Text = "Страна c:";
             UI.HeightLabel.Text = "Височина h:";
         }
-        public static void ConfigureTextBoxesByDefault(HelperTriangleUIControls UI)
+        public static void ConfigureTextBoxesByDefault(TriangleUIControls UI)
         {
             UI.SideABox.Enabled = UI.SideABox.Visible = true;
             UI.SideBBox.Enabled = UI.SideBBox.Visible = true;

@@ -29,7 +29,7 @@ namespace AreaCalculator
                     var rectangle = new Rectangle(side, sideB);
                     CalculateRectangle(rectangle);
 
-                    Helper.ShowInformationalPanel(Infopanel, formula, RectangleName, "Правоъгълник", "ee");
+                    Helper.ShowInformationalPanel(Infopanel);
                 }
                 else
                 {

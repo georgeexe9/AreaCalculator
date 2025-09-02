@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorMainFrom));
             label1 = new Label();
             MainPanel = new Panel();
+            customControl11 = new CustomControl1();
             panel3D = new Panel();
             label2 = new Label();
             button3 = new Button();
@@ -53,6 +54,7 @@
             button1 = new Button();
             RhombusControlButton = new Button();
             splitContainer1 = new SplitContainer();
+            MainPanel.SuspendLayout();
             panel3D.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2D.SuspendLayout();
@@ -77,10 +79,19 @@
             // MainPanel
             // 
             MainPanel.BackColor = Color.FromArgb(46, 60, 99);
+            MainPanel.Controls.Add(customControl11);
             MainPanel.Location = new Point(263, 130);
             MainPanel.Name = "MainPanel";
             MainPanel.Size = new Size(725, 450);
             MainPanel.TabIndex = 3;
+            // 
+            // customControl11
+            // 
+            customControl11.Location = new Point(549, 181);
+            customControl11.Name = "customControl11";
+            customControl11.Size = new Size(75, 23);
+            customControl11.TabIndex = 0;
+            customControl11.Text = "customControl11";
             // 
             // panel3D
             // 
@@ -450,16 +461,15 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(60, 79, 130);
-            ClientSize = new Size(988, 575);
+            ClientSize = new Size(986, 575);
             Controls.Add(splitContainer1);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(MainPanel);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximumSize = new Size(1004, 614);
-            MinimumSize = new Size(1004, 614);
             Name = "CalculatorMainFrom";
             Text = "Shape Calculator";
+            MainPanel.ResumeLayout(false);
             panel3D.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2D.ResumeLayout(false);
@@ -496,6 +506,7 @@
         private Button button9;
         private SplitContainer splitContainer1;
         private Label label2;
+        private CustomControl1 customControl11;
     }
 
 }

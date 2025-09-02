@@ -12,7 +12,7 @@ namespace AreaCalculator.Triangles
         {
             if (side <= 0)
             {
-                throw new ArgumentException("Страната трябва да бъде по-голяма от 0!");
+                throw new ArgumentException("Страната трябва да\nбъде по-голяма от 0!");
             }
             Side = side;
         }
@@ -29,16 +29,16 @@ namespace AreaCalculator.Triangles
         {
             return "Равнобедрен триъгълник";
         }
-        //public override string GetShapeInfo()
-        //{
-        //    StringBuilder newSBS = new StringBuilder();
-        //    newSBS.AppendLine($"Равностранен триъгълник");
-        //    newSBS.AppendLine($"Страна {Side}, всички страни са еднакви!");
-        //    newSBS.AppendLine($"Лице/Площ - {CalculateArea()}");
-        //    newSBS.AppendLine($"Периметър/Обиколка - {CalculatePerimeter()}");
-        //    return newSBS.ToString();
-
-        //}
+        public override List<string> GetSummary()
+        {
+            return new List<string>
+            {
+                $"Равностранен триъгълник",
+                $"Страна: {Side} cm",
+                $"Лице/Площ: {CalculateArea():F2} cm",
+                $"Периметър: {CalculatePerimeter():F2} cm"
+            };
+        }
 
     }
 

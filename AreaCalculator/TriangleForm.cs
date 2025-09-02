@@ -19,7 +19,7 @@ namespace AreaCalculator
         private double area;
         private double perimeter;
         private List<string> summary = new List<string>();
-        private readonly HelperTriangleUIControls triangleUI;
+        private readonly TriangleUIControls triangleUI;
 
 
         public TriangleForm()
@@ -28,7 +28,7 @@ namespace AreaCalculator
             panelInfo.Visible = false;
             Infopanel.Visible = false;
             Helper.ConfigureChoiceBox(TriangleChoiceBox);
-            triangleUI = new HelperTriangleUIControls(SideABox, SideBBox, SideCBox, HeightBox, SideALabel, SideBLabel, SideCLabel, HeightLabel);
+            triangleUI = new TriangleUIControls(SideABox, SideBBox, SideCBox, HeightBox, SideALabel, SideBLabel, SideCLabel, HeightLabel, TriangleName, FormulaLabel, FunFact);
 
         }
 
@@ -73,7 +73,7 @@ namespace AreaCalculator
                         }
                         else
                         {
-                            Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
+                            Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови\nстойности!", Color.White, Color.Red);
                         }
 
                         break;
@@ -86,7 +86,7 @@ namespace AreaCalculator
                         }
                         else
                         {
-                            Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
+                            Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови\nстойности!", Color.White, Color.Red);
 
                         }
 
@@ -100,7 +100,7 @@ namespace AreaCalculator
                         }
                         else
                         {
-                            Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
+                            Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови\nстойности!", Color.White, Color.Red);
 
                         }
                         break;
@@ -114,20 +114,20 @@ namespace AreaCalculator
                         }
                         else
                         {
-                            Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
+                            Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови\nстойности!", Color.White, Color.Red);
 
                         }
                         break;
                     //Ако не е избран триъгълник (или друга причина)
                     default:
-                        Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Няма такъв триъгълник! Неподдържана фигура!", Color.White, Color.Red);
+                        Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Няма такъв триъгълник!\nНеподдържана фигура!", Color.White, Color.Red);
                         break;
                 }
             }
 
             catch (FormatException)
             {
-                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови стойности!", Color.White, Color.Red);
+                Helper.ShowExceptionalMessage(panelInfo, InformationalLabel, "Моля въведете числови\nстойности!", Color.White, Color.Red);
             }
             catch (ArgumentException ex)
             {
@@ -144,10 +144,8 @@ namespace AreaCalculator
         {
             var type = (TriangleChoices)TriangleChoiceBox.SelectedIndex;
 
-            string? nameTriangle = TriangleChoiceBox.GetItemText(TriangleChoiceBox.SelectedIndex);
-
             HelperTriangles.ConfigureUITextBox(triangleUI, type);
-            HelperTriangles.ConfigureUITriangleLabels(triangleUI, type, Infopanel, formula, InformationalLabel, nameTriangle);
+            HelperTriangles.ConfigureUITriangleLabels(triangleUI, type, Infopanel);
             Helper.ClearListView(listSummary);
             Helper.ClearAllTextBoxes(SideABox, SideBBox, SideCBox, HeightBox);
 
@@ -177,6 +175,9 @@ namespace AreaCalculator
 
         }
 
-
+        private void NoTriangleLabel_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
