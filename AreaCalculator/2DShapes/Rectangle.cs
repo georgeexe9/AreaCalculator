@@ -46,8 +46,8 @@ namespace AreaCalculator
             return new List<string>()
             {
                 $"Правоъгълник",
-                $"Страна а: {Sidea}",
-                $"Страна b: {Sideb}",
+                $"Страна а: {SideA}",
+                $"Страна b: {SideB}",
                 $"Диагонал - {CalculateDiagonal():F2}",
                 $"Лице/Площ - {CalculateArea():F2}",
                 $"Периметър - {CalculatePerimeter():F2}",
