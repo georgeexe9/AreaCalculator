@@ -16,19 +16,19 @@ namespace AreaCalculator
 
             if (side <= 0)
             {
-                throw new ArgumentException("Страната на триъгълника трябва да бъде по-голяма от 0");
+                throw new ArgumentException("Страната на триъгълника\nтрябва да бъде по-голяма от 0");
             }
             if (sideB <= 0)
             {
-                throw new ArgumentException("Височината на триъгълника трябва да бъде по-голяма от 0");
+                throw new ArgumentException("Височината на триъгълника\nтрябва да бъде по-голяма от 0");
             }
             if (sideC <= 0)
             {
-                throw new ArgumentException("Височината на триъгълника трябва да бъде по-голяма от 0");
+                throw new ArgumentException("Височината на триъгълника\nтрябва да бъде по-голяма от 0");
             }
             if (height <= 0)
             {
-                throw new ArgumentException("Височината на триъгълника трябва да бъде по-голяма от 0");
+                throw new ArgumentException("Височината на триъгълника\nтрябва да бъде по-голяма от 0");
             }
          
             Side = side;
@@ -54,18 +54,20 @@ namespace AreaCalculator
             return "Триъгълник";
         }
 
-        public override string GetShapeInfo()
+        public override List<string> GetSummary()
         {
-            StringBuilder newSBS = new StringBuilder();
-            newSBS.AppendLine($"Фигура: Триъгълник\n");
-            newSBS.AppendLine($"Страна a: {Side}\n");
-            newSBS.AppendLine($"Страна b: {SideB}\n");
-            newSBS.AppendLine($"Страна c: {SideC}\n");
-            newSBS.AppendLine($"Височина h: {Height}");
-            newSBS.AppendLine($"Лице/Площ S - {CalculateArea()}\n");
-            newSBS.AppendLine($"Периметър P - {CalculatePerimeter()}\n");
-            return newSBS.ToString();
+            return new List<string>
+            {
+                $"Триъгълник",
+                $"Страна а: {Side}",
+                $"Страна b: {SideB}",
+                $"Страна c: {SideC}",
+                $"Височина h: {Height}",
+                $"Лице/Площ: {CalculateArea():F2}",
+                $"Периметър: {CalculatePerimeter():F2}"
+            };
         }
+       
 
     }
 }

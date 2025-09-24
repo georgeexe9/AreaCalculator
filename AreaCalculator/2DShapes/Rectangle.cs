@@ -20,17 +20,13 @@ namespace AreaCalculator
             {
                 throw new ArgumentException("Страната b на правоъгълника трябва да бъдат по-големи от нула.");
             }
-            SideA = sidea;
-            SideB = sideb;
         }
 
         public override double CalculateArea()
         {
-            return SideA * SideB;
         }
         public override double CalculatePerimeter()
         {
-            return 2 * (SideA + SideB);
 
         }
         public override double CalculateDiagonal()
@@ -46,8 +42,6 @@ namespace AreaCalculator
             return new List<string>()
             {
                 $"Правоъгълник",
-                $"Страна а: {SideA}",
-                $"Страна b: {SideB}",
                 $"Диагонал - {CalculateDiagonal():F2}",
                 $"Лице/Площ - {CalculateArea():F2}",
                 $"Периметър - {CalculatePerimeter():F2}",

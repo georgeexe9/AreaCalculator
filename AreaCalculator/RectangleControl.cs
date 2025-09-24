@@ -1,6 +1,5 @@
 ﻿
 using AreaCalculator.Helpers;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ScrollBar;
 
 namespace AreaCalculator
 {
@@ -28,9 +27,9 @@ namespace AreaCalculator
                 if (Helper.VerifyValidationIsOk(RecUI,out side, out sideB))
                 {
                     var rectangle = new Rectangle(side, sideB);
-                    Calculate(rectangle);
+                    CalculateRectangle(rectangle);
 
-                    Helper.ShowInformationalPanel(Infopanel, formula, RectangleName, "Правоъгълник", "ee");
+                    Helper.ShowInformationalPanel(Infopanel);
                 }
                 else
                 {
@@ -57,7 +56,7 @@ namespace AreaCalculator
             Infopanel.Visible = false;
             panelInfo.Visible = false;
         }
-        private void Calculate(Shape rectangle)
+        private void CalculateRectangle(Shape rectangle)
         {
             perimeter = rectangle.CalculatePerimeter();
             area = rectangle.CalculateArea();

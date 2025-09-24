@@ -18,11 +18,11 @@
         {
             if (sidea <= 0)
             {
-                throw new ArgumentException("Страната a трябва да бъде по-голяма от 0");
+                throw new ArgumentException("Страната a трябва да\nбъде по-голяма от 0");
             }
             if (sideb <= 0)
             {
-                throw new ArgumentException("Страната b трябва да бъде по-голяма от 0");
+                throw new ArgumentException("Страната b трябва да\nбъде по-голяма от 0");
             }
             SideA = sidea;
             SideB = sideb;
@@ -49,11 +49,11 @@
             return new List<string>
             {
                 $"Правоъгълен триъгълник",
-                $"Страна а: {SideA}",
-                $"Страна b: {SideB}",
-                $"Хипотенуза c: {Hypotenuse:F2}",
-                $"Лице/Площ: {CalculateArea():F2}",
-                $"Периметър: {CalculatePerimeter():F2}"
+                $"Страна а: {SideA} cm",
+                $"Страна b: {SideB} cm",
+                $"Хипотенуза c: {Hypotenuse:F2} cm",
+                $"Лице/Площ: {CalculateArea():F2} cm",
+                $"Периметър: {CalculatePerimeter():F2} cm"
             };
         }
 

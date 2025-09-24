@@ -1,4 +1,4 @@
-﻿using static System.Windows.Forms.VisualStyles.VisualStyleElement.ScrollBar;
+﻿
 
 namespace AreaCalculator.Helpers
 {
@@ -11,22 +11,22 @@ namespace AreaCalculator.Helpers
 
     public static class Helper
     {
-        
+
 
         public static void ConfigureChoiceBox(ComboBox TriangleChoiceBox)
         {
             TriangleChoiceBox.Items.Insert(0, "-Избери-");
             TriangleChoiceBox.FlatStyle = FlatStyle.System;
             TriangleChoiceBox.SelectedIndex = 0;
+           
         }
 
         //показва кратка информация за фигурата
-        public static void ShowInformationalPanel(Panel Infopanel, Label formulas, Label TriangleName, string shape, string formula)
+        public static void ShowInformationalPanel(Panel Infopanel)
         {
 
             Infopanel.Visible = true;
-            formulas.Text = formula;
-            TriangleName.Text = shape;
+            
         }
         //Показва резултата и панела,където се визуализира информацията
         public static void ShowMessageResult(Panel panelInfo, Label InformationalLabel, double area, double perimeter)
@@ -40,7 +40,7 @@ namespace AreaCalculator.Helpers
             panelInfo.Visible = true;
 
             //Показва резултата от обекта
-            InformationalLabel.Text = $"Лице: {area:F2} cm.\n Периметър: {perimeter:F2} cm.";
+            InformationalLabel.Text = $"Лице S = {area:F2} cm.\nПериметър P = {perimeter:F2} cm.";
 
         }
 
@@ -54,9 +54,9 @@ namespace AreaCalculator.Helpers
 
         }
 
-        public static bool VerifyValidationIsOk(HelperTriangleUIControls UI, out double sideA, out double sideB)
+        public static bool VerifyValidationIsOk(TriangleUIControls UI, out double sideA, out double sideB)
         {
-            
+
             sideB = 0;
             return double.TryParse(UI.SideABox.Text, out sideA) &&
             double.TryParse(UI.SideBBox.Text, out sideB);
@@ -69,7 +69,7 @@ namespace AreaCalculator.Helpers
             double.TryParse(recUI.SideBBox.Text, out sideB);
         }
 
-        public static bool VerifyValidationIsOk(HelperTriangleUIControls UI, out double sideA, out double sideB, out double sideC, out double height)
+        public static bool VerifyValidationIsOk(TriangleUIControls UI, out double sideA, out double sideB, out double sideC, out double height)
         {
 
             sideB = 0;
@@ -80,12 +80,12 @@ namespace AreaCalculator.Helpers
             double.TryParse(UI.SideCBox.Text, out sideC) &&
             double.TryParse(UI.HeightBox.Text, out height);
         }
-        
-           
 
-        public static bool VerifyValidationIsOk(HelperTriangleUIControls UI, out double sideA)
+
+
+        public static bool VerifyValidationIsOk(TriangleUIControls UI, out double sideA)
         {
-           
+
             return double.TryParse(UI.SideABox.Text, out sideA);
         }
 
@@ -93,19 +93,16 @@ namespace AreaCalculator.Helpers
         {
             listViewSummary.View = View.Details;
             listViewSummary.Columns.Add("Кратка информация:", -2, HorizontalAlignment.Left);
+            listViewSummary.GridLines = true;
+            listViewSummary.ForeColor = Color.White;
 
         }
 
-        public static void ClearListView(ListView listViewSummary)
-        {
-            if (listViewSummary.Items.Count > 0)
-            {
-                listViewSummary.Clear();
-            }
+        public static void ClearListView(ListView listViewSummary) {
+
+            listViewSummary.Clear();
 
         }
-
-
         /// <summary>
         /// Вмъква информацията в listSummary
         /// </summary>
@@ -127,13 +124,13 @@ namespace AreaCalculator.Helpers
 
         public static void ClearAllTextBoxes(TextBox SideABox, TextBox SideBBox, TextBox SideCBox, TextBox HeightBox)
         {
-            
-                SideABox.Clear();
-                SideBBox.Clear();
-                SideCBox.Clear();
-                HeightBox.Clear();
-            
-               
+
+            SideABox.Clear();
+            SideBBox.Clear();
+            SideCBox.Clear();
+            HeightBox.Clear();
+
+
         }
         public static void ClearAllTextBoxes(TextBox SideABox, TextBox SideBBox)
         {
