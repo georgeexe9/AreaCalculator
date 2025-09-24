@@ -24,14 +24,15 @@ namespace AreaCalculator
 
         public override double CalculateArea()
         {
+            return SideA * SideB;
         }
         public override double CalculatePerimeter()
         {
-
+            return 2 * (SideA + SideB);
         }
         public override double CalculateDiagonal()
         {
-            return Math.Sqrt(Math.Pow(Sidea, 2) + Math.Pow(Sideb, 2));
+            return Math.Sqrt(Math.Pow(SideA, 2) + Math.Pow(SideB, 2));
         }
         public override string GetShapeName()
         {
